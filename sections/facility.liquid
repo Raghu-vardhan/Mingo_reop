@@ -1,0 +1,99 @@
+<div class="faculty">
+  <div class="faculty_sub page-width">
+    <div class="faculty_img">
+         <img src="{{section.settings.faculty_img | img_url: 'original' }}" alt="Centered Image" class="centered-image" width="85" height="85"/>
+    </div>
+    
+      <div class="faculty_info">
+        <h3>{{ section.settings.faculty_heading}}</h3>
+        <p>{{ section.settings.faculty_desc }}</p>
+      </div>
+  </div>
+</div>
+
+<style>
+  .faculty_sub{
+    display:flex;
+    gap:5.3rem;
+    align-items:center;
+    margin-top:8rem;
+    
+  }
+    .faculty_info{
+    display:flex;
+    flex-direction:column;
+      gap:16px;
+    }
+  
+  .faculty_info h3{
+    text-align:center;
+    font-family: 'Roboto', sans-serif;
+    color:#226DFF;
+    text-align:start;
+    font-size:32px;
+    font-weight:700;
+    margin:0px;
+  }
+  .faculty_img {
+    display:flex;
+   align-items:center;
+  }
+  .faculty_img img{
+    width:100%;
+    height:auto;
+  }
+  .second-info{
+    display:flex;
+    gap:rem;
+   flex-direction:column;
+    justify-content:space-around;
+  }
+  .faculty_info p{
+    max-width:509px;
+    line-height:22px;
+    color:#000000;
+    font-weight:400;
+    font-family: 'Nutio', sans-serif;
+  }
+
+  @media (max-width:600px){
+    .faculty_sub{
+      flex-direction:column;
+      gap:15px;
+    }
+    .faculty_info h3{
+      font-size:26px;
+      text-align:center;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "faculty",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "faculty_img",
+      "label": "Select Image"
+    },
+     {
+      "type": "text",
+      "id": "faculty_heading",
+      "label": "Heading"
+    },
+    {
+      "type": "textarea",
+      "id": "faculty_desc",
+      "label": "Description"
+    },
+   
+  ],
+  "presets": [
+    {
+      "name": "faculty",
+      "category": "faculty"
+    }
+  ]
+}
+{% endschema %}

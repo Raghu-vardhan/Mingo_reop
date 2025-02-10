@@ -1,0 +1,126 @@
+{% schema %}
+{
+  "name": "Rotating Image",
+  "settings": [
+    {
+      "id": "image_logo",
+      "type": "image_picker",
+      "label": "Upload Image"
+    },
+    {
+      "id": "image_logo1",
+      "type": "image_picker",
+      "label": "Upload Image"
+    },
+    {
+      "id": "width",
+      "type": "number",
+      "label": "Image Container Width (px)",
+      "default": 150
+    },
+    {
+      "id": "rotation",
+      "type": "number",
+      "label": "Rotation Degrees",
+      "default": -10
+    },
+    {
+      "id": "hover_rotation",
+      "type": "number",
+      "label": "Hover Rotation Degrees",
+      "default": 60
+    }
+  ],
+  "presets": [
+    {
+      "name": "Rotate-anima",
+      "category": "rotate"
+    }
+  ]
+}
+{% endschema %}
+
+<div class="rotate-main ">
+  <div class="image-container image-hover" style="width: {{ settings.width }}px; transform: rotate({{ settings.rotation }}deg);">
+    <img src="{{ section.settings.image_logo | img_url: 'original' }}" alt="Custom Image" height="" width="">
+  </div>
+</div>
+<style>
+  .rotate-main{
+    display:flex;
+    justify-content:left;
+    max-width: 1440px;
+    margin: 0 auto;
+
+  }
+/* Fade-in and initial rotation */
+@keyframes fade-and-rotate {
+    from {
+        transform: rotate(-10deg);
+        opacity: 0; /* Start invisible */
+    }
+    to {
+        transform: rotate(0deg);
+        opacity: 1; /* Fully visible */
+    }
+}
+
+/* Continuous auto-rotation with 3-second gap */
+@keyframes auto-rotate {
+    0% {
+      transform: translateY(0px); /* Start position */
+    }
+    50% {
+      transform: translateY(-3rem); /* Move up */
+    }
+    100% {
+      transform: translateY(0px); /* Return to start */
+    }
+}
+
+.image-container {
+    width: 150px;
+    position: relative;
+    transform: rotate(-10deg); /* Initial rotation */
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.5s ease-in-out; /* Smooth fade effect */
+    animation: fade-and-rotate 3s ease-in-out forwards, auto-rotate 6s linear infinite; /* Combined animations */
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  filter: drop-shadow(2px 4px 6px black);
+}
+    border-radius: 10px; /* Rounded corners for the image */
+}
+
+/* Triggered when the section is visible */
+.image-container.visible {
+    animation: fade-and-rotate 3s ease-in-out forwards, auto-rotate 6s linear infinite; /* Restart animations when visible */
+}
+
+</style>
+
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                    }
+                });
+            },
+            { threshold: 0.5 } // Trigger when 50% of the section is visible
+        );
+
+        const imageContainer = document.querySelector(".image-container");
+        if (imageContainer) {
+            observer.observe(imageContainer);
+        }
+    });
+</script>
+

@@ -1,0 +1,109 @@
+<div class="Sprod-benefits page-width">
+  <h2>{{ section.settings.Sprod-benfits_heading }}</h2>
+  <div class="benefits-sub">
+    {% for block in section.blocks %}
+    {% if block.settings.Sprod_img %}
+    <ul class="Sprod-benefits_ul">
+      <li>
+        <div class="Sprod-img">
+            <img src="{{ block.settings.Sprod_img | img_url: 'original' }}" alt="Sprod-benfits Image" height="100" width="100">
+        </div>
+        <p>{{ block.settings.Sprod_desc}}</p>
+      </li>
+      <li>
+        <div class="Sprod-img">
+            <img src="{{ block.settings.Sprod_img1 | img_url: 'original' }}" alt="Sprod-benfits Image" height="100" width="100">
+        </div>
+        <p>{{ block.settings.Sprod_desc1}}</p>
+      </li>
+      <li>
+        <div class="Sprod-img">
+            <img src="{{ block.settings.Sprod_img2 | img_url: 'original' }}" alt="Sprod-benfits Image" height="100" width="100">
+        </div>
+        <p>{{ block.settings.Sprod_desc2}}</p>
+      </li>
+      
+    </ul>
+    {% endif %}
+    {% endfor %}
+  </div>
+</div>
+
+<style>
+  .Sprod-benefits_ul{
+    display:flex;
+    gap:30px;
+    list-style:none;
+    padding:0px;
+  }
+  .Sprod-benefits h2{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    color: #226DFF;
+  }
+  .Sprod-benefits_ul li{
+    text-align:center;
+  }
+  .Sprod-img img{
+    max-width:40px;
+    height:auto;
+  }
+</style>
+
+
+{% schema %}
+{
+    "name": "Sprod-benfits",
+    "settings": [
+        {
+          "type": "text",
+          "id": "Sprod-benfits_heading",
+          "label": "Heading"
+        }
+    ],
+    "blocks": [
+        {
+            "type": "image",
+            "name": "Sprod-benfits Image",
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "Sprod_img",
+                    "label": "Select image"
+                },
+                {
+                    "type": "text",
+                    "id": "Sprod_desc",
+                    "label": "text here"
+                },
+                   {
+                    "type": "image_picker",
+                    "id": "Sprod_img1",
+                    "label": "Select image"
+                },
+                {
+                    "type": "text",
+                    "id": "Sprod_desc1",
+                    "label": "text here"
+                },
+                   {
+                    "type": "image_picker",
+                    "id": "Sprod_img2",
+                    "label": "Select image"
+                },
+                {
+                    "type": "text",
+                    "id": "Sprod_desc2",
+                    "label": "text here"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "Sprod-benfits",
+            "category": "Collections"
+        }
+    ]
+}
+{% endschema %}

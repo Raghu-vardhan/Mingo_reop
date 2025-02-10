@@ -1,0 +1,159 @@
+{% schema %}
+{
+  "name": "Horizontal Carousel",
+  "settings": [
+    {
+      "type": "number",
+      "id": "auto_slide_duration",
+      "label": "Auto Slide ",
+      "default": 3,
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "heading ",
+    },
+   
+
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Carousel Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "carousel_image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "alt_text",
+          "label": "Alt Text",
+          "default": "Carousel Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Horizontal Carousel Slider",
+      "category": "Custom Sections"
+    }
+  ]
+}
+{% endschema %}
+
+<div class="carousel page-width">
+  <div class="carosel-head">
+    <h2>{{ section.settings.heading }}</h2>
+  </div>
+  <div class="carousel-inner">
+    {% for block in section.blocks %}
+      <div class="carousel-item">
+        <img src="{{ block.settings.carousel_image | image_url }}" alt="{{ block.settings.alt_text }}">
+      </div>
+    {% endfor %}
+  </div>
+  <button class="carousel-btn left" id="prevBtn">&#10094;</button>
+  <button class="carousel-btn right" id="nextBtn">&#10095;</button>
+</div>
+
+<style>
+  .carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    margin-top:4rem;
+  }
+   .carousel h2{
+         color: #80079e;
+     font-size:32px;
+     font-weight:600;
+     margin-bottom:3rem;
+   }
+  .carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+  .carousel-item {
+    flex: 0 0 calc(100% / 4); /* Adjust for 7 images visible at once */
+    box-sizing: border-box;
+    padding: 5px;
+  }
+  .carousel img {
+    width: 100%;
+    display: block;
+    border-radius: 5px;
+  }
+  .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(40%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+  }
+  .carousel-btn.left {
+    left: 10px;
+  }
+  .carousel-btn.right {
+    right: 10px;
+  }
+
+  @media (max-width:600px){
+    .carousel-item{
+        flex: 0 0 calc(100% / 2);
+    }
+    .carousel h2{
+      font-size:23px;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+  const carouselInner = document.querySelector('.carousel-inner');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  const autoSlideDuration = {{ section.settings.auto_slide_duration | times: 1000 }};
+  let index = 0;
+
+  const moveToSlide = (slideIndex) => {
+    const items = document.querySelectorAll('.carousel-item');
+    const totalSlides = items.length;
+    const visibleSlides = 8; // Adjust for the number of visible images
+    index = (slideIndex + totalSlides) % totalSlides; // Handle wrap-around
+    carouselInner.style.transform = `translateX(-${index * (100 / visibleSlides)}%)`;
+  };
+
+  const checkImagesLoaded = () => {
+    const images = document.querySelectorAll('.carousel-item img');
+    let allLoaded = true;
+    images.forEach((img) => {
+      if (!img.complete || img.naturalWidth === 0) {
+        allLoaded = false;
+      }
+    });
+    return allLoaded;
+  };
+
+  const startSlider = () => {
+    if (checkImagesLoaded()) {
+      setInterval(() => moveToSlide(index + 1), autoSlideDuration);
+    } else {
+      setTimeout(startSlider, 500); // Retry after 500ms
+    }
+  };
+
+  // Event Listeners
+  prevBtn.addEventListener('click', () => moveToSlide(index - 1));
+  nextBtn.addEventListener('click', () => moveToSlide(index + 1));
+
+  // Start the auto-slider
+  startSlider();
+});
+
+</script>

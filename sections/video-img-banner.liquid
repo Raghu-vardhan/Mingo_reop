@@ -1,0 +1,157 @@
+{% schema %}
+{
+  "name": "home Banner Slider",
+  "settings": [
+    {
+      "type": "range",
+      "id": "slide_interval",
+      "label": "Slide Interval (seconds)",
+      "default": 3,
+      "min": 1,
+      "max": 10,
+      "step": 1
+    }
+  ],
+  "presets": [
+    {
+      "name": "Home banner",
+      "category": "collection"
+    }
+  ]
+}
+{% endschema %}
+
+<div class="slider">
+  <div class="slides">
+    <!-- Slide 1 -->
+
+    <div class="slide">
+      <video autoplay muted loop playsinline style="width: 100%; height: auto;">
+        <!-- Mobile Video -->
+        <source src="/path-to-mobile-video.mp4" type="video/mp4" media="(max-width: 720px)">
+        <!-- Desktop Video -->
+        <source src="https://cdn.shopify.com/videos/c/o/v/3c5dc4ec2e6546a5a71e16432f24121a.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    
+    <div class="slide">
+      <picture>
+        <!-- <a href="/collection1"> -->
+          <!-- Mobile Image -->
+          <source srcset="/path-to-mobile-image1.jpg" media="(max-width: 720px)">
+          <!-- Desktop Image -->
+          <img src="https://cdn.shopify.com/s/files/1/0640/4830/0241/files/Momints_Banner_2_v1.png?v=1733999411" alt="Alt Text for Slide 1" height="" width="">
+        <!-- </a> -->
+      </picture>
+    </div>
+    
+    <!-- Slide 2 -->
+    <div class="slide">
+      <picture>
+        <!-- <a href="/collection2"> -->
+          <!-- Mobile Image -->
+          <source srcset="/path-to-mobile-image2.jpg" media="(max-width: 720px)">
+          <!-- Desktop Image -->
+          <img src="https://heymingo.myshopify.com/cdn/shop/files/momints-banner.png?v=1733912439" alt="Alt Text for Slide 2" height="" width="">
+        <!-- </a> -->
+      </picture>
+    </div>
+
+    <!-- Slide 3 (Video) -->
+  
+
+    <!-- Add more slides as needed -->
+  </div>
+  <div class="dots">
+    <div class="dot" data-index="0"></div>
+    <div class="dot" data-index="1"></div>
+    <div class="dot" data-index="2"></div>
+    <!-- Add more dots matching the number of slides -->
+  </div>
+</div>
+
+<style>
+  .slider {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .slide {
+    min-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .slide img {
+    width: 100%;
+    display: block;
+    height: auto;
+  }
+
+  .dots {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+  }
+
+  .dot {
+    width: 12px;
+    height: 12px;
+    background-color: #bbb;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .dot.active {
+    background-color: #717171;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const slider = document.querySelector('.slider');
+    const slides = slider.querySelector('.slides');
+    const dots = slider.querySelectorAll('.dot');
+    const slideCount = dots.length;
+    let currentIndex = 0;
+
+    // Function to update the slider and dot states
+    const updateSlider = (index) => {
+      slides.style.transform = `translateX(-${index * 100}%)`;
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === index);
+      });
+    };
+
+    // Auto-slide functionality
+    const autoSlide = () => {
+      currentIndex = (currentIndex + 1) % slideCount;
+      updateSlider(currentIndex);
+    };
+
+    // Attach click events to dots
+    dots.forEach((dot, i) => {
+      dot.addEventListener('click', () => {
+        currentIndex = i;
+        updateSlider(currentIndex);
+      });
+    });
+
+    // Initialize the slider
+    updateSlider(currentIndex);
+
+    // Auto-slide interval
+    const interval = {{ section.settings.slide_interval | times: 1000 }};
+    setInterval(autoSlide, interval);
+  });
+</script>

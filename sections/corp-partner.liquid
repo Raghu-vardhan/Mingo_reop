@@ -1,0 +1,130 @@
+<div class="corp-part-main page-width">
+  
+    <div class="corp-part-sub">
+      <h2>{{ section.settings.corp-partner-heading }}</h2>
+      <p class="corp-partner-desc">{{ section.settings.corp-partner-desc }}</p>
+        <div class="corp-part-down">
+            <a href="#">
+              <!-- <button>Partner with us </button> -->
+            </a>
+            <a href="#">
+              <!-- <p>Learn more</p> -->
+            </a>   
+        </div>
+    </div>
+  
+      <div class="corp-part_left">
+           <img src="{{ section.settings.corp-part_img | img_url: 'original' }}" alt="Centered Image" width="85" height="85"/> 
+      </div>
+  
+</div>
+
+<style>
+  .corp-part-main{
+    display:flex;
+    justify-content:space-between;
+    margin-top:8rem;
+  }
+  .corp-part-sub{
+    text-align:top;
+    height:100%;
+    max-width:600px;
+  }
+  .corp-part-sub h2{
+    font-size: 32px;
+    font-weight: 600;
+    color: #80079e;
+    margin-bottom:2.4rem;
+  }
+  .corp-partner-desc{
+    max-width: 514px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 23px;
+    color: #000000;
+  }
+  .corp-part-down{
+    display:flex;
+    gap:40px;
+    align-items:center;
+    margin-top:18px;
+  }
+  .corp-part_left img{
+    height:362px;
+    width:100%;
+  }
+  .corp-part-down a{
+    text-decoration:none;
+  }
+  .corp-part-down p{
+    font-size:16px;
+    font-family: 'Roboto', sans-serif;
+    font-weight:300;
+    color:#226DFF;
+    max-width:500px;
+    
+  }
+  .corp-part-down button{
+    background: #2E5BE8;
+    color: #fff;
+    border-radius: 18px;
+    padding: 9px 25px;
+    border: none;
+    font-weight:400;
+    cursor:pointer;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  
+    @media (max-width:1200px){
+      .corp-part-main {
+           flex-direction: column;
+        gap:3rem;
+      }
+    }
+
+     @media (max-width:1200px){
+      .corp-partner-desc {
+          font-weight:400;
+      }
+    }
+  
+    @media (max-width:1097px){  
+      .corp-team_up{
+        flex-direction:column;
+        judtify-content:center;
+        
+      }
+    }
+
+</style>
+
+
+{% schema %}
+{
+  "name": "corp-partner",
+  "settings": [
+    {
+      "type": "text",
+      "id": "corp-partner-heading",
+      "label": "Heading"
+    },
+    {
+      "type": "textarea",
+      "id": "corp-partner-desc",
+      "label": "Description",
+    },
+    {
+      "type": "image_picker",
+      "id":"corp-part_img",
+      "label": "select image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "corp-partner",
+      "category": "corp-partner"
+    }
+  ]
+}
+{% endschema %}

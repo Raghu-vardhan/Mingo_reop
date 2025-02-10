@@ -1,0 +1,179 @@
+<div class="probannerlast-main page-width">
+  <div class="prolast-sub">
+    <div class="pro_img">
+       <img src="{{ section.settings.last_img | img_url: 'original' }}" alt="Centered Image" class="centered-image" />
+    </div>
+    <div class="pro-last">
+      <h2>{{ section.settings.last_heading }}</h2>
+      <p>{{ section.settings.last_desc }}</p>
+      <!-- <div class="insta_main">
+        <a href="{{ section.settings.last_url }}">
+          <span style="display:flex;">
+               <img src="{{ section.settings.inst_logo | img_url: 'original' }}" alt="Centered Image" class="centered-image" />
+          </span>
+          <h4>{{ section.settings.last_comment }}</h4>
+        </a>
+      </div> -->
+    </div>
+  </div>
+</div>
+
+<style>
+  .probannerlast-main {
+  }
+
+  .prolast-sub {
+    border-radius: 7px;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    margin-top: 4rem;
+    flex-wrap: wrap;
+    align-items:center;
+  }
+
+  .pro_img {
+      padding:30px;
+  }
+
+  .pro_img img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .pro-last {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .pro-last h2 {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 28px;
+  }
+
+  .pro-last p {
+    font-size: 16px;
+    width: 100%;
+    max-width: 635px;
+    line-height: 23px;
+    color: #000000;
+    font-weight: 400;
+    margin: 20px 0;
+  }
+
+  .insta_main {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 10px;
+  }
+
+  .insta_main img {
+    height: 24px;
+    width: 24px;
+    margin-right: 10px;
+  }
+
+  .insta_main h4 {
+    color: #F864C0;
+    font-weight: 700;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+  }
+
+  /* Media Queries for Responsiveness */
+  @media (max-width: 768px) {
+    .prolast-sub {
+      flex-direction: column;
+      padding: 20px;
+    }
+
+    .pro_img img {
+      height: auto;
+      width: 100%;
+    }
+
+    .pro-last h2 {
+      font-size: 20px;
+    }
+
+    .pro-last p {
+      font-size: 16px;
+      width: 100%;
+    }
+
+    .insta_main h4 {
+      font-size: 18px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .prolast-sub {
+      padding: 10px;
+    }
+
+    .pro-last h2 {
+      font-size: 18px;
+    }
+
+    .pro-last p {
+      font-size: 14px;
+    }
+
+    .insta_main h4 {
+      font-size: 16px;
+    }
+  }
+</style>
+
+
+
+{% schema %}
+{
+  "name": "last-banner",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "last_img",
+      "label": "select banner"
+    },
+      {
+      "type": "text",
+      "id":"last_heading",
+      "label":"heading"
+    },
+    {
+      "type":"textarea",
+       "id":"last_desc",
+      "label":"descripition"
+    },
+    {
+       "type":"text",
+       "id":"last_comment",
+      "label":"insta"
+    },
+  
+    {
+       "type":"url",
+       "id":"last_url",
+      "label":"instragam_id"
+    },
+    {
+       "type":"image_picker",
+       "id":"inst_logo",
+      "label":"insta logo"
+    }
+  ],
+  
+  "presets": [
+    {
+      "name": "last-banner",
+      "category": "Collections",
+    }
+  ]
+}
+{% endschema %}

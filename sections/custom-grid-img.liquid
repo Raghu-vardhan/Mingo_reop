@@ -1,0 +1,84 @@
+<section class="custom_grid-img">
+  <div class="grid_flex-img ">
+    {% for block in section.blocks %}
+      {% if block.settings.grid_img %}
+        <video class="reel-video" muted>
+            <source src="https://cdn.shopify.com/videos/c/o/v/dfb8c60859194987bb4389334b1ab7eb.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>
+
+<style>
+  .custom_grid-img{
+      overflow-x: auto;
+      white-space: nowrap;
+      cursor: pointer;
+  }
+  .grid_flex-img video{
+      height: 430px;
+      max-width: 400px;
+      border-radius: 7px;
+  }
+  .grid_flex-img {
+      display: flex;
+  }
+
+  @media (max-width:600px){
+    .custom_grid-img{
+
+    }
+  }
+</style>
+
+<script>
+    document.querySelectorAll('.reel-video').forEach(video => {
+        video.addEventListener('mouseover', () => {
+            video.play();
+            video.muted = false;  // Unmute the video
+            video.volume = 1.0;  // Set volume to 100%
+        });
+
+        video.addEventListener('mouseout', () => {
+            video.pause();
+        });
+
+        video.addEventListener('click', () => {
+            if (video.paused) {
+                video.play();
+                video.muted = false;  // Ensure the video is unmuted
+                video.volume = 1.0;  // Ensure the sound plays when clicked
+            } else {
+                video.pause();
+            }
+        });
+    });
+</script>
+
+{% schema %}
+{
+    "name": "custom-grid_img",
+    "settings": [],
+    "blocks": [
+        {
+            "type": "image",
+            "name": "Product Block",
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "grid_img",
+                    "label": "Select image"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "custom-grid_img",
+            "category": "grid_image"
+        }
+    ]
+}
+{% endschema %}

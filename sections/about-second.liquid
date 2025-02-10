@@ -1,0 +1,129 @@
+<div class="second-about">
+  <div class="sec-about_sub page-width">
+    <div class="second-info">
+        <div class="sec-abt_info">
+        <h3>{{ section.settings.sec-abt_heading}}</h3>
+        <p>{{ section.settings.sec-abt_desc }}</p>
+        </div>
+  
+       <div class="sec-abt_info">
+        <h3>{{ section.settings.sec1-abt_heading}}</h3>
+        <p>{{ section.settings.sec1-abt_desc }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .second-about{
+    background:#fff;
+    margin-top:8rem;
+  }
+  .sec-about_sub{
+    display:flex;
+    gap:5rem;
+    padding:6rem 0rem;
+    align-items:center;
+  }
+  .sec-abt_info h3{
+    text-align:center;
+    color:#80079e;
+    text-align:start;
+    font-size:32px;
+    font-weight:700;
+    margin:0px;
+  }
+  .abt-content p{
+    text-align: center;
+    margin: 0px;
+    line-height: 23px;
+    font-weight: 400;
+  }
+  .sec-abut_img img {
+    width:100%;
+    height:auto;
+  }
+    .second-info{
+      display:flex;
+      gap:5rem;
+    }
+    .sec-abt_info{
+    margi-bottom:20px;
+    }
+  .sec-abt_info p{
+    max-width:620px;
+    padding:10px 0;
+    margin:0px;
+    line-height:22px;
+    color:#121212;
+    font-weight:400;
+  }
+
+  @media (max-width: 1020px){
+    .second-info{
+    flex-direction: column;
+    }
+    
+  }
+  @media (max-width:600px){
+    .sec-about_sub{
+      flex-direction:column;
+      gap:1.5rem;
+    }
+    .second-about{
+      margin-top:4rem;
+          padding: 40px 0;
+    }
+    .sec-abt_info h3{
+      font-size:26px;
+    }
+    .sec-about_sub{
+      padding:0;
+    }
+    .second-info{
+      gap:1rem;
+    }
+     .sec-abt_info p {
+      font-size:14px;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "about-second",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "about-second_img",
+      "label": "Select Image"
+    },
+    {
+      "type": "text",
+      "id": "sec-abt_heading",
+      "label": "Heading"
+    },
+    {
+      "type": "textarea",
+      "id": "sec-abt_desc",
+      "label": "Description"
+    },
+     {
+      "type": "text",
+      "id": "sec1-abt_heading",
+      "label": "Heading"
+    },
+    {
+      "type": "textarea",
+      "id": "sec1-abt_desc",
+      "label": "Description"
+    },
+   
+  ],
+  "presets": [
+    {
+      "name": "about-second",
+      "category": "about-second"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,322 @@
+{% comment %}
+  Custom Contact Form with Resume Upload and Role Selection
+{% endcomment %}
+{{ 'join-team.css' | asset_url | stylesheet_tag }}
+
+<section class="contact-main page-width">
+  <div class="contact"> 
+    <div class="role-1">
+      <div class="title_career">
+        <h4>Job Title:</h4>
+        <p>UI/Ux designer</p>
+      </div>
+      <div class="title_career">
+        <h4>Location:</h4>
+        <p>[City,State] or Remote</p>
+      </div>
+    </div>
+
+    <div class="role-2">
+      <h3>Role Overview:</h3>
+      <p>We’re seeking a passionate and skilled UI/UX Designer to create intuitive and engaging user 
+        interfaces for our digital platforms. You’ll work closely with our product managers, developers, 
+        and other stakeholders to design seamless user experiences that meet our users’ needs and align with 
+        our brand’s vision</p>
+    </div>
+
+    <div class="role-3">
+        <h3>Key Responsibilities:</h3>
+        <ul>
+          <li>
+            We’re seeking a passionate and skilled UI/UX Designer to create intuitive and engaging user 
+            interfaces for our digital platforms. Yo
+          </li>
+          <li>
+            We’re seeking a passionate and skilled UI/UX Designer to create intuitive and engaging user 
+            interfaces for our digital platforms. Yo
+          </li>
+          <li>
+            We’re seeking a passionate and skilled UI/UX Designer to create intuitive and engaging user 
+            interfaces for our digital platforms. Yo
+          </li>
+          <li>
+            We’re seeking a passionate and skilled UI/UX Designer to create intuitive and engaging user 
+            interfaces for our digital platforms. Yo
+          </li>
+        </ul>
+    </div>
+
+      <div class="role-4">
+        <h3>Qualifications:</h3>
+        <ul>
+          <li>
+              <p>Experience: Proven experience as a UI/UX Designer</p>
+          </li>
+             <li>
+              <p>Experience: Proven experience as a UI/UX Designer</p>
+          </li>
+             <li>
+              <p>Experience: Proven experience as a UI/UX Designer</p>
+          </li>
+        </ul>
+      </div>
+  </div>
+
+  <div class="">
+    
+<div class="contact-form-container">
+
+  <form method="post" action="/contact#contact_form" id="contact_form" accept-charset="UTF-8" class="contact-form" enctype="multipart/form-data">
+    <input type="hidden" name="form_type" value="contact" />
+    <input type="hidden" name="utf8" value="✓" />
+
+    <div class="contact-1">
+          <!-- Full Name -->
+        <div class="form-group">
+          <p for="ContactFormName">Full Name <span id="contact-star">*</span></p>
+          <input type="text" id="ContactFormName" name="contact[name]" required>
+          <!-- Phone Number --></div>
+        <div class="form-group">
+          <p for="ContactFormPhone">Phone Number<span id="contact-star">*</span></p>
+          <input type="tel" id="ContactFormPhone" name="contact[phone]" required>
+        </div>
+    </div>
+
+    
+    <!-- Email ID -->
+    <div class="form-group">
+      <p for="ContactFormEmail">Email ID <span id="contact-star">*</span></p>
+      <input type="email" id="ContactFormEmail" name="contact[email]" required>
+    </div>
+
+
+    <div class="contact-1">
+       <!-- Upload Resume -->
+    <div class="form-group">
+      <p for="ContactFormResume">Upload Cv/Resume <span id="contact-star">*</span></p>
+      <input type="file" id="ContactFormResume" name="contact[resume]" accept=".pdf,.doc,.docx" required>
+    </div>
+
+      <div class="form-group">
+        <p for="ContactFormRole">Role <span id="contact-star">*</span></p>
+        <select id="ContactFormRole" name="contact[role]" required>
+          <option value="" disabled selected>Select a role</option>
+          <option value="Software Developer">Software Developer</option>
+          <option value="UI/UX Developer">UI/UX Developer</option>
+        </select>
+    </div>
+    </div>
+   
+
+   
+    <!-- Role Selection Dropdown -->
+  
+
+    <!-- Message -->
+    <div class="form-group">
+      <textarea placeholder="cover letter" id="ContactFormMessage" name="contact[body]" rows="10" required></textarea>
+    </div>
+
+    <!-- Submit Button -->
+    <div class="form-group">
+      <button type="submit" class="btn">Submit</button>
+    </div>
+  </form>
+
+  <!-- Display confirmation message after submission -->
+  {% if form.posted_successfully? %}
+    <p class="success">
+      Thank you for contacting us! We will get back to you as soon as possible.
+    </p>
+  {% elsif form.errors %}
+    <p class="error">
+      There was an error with your submission. Please check the form and try again.
+    </p>
+  {% endif %}
+</div>
+  </div>
+</section>
+
+
+<style>
+.title_career {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contact h3 {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.role-3 ul {
+  padding-left: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-ul {
+  margin-top: 25px;
+  justify-content: center;
+}
+
+.left-contact h2 {
+  margin-top: 0px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.title_career h4 {
+  font-weight: bold;
+}
+
+.contact-form-container h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.contact-form {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-1 {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.form-group p {
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: #000000;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6.5px;
+  outline: 0px;
+  border: 1px solid #000000;
+  font-size: 14px;
+}
+
+.contact-1 .form-group {
+  flex: 1;
+}
+
+#ContactFormEmail {
+  max-width: 100%;
+}
+
+#ContactFormMessage {
+  resize: vertical;
+}
+
+.btn {
+  background-color: #007BFF;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+.success {
+  color: green;
+  font-weight: bold;
+}
+
+#contact-star {
+  color: red;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+}
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+  .contact-1 {
+    flex-direction: column;
+  }
+
+  .title_career {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .contact-form {
+    width: 100%;
+    padding: 0 15px;
+  }
+
+  .form-group {
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .contact h3 {
+    font-size: 14px;
+  }
+
+  .btn {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .contact-form {
+    width: 100%;
+    padding: 0 10px;
+  }
+}
+
+
+</style>
+
+{% schema %}
+{
+  "name": "contact-us",
+  "settings": [
+    {
+      "type": "text",
+      "id": "contact-us_heading",
+      "label": "Heading"
+    },
+   {
+      "type": "textarea",
+      "id": "contact-us_desc",
+      "label": "desc"
+    },
+  ],
+  
+  "presets": [
+    {
+      "name": "contact-us",
+      "category": "contact-us"
+    }
+  ]
+}
+{% endschema %}

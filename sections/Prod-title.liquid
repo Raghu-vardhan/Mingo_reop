@@ -1,0 +1,39 @@
+<div class="product-quote">
+  <p>{{ section.settings.product-quote }}</p>
+</div>
+
+{% schema %}
+{
+  "name": "product-quote",
+  "settings": [
+    {
+      "type": "text",
+      "id": "product-quote",
+      "label": "Heading"
+    },
+  ],
+  "presets": [
+    {
+      "name": "product-quote",
+      "category": "product-quote"
+    }
+  ]
+}
+{% endschema %}
+
+<style>
+  .product-quote p{
+    text-align:center;
+    color:#000000;
+    font-family: 'Roboto', sans-serif;
+    margin-top:4rem;
+    font-size:3.2rem;
+    font-weight:400;
+  }
+
+  @media (max-width:600px){
+     .product-quote p{
+        line-height:3.5rem;
+     }
+  }
+</style>

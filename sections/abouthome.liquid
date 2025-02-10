@@ -1,0 +1,89 @@
+<div class="background">
+  <div class="about-hm page-width ">
+  <div class="ab-img scroll-trigger animate--slide-in">
+     <img src="{{ section.settings.abt_img | img_url: 'original' }}" alt="Centered Image" class="centered-image" width="" height=""/>
+  </div>
+
+  <div class="abt-content">
+    <h2 class="scroll-trigger animate--slide-in">{{ section.settings.abt_heading }}</h2>
+    <p class="scroll-trigger animate--slide-in">{{ section.settings.desc1 }}</p>
+  </div>
+</div>
+</div>
+
+
+<style>
+  .about-hm{
+    display:flex;
+    justify-content:space-between;
+    padding:8rem 0;
+    align-items:center;
+  }
+  .ab-img img{
+    max-width:100%;
+    height:auto;
+  }
+  .abt-content{
+    max-width:600px;
+  }
+  .abt-content h2{
+     font-size:32px;
+    font-weight:700;
+    color:#3260E4;
+    display:block;
+    margin-bottom:2rem;
+    color:#80079E;
+  }
+.abt-content p{
+    margin: 0px;
+    line-height: 23px;
+    font-weight: 400;
+  color:#121212;
+  margin:10px 0;
+  }
+  @media (max-width:1190px){
+    .about-hm{
+      flex-direction:column;
+    }
+    .abt-content h2{
+      font-size:26px;
+      text-align:center;
+      margin:1.5rem auto;
+    }
+    .abt-content p{
+        font-size:14px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "ab0ut-home",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "abt_img",
+      "label": "select banner"
+    },
+
+    {
+    "type": "richtext",
+    "id": "desc1",
+    "label": "content",
+    },
+    {
+      "type": "text",
+    "id": "abt_heading",
+    "label": "heading",
+    }
+  ],
+  
+  "presets": [
+    {
+      "name": "about Home",
+      "category": "content"
+    }
+  ]
+}
+
+{% endschema %}

@@ -1,0 +1,59 @@
+<div class="head page-width">
+  <h2>{{ section.settings.heading }}</h2>
+  <p>{{ section.settings.desc }}</p>
+</div>
+
+{% schema %}
+{
+  "name": "science heading",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+    },
+    {
+      "type": "text",
+      "id": "desc",
+      "label": "Description",
+      "default": "Your description goes here."
+    }
+  ],
+  "presets": [
+    {
+      "name": "science heading",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
+
+<style>
+  .head{
+    display:flex;
+    flex-direction:column;
+    gap:1rem;
+    jutify-content:center;
+    margin-top:6rem;
+    margin-bottom:3rem;
+  }
+  .head h2{
+    color: #80079e;
+    font-size: 32px;
+    font-weight: 600;
+    text-align:center;
+  }
+  .head p{
+    color: #000000;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 23px;
+    text-align:center;
+  }
+
+  @media (max-width:600px){
+    .head h2{
+      font-size:
+    }
+  }
+</style>

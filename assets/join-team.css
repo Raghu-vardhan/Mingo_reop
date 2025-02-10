@@ -1,0 +1,335 @@
+.Jointeam-header{
+    text-align:center;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    font-family: 'Nutio', sans-serif;
+    gap:16px;
+  }
+.jointeams{
+  margin-top:8rem;
+}
+  .team-li{
+    background:#fff4f4;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding: 16px 35px;
+    list-style:none;
+    cursor: pointer;
+  }
+  .Jointeam-header h2{
+    color:#80079e;
+    font-weight:700;
+    font-size:32px;
+  }
+  .team-flex {
+    padding:0px;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-top:32px;
+  }
+  .Jointeam-header p{
+      line-height: 23px;
+      font-weight:400;
+    max-width:850px;
+       color:#000000;
+  }
+  .left_icons{
+    display:flex;
+      align-items:center;
+    gap:8px;
+  }
+  .left-info h3{
+    margin:0px;
+    font-size:20px;
+    font-weight:500;
+    line-height:28px;
+    padding:8px 0;
+  }
+  .left-info p{
+    font-weight:500;
+    font-size:12px;
+    color:#666666;
+  }
+  .left_icons img{
+    height:20px;
+    width:20px;
+    color:#666666;
+  }
+  .left_png{
+    display:flex;
+    gap:50px;
+  }
+  .contact{
+    max-width:526px;
+    font-weight:400;
+  }
+  .right-info button { 
+      background: #80079e;
+      color: #fff;
+      border-radius: 18px;
+      padding: 8px 13px;
+      border: none;
+      font-size: 12px;
+      cursor:pointer;
+  }
+  
+  /*starts here  */
+    roles ul li::marker{
+      content: "•"; /* Black bullet */
+      color: black;
+      margin-right: 0.5em;
+      font-size: 1.5em; 
+  }
+  .contact-main {
+      display: flex;
+      justify-content: space-between;
+      margin: 24px 35px 0px;
+       color:#000000;
+    }
+  .contact .role-2{
+    margin-top:32px;
+    display:flex;
+    justify-content:space-between;
+    flex-direction:column;
+    gap:10px;
+  }
+   .contact .role-2 p{
+     line-height:22px;
+     color:#000000;
+     font-weight:400;
+   }
+  .contact .role-3{
+    margin-top:54px;
+    display:flex;
+    justify-content:space-between;
+    flex-direction:column;
+    gap:10px;
+  }
+  .role-3 ul li{
+    line-height:22px;
+    font-weight:400;
+  }
+  .role-3 ul {
+    display: flex;
+    flex-direction: column;
+    gap:4px;
+    margin-left:2.4rem;
+  }
+  .contact .role-4{
+    margin-top:54px;
+    display:flex;
+    justify-content:space-between;
+    flex-direction:column;
+    gap:10px;
+  }
+  .contact .role-4 ul li{
+    line-height:22px;
+    font-weight:400;
+  }
+   .role-4 ul{
+     display: flex;
+    flex-direction: column;
+     gap:4px;
+     margin-left:2.4rem;
+   }
+  .contact-ul{
+    margin-top:25px;
+      justify-content:center;
+      font-family: 'Nutio', sans-serif;
+  }
+  .left-contact h2{
+    margin-top:0px;
+    font-family: 'Roboto', sans-serif;
+    font-size:20px;
+    font-weight:700;
+  }
+  .left-contact ul {
+      list-style: none;
+      padding: 0;
+  }
+  .contact-li p{
+    color:#333333;
+  }
+  .contact-desc{
+    width:400px;
+    line-height:22px;
+    text-align:justify;
+  }
+  .left-contact ul li {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+  }
+  
+  .left-contact ul li img {
+      margin-right: 10px;
+  }
+  
+  .contact-form-container h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+  }
+  
+  .contact-form {
+      max-width: 500px;
+  }
+  
+  .contact-1 {
+      gap: 20px;
+      flex-wrap: wrap;
+  }
+  
+  .form-group {
+      margin-bottom: 13px;
+      width: 100%;
+      cursor:pointer;
+  }
+  
+  .form-group p {
+      margin-bottom: 5px;
+      font-weight: 500;
+       font-family: 'Roboto', sans-serif;
+      color:black;
+  }
+  
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6.5px;
+      outline: 0px;
+      border: 1px solid #000000;
+      font-size: 14px;
+      background:#ffeedb;
+  }
+  
+  
+  .contact-1 .form-group {
+      flex: 1;
+  }
+  
+  #ContactFormEmail {
+      max-width: 100%;
+  }
+  
+  #ContactFormMessage {
+      resize: vertical;
+  }
+  
+  .btn {
+      background-color: #80079e;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 20px;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+  }
+  
+  .btn:hover {
+      background-color: #0056b3;
+  }
+  
+  .success {
+      color: green;
+      font-weight: bold;
+  }
+  #contact-star{
+    color:red;
+    font-weight:500;
+    font-size:15px;
+  }
+  .error {
+      color: red;
+      font-weight: bold;
+  }
+  .title_career{
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .title_career p{
+    font-weight:400;
+  }
+  .contact h3{
+    font-weight:bold;
+     font-family: 'Nutio', sans-serif;
+    font-size:16px;
+    font-weight:400;
+  }
+.title_career{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.contact h3{
+  font-weight:bold;
+   font-family: 'Nutio', sans-serif;
+  font-size:16px;
+}
+ .accordion {
+    color: #444;
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+  }
+  .active, .accordion:hover {
+  }
+  .title_career h4{
+    font-weight:bold;
+  }
+  .panel {
+    color:#000000;
+    display: none;
+    overflow: hidden;
+  }
+  .form-group label{
+    font-size:16px;
+    font-weight:500;
+    line-height:22px;
+}
+
+@media (max-width:1200px){
+  .left-info p{
+    font-size:10px;
+  }
+  .left-info h3{
+    font-size:18px;
+  }
+  .contact-main{
+    flex-direction: column;
+    gap: 3rem;
+    margin:15px;
+  }
+  ..contact .role-3{
+    flex-direction: column;
+    gap: 10px;
+  }
+  .team-li{
+    padding:15px;
+  }
+  .contact .role-2{
+    gap:1rem;
+    margin-top:3rem;
+  }
+  .contact .role-3{
+    gap:1rem ; 
+    margin-top:3rem;
+  }
+  .contact .role-4{
+    gap:1rem;
+    margin-top:3rem;
+  }
+  .role-3 ul, .role-4 ul{
+    margin-left: 1.4rem;
+  }
+}

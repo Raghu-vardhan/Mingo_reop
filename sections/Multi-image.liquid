@@ -1,0 +1,159 @@
+{% schema %}
+{
+  "name": "Responsive Banner Slider",
+  "settings": [
+    {
+      "type": "range",
+      "id": "slide_interval",
+      "label": "Slide Interval (seconds)",
+      "default": 3,
+      "min": 1,
+      "max": 10,
+      "step": 1
+    }
+  ],
+  "blocks": [
+    {
+      "type": "banner",
+      "name": "Slide",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "desktop_image",
+          "label": "Desktop Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "mobile_image",
+          "label": "Mobile Image"
+        },
+        {
+          "type": "text",
+          "id": "alt_text",
+          "label": "Alt Text"
+        },
+        {
+          "type": "url",
+          "id":"url_path",
+          "label":"collection url"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Responsive Banner Slider",
+      "category": "Image"
+    }
+  ]
+}
+{% endschema %}
+
+<div class="slider scroll-trigger animate--slide-in"">
+  <div class="slides">
+    {% for block in section.blocks %}
+      {% if block.type == 'banner' %}
+        <div class="slide">
+          <picture>
+            <a href="{{ block.settings.url_path }}">
+            <!-- Mobile Image -->
+            <source srcset="{{ block.settings.mobile_image | image_url }}" media="(max-width: 720px)">
+            <!-- Desktop Image -->
+            <img src="{{ block.settings.desktop_image | image_url }}" alt="{{ block.settings.alt_text | escape }}">
+        </a>
+          </picture>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+  <div class="dots">
+    {% for block in section.blocks %}
+      <div class="dot" data-index="{{ forloop.index0 }}"></div>
+    {% endfor %}
+  </div>
+</div>
+
+<style>
+  .slider {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .slide {
+    min-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .slide img {
+    width: 100%;
+    display: block;
+    height:auto;
+  }
+
+  .dots {
+    position: absolute;
+    bottom: 1.8rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+  }
+
+  .dot {
+    width: 12px;
+    height: 12px;
+    background-color: #bbb;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .dot.active {
+    background-color: #717171;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const slider = document.querySelector('.slider');
+    const slides = slider.querySelector('.slides');
+    const dots = slider.querySelectorAll('.dot');
+    const slideCount = dots.length;
+    let currentIndex = 0;
+
+    // Function to update the slider and dot states
+    const updateSlider = (index) => {
+      slides.style.transform = `translateX(-${index * 100}%)`;
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === index);
+      });
+    };
+
+    // Auto-slide functionality
+    const autoSlide = () => {
+      currentIndex = (currentIndex + 1) % slideCount;
+      updateSlider(currentIndex);
+    };
+
+    // Attach click events to dots
+    dots.forEach((dot, i) => {
+      dot.addEventListener('click', () => {
+        currentIndex = i;
+        updateSlider(currentIndex);
+      });
+    });
+
+    // Initialize the slider
+    updateSlider(currentIndex);
+
+    // Auto-slide interval
+    const interval = {{ section.settings.slide_interval | times: 1000 }};
+    setInterval(autoSlide, interval);
+  });
+</script>

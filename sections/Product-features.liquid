@@ -1,0 +1,154 @@
+<style>
+.product-features-container {
+  background-color: rgba(233, 255, 238, 0.75);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 51px 80px;
+  margin-top:40px;
+}
+
+.product-features-wrapper {
+  display: flex;
+  width: 100%;
+  max-width: 1111px;
+  flex-direction: column;
+  gap:8px;
+}
+
+.product-features-header {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.product-features-content {
+  display: flex;
+  max-width: 100%;
+  flex-direction: column;
+  gap:8px;
+}
+
+.product-features-title {
+  color: #226DFF;
+  font: 700 32px Roboto, sans-serif;
+}
+
+.product-features-description {
+  color: #000;
+  font: 400 16px / 1.4 Nunito, sans-serif;
+  max-width:650px;
+  margin-top:1rem;
+}
+
+.product-features-list {
+  display: flex;
+  margin-top: 44px;
+  width: 100%;
+  align-items: center;
+  color: #000000;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  font: 600 16px Nunito, sans-serif;
+}
+
+.feature-item {
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: flex-start;
+  flex-grow: 1;
+  margin: auto 0;
+}
+
+.feature-icon {
+  aspect-ratio: 1;
+  object-fit: contain;
+  object-position: center;
+  align-self: stretch;
+  margin: auto 0;
+  height:50px;
+  width:50px;
+}
+
+.feature-text {
+  align-self: stretch;
+  margin: auto 0;
+  font-size:16px;
+  font-weight:500;
+}
+
+@media (max-width: 991px) {
+  .product-features-container {
+    padding:3rem 20px;
+  }
+
+  .product-features-wrapper,
+  .product-features-header,
+  .product-features-title,
+  .product-features-description {
+    max-width: 100%;
+  }
+
+  .product-features-list {
+    max-width: 100%;
+    margin-top: 40px;
+    flex-direction:column;
+  }
+  .product-features-title{
+    font-size:26px;
+  }
+  .feature-item {
+    white-space: initial;
+  }
+  .flex-two, .flex-one{
+    width:auto;
+  }
+}
+</style>
+
+<section class="product-features-container ">
+  <div class="product-features-wrapper">
+    <header class="product-features-header">
+      <div class="product-features-content">
+        <h2 class="product-features-title scroll-trigger animate--slide-in">Product Features</h2>
+        <p class="product-features-description scroll-trigger animate--slide-in">
+Packed with the perfect fusion of flavor and wellness, Mingo supplements make getting your nutrients a treat, 
+not a task. Crafted with plant-based, soy-free ingredients, they’re safe, wholesome, and made for everyone to enjoy.
+        </p>
+      </div>
+    </header>
+    <div class="product-features-list scroll-trigger animate--slide-in">
+      <div class="feature-item">
+        <img src="https://cdn.shopify.com/s/files/1/0640/4830/0241/files/hand-ezgif.com-video-to-gif-converter.gif?v=1733915905" alt="Vegan icon" class="feature-icon"  width="300" height="300"" />
+        <span class="feature-text scroll-trigger animate--slide-in"> 
+Patented Technology
+</span>
+      </div>
+      <div class="feature-item scroll-trigger animate--slide-in">
+        <img src="https://cdn.shopify.com/s/files/1/0640/4830/0241/files/bioavail-ezgif.com-video-to-gif-converter.gif?v=1733915889" alt="Clinically Approved icon" class="feature-icon" width="300" height="300" " />
+        <span class="feature-text scroll-trigger animate--slide-in">100% Bioavailable
+</span>
+      </div>
+      <div class="feature-item scroll-trigger animate--slide-in">
+        <img src="https://cdn.shopify.com/s/files/1/0640/4830/0241/files/aproved-ezgif.com-video-to-gif-converter.gif?v=1733925576" alt="Gelatin Free icon" class="feature-icon"  width="300" height="300"" />
+        <span class="feature-text scroll-trigger animate--slide-in">Clinically Proven
+</span>
+      </div>
+      <div class="feature-item scroll-trigger animate--slide-in">
+        <img src="https://cdn.shopify.com/s/files/1/0640/4830/0241/files/vegan-ezgif.com-video-to-gif-converter.gif?v=1733915756" alt="Soy Free icon" class="feature-icon" width="300" height="300";" />
+        <span class="feature-text scroll-trigger animate--slide-in">Vegan
+</span>
+      </div>
+      <div class="feature-item scroll-trigger animate--slide-in">
+        <img src="https://cdn.shopify.com/s/files/1/0640/4830/0241/files/peanut-ezgif.com-video-to-gif-converter.gif?v=1733915905" alt="Peanut Free icon" class="feature-icon"  width="300" height="300" />
+        <span class="feature-text scroll-trigger animate--slide-in">Gluten, Peanut & Soy Free
+</span>
+      </div>
+    </div>
+  </div>
+</section>

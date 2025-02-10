@@ -1,0 +1,219 @@
+<div class="peopelesay-main page-width scroll-trigger animate--slide-in"">
+  <h2>{{ section.settings.heading }}</h2>
+
+  <div class="slider-container">
+    <div class="slider">
+      {% for block in section.blocks %}
+        <div class="box-main">
+          <div class="box-sub ">
+            <img src="{{ block.settings.image | img_url: '300x300' }}" alt="Image">
+            <div class="content scroll-trigger animate--slide-in"">
+              <h4 class="scroll-trigger animate--slide-in">{{ block.settings.title }}</h4>
+              <h5  class="scroll-trigger animate--slide-in"> {{ block.settings.quote }}</h5>
+              <p  class="scroll-trigger animate--slide-in">{{ block.settings.description }}</p>
+              <div class="stars-say scroll-trigger animate--slide-in">
+                {% for i in (1..5) %}
+                  <span class="star1" data-value="{{ i }}">★</span>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+    <div class="slider-indicators">
+      {% for block in section.blocks %}
+        <span class="indicator" data-index="{{ forloop.index0 }}"></span>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<style>
+  .peopelesay-main{
+    margin:7rem auto;
+  }
+  .peopelesay-main h2{
+  font-weight: 600;
+    color: #80079E;
+    font-size: 32px;
+    margin-bottom:2rem;
+  }
+  .slider-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .slider {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory; /* Enable snap scrolling */
+    scroll-behavior: smooth; /* Smooth scrolling behavior */
+    gap: 15px; /* Space between slides */
+  }
+
+  .slider::-webkit-scrollbar {
+    display: none; /* Hide scrollbars */
+  }
+
+  .box-main {
+    border: 1px solid #80079e;
+    flex: 0 0 auto; /* Prevent shrinking */
+    width: 300px;
+    scroll-snap-align: start; /* Snap each slide to the start */
+    scroll-snap-stop: always; /* Always stop at snap points */
+  }
+
+  .box-sub {
+    padding: 2rem 3rem;
+    background:#fff;
+  }
+
+  .box-sub img {
+    height: auto;
+    width: 100%;
+  }
+
+  .content h4, .content h5, .content p {
+    text-align: center;
+  }
+  .content p {
+    text-align: center;
+    line-height: 20px;
+    font-size: 16px;
+    color: #000000;
+  }
+  .content h5{
+    margin:5px 0;
+    font-size:20px;
+    color:#80079e;
+    font-weight:bold;
+  }
+    .content h4{
+        font-size: 18px;
+        font-weight: 600;
+    }
+  
+    .star1{
+      color: #80079e;
+      font-size: 1.5rem;
+      margin-top: 1rem;
+      }
+  .stars-say {
+    display: flex;
+    justify-content: center;
+  }
+
+  .slider-indicators {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+  }
+
+  .indicator {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: #ccc;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+
+  .indicator.active {
+    background: #000;
+  }
+
+  @media (max-width:600px){
+    .peopelesay-main h2{
+      font-size:26px;
+    }
+    .content p{
+      font-size:14px;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const slider = document.querySelector(".slider");
+    const indicators = document.querySelectorAll(".indicator");
+    const slides = document.querySelectorAll(".box-main");
+
+    function updateIndicators() {
+      const scrollLeft = slider.scrollLeft;
+      const blockWidth = slides[0].offsetWidth + 15; // Width of a slide + gap
+      const activeIndex = Math.round(scrollLeft / blockWidth);
+
+      indicators.forEach((indicator, i) => {
+        indicator.classList.toggle("active", i === activeIndex);
+      });
+    }
+
+    // Listen for scroll events
+    slider.addEventListener("scroll", updateIndicators);
+
+    // Add click functionality for indicators
+    indicators.forEach((indicator, index) => {
+      indicator.addEventListener("click", () => {
+        slider.scrollTo({
+          left: index * (slides[0].offsetWidth + 15),
+          behavior: "smooth"
+        });
+      });
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "People Say Slider",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Section Heading",
+      "default": "What People are Saying"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "box",
+      "name": "Box",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Partner Name"
+        },
+        {
+          "type": "text",
+          "id": "quote",
+          "label": "Quote",
+          "default": "Customer Quote"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Our trusted partners share our commitment to quality, innovation, and well-being, collaborating with us to bring the best in health and wellness."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "People Say Slider",
+      "category": "Custom Sections"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,190 @@
+<section class="custom_grid-img">
+  <div class="grid_flex-img page-width">
+    {% for block in section.blocks %}
+      {% if block.settings.product_description_video %}
+        <video class="reel-video" muted autoplay loop playsinline aria-label="Product Video">
+          <source src="{{ block.settings.product_description_video }}" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>
+
+<!-- Fullscreen Video Overlay -->
+<div class="video-overlay" id="videoOverlay">
+  <button class="close-overlay" onclick="closeOverlay()">✕</button>
+  <video class="fullscreen-video" id="fullscreenVideo" controls></video>
+</div>
+
+<style>
+  .reel-head h2 {
+    font-stack-header: 'M-Heading-Font';
+    color: #6a61aa;
+  }
+  .reel-head {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5rem;
+    gap: .8rem;
+    margin:0 20px;
+    margin-top:4rem;
+  }
+  .reel-head p{
+    max-width:600px;
+    text-align:center;
+  }
+  .custom_grid-img {
+    background-color: #FFFDED;
+    padding: 50px 80px;
+    overflow-x: auto;
+    margin-top: 8rem;
+  }
+  .custom_grid-img::-webkit-scrollbar {
+    height: 8px; /* Custom scrollbar height */
+  }
+  .custom_grid-img::-webkit-scrollbar-thumb {
+    background-color: #f2bfc0; /* Green scrollbar color */
+    border-radius: 4px;
+    cursor: pointer; /* Round edges */
+  }
+  .custom_grid-img::-webkit-scrollbar-thumb:hover {
+    background-color: #008a47; /* Darker green on hover */
+  }
+  .grid_flex-img video {
+    height: 550px;
+    border-radius: 20px;
+    padding: 0.5rem 0.5rem;
+    cursor: pointer; /* Pointer cursor for video */
+  }
+  .grid_flex-img {
+    display: flex;
+    gap: 3rem;
+  }
+  /* Fullscreen Video Overlay */
+  .video-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(8px); /* Blurred background */
+    z-index: 1000;
+  }
+  .fullscreen-video {
+    max-width: 90%; /* Change this value to control width */
+    max-height: 90%; /* Change this value to control height */
+    border-radius: 10px;
+    object-fit: contain; /* Maintain aspect ratio */
+  }
+  .close-overlay {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2rem;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer; /* Pointer cursor for close button */
+  }
+  @media (max-width: 600px) {
+     .custom_grid-img {
+      padding: 50px 0;
+      margin-top:0rem;
+    }
+  }
+  @media (min-width: 1450px) {
+    .grid_flex-img video {
+      height: 700px;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const scrollContainer = document.querySelector('.grid_flex-img');
+    const scrollAmount = 100; // Scroll distance per right-click
+
+    // Right-click to scroll
+    scrollContainer.addEventListener('contextmenu', (event) => {
+      event.preventDefault(); // Prevent default context menu
+      scrollContainer.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    });
+
+    // Intersection Observer for autoplaying/pause videos in view
+    const observerOptions = {
+      threshold: 0.5 // Play video when 50% of it is visible
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.play();
+        } else {
+          entry.target.pause();
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.reel-video').forEach(video => {
+      observer.observe(video);
+
+      // Open fullscreen video on click
+      video.addEventListener('click', () => {
+        openFullscreenVideo(video);
+      });
+    });
+  });
+
+  function openFullscreenVideo(video) {
+    const overlay = document.getElementById('videoOverlay');
+    const fullscreenVideo = document.getElementById('fullscreenVideo');
+    
+    fullscreenVideo.src = video.querySelector('source').src;
+    fullscreenVideo.muted = false; // Ensure sound is on in fullscreen
+    fullscreenVideo.play(); // Start playing the video automatically
+    overlay.style.display = 'flex';
+  }
+
+  function closeOverlay() {
+    const overlay = document.getElementById('videoOverlay');
+    const fullscreenVideo = document.getElementById('fullscreenVideo');
+    
+    overlay.style.display = 'none';
+    fullscreenVideo.pause();
+    fullscreenVideo.src = ''; // Stop video and reset source
+  }
+</script>
+
+{% schema %}
+{
+    "name": "custom-grid_img",
+    "settings": [],
+    "blocks": [
+        {
+            "type": "video",
+            "name": "Product Block",
+            "settings": [
+                {
+                    "type": "url",
+                    "id": "product_description_video",
+                    "label": "Product Description Video",
+                    "info": "Enter the URL of the product video (e.g., MP4 format)"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "Reels",
+            "category": "grid_image"
+        }
+    ]
+}
+{% endschema %}

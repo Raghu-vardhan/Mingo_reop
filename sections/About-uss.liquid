@@ -1,0 +1,155 @@
+<div class="about-us scroll-trigger animate--slide-in"">
+  <div class="page-width">
+    <div class="about-sub">
+      <div class="about-info">
+        <h2>{{ section.settings.about_heading }}</h2>
+        <p>{{ section.settings.desc_about }}</p>
+      </div>
+
+      <div class="brand-info">
+        <h3>{{ section.settings.brand_heading }}</h3>  
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .about-sub {
+    /* Add styling for the about-sub class if needed */
+    max-width:600px;
+  }
+  .about-us{
+    margin-top:4rem;
+  }
+  .about-info,.brand-info{
+    display: flex;
+    flex-direction: column;
+    color:#100000;
+  }
+  .about-info p {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color:#000000;
+  }
+  .brand-info{
+    margin-top:2.5rem;
+  }
+  .about-info h2 {
+    color: #80079e;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom:2.5rem;
+  }
+  .about-info ul{
+    margin-left:1.5rem;
+  }
+  .brand-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .brand-list {
+    display: flex;
+    justify-content: center;
+    gap:2.3rem;
+  }
+
+  .brand-info h3 {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+  }
+
+  .brand-list li {
+    margin: 5px 0;
+  }
+  
+  /* .brand_li img{
+       box-shadow:#F4F8FF 0px 5px 15px;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+      transform: scale(1.1);
+      border-radius:7px; */
+  /* } */
+  .brand-list li p{
+       max-width: 300px;
+    font-size: 16px;
+    text-align: center;
+    line-height:23px;
+    font-weight:400;
+    color:#100000;
+  }
+  .brand-list img {
+    height: auto;
+    width: 100%;
+  }
+
+  .centered-image {
+    display: block;
+    margin: 0 auto;
+  }
+
+  @media (max-width:600px){
+    .brand-list{
+      flex-direction:column;
+      gap:0;
+    }
+    .brand-list li{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+    }
+    .about-info p{
+      font-size:1.5rem;
+      text-align:left;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "About us",
+  "settings": [
+    {
+      "type": "text",
+      "id": "about_heading",
+      "label": "Heading"
+    },
+    {
+      "type": "richtext",
+      "id": "desc_about",
+      "label": "Description"
+    },
+    {
+      "type": "text",
+      "id": "brand_heading",
+      "label": "Brand Heading"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "Brand",
+      "name": "Brand Block",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "brand_video",
+          "label": "Brand Image"
+        },
+         {
+          "type": "text",
+          "id": "desc",
+          "label": "Brand text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "us-about",
+      "category": "About Us"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,71 @@
+<!-- Announcement Bar -->
+<div class="announcement-bar">
+  <div class="announcement-bar-content">
+    {% if section.settings.announcement_text != blank %}
+      {{ section.settings.announcement_text }}
+    {% else %}
+      <ul class="announcement-list">
+        <li><p>Free shipping on orders over $50!</p></li>
+        <li><p>Special discounts this week only!</p></li>
+        <li><p>New arrivals just landed, check them out!</p></li>
+        <li><p>Free shipping on orders over $50!</p></li>
+        <li><p>Special discounts this week only!</p></li>
+        <li><p>New arrivals just landed, check them out!</p></li>
+      </ul>
+    {% endif %}
+  </div>
+</div>
+
+
+<style>
+/* Announcement Bar Styling */
+.announcement-bar {
+  background-color: #E9EFFF; /* Adjust background color */
+  padding: 10px 0;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  white-space: nowrap;
+}
+
+.announcement-bar-content {
+  display: flex; /* Use flexbox to align the content */
+  justify-content: flex-start;
+  animation: scroll-left 80s linear infinite;
+  gap:20rem
+}
+
+.announcement-list {
+  display: flex;
+  gap: 20rem; /* Adjust the gap between items */
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+</style>
+
+{% schema %}
+{
+    "name": "announcement bar",
+    "settings": [
+      {
+        "type": "text",
+        "id": "announcement_text",
+        "label": "desc"
+      },
+    ],
+  "presets": [
+        {
+            "name": "announcement bar",
+            "category": "announcement"
+        }
+    ]
+}
+{% endschema %}

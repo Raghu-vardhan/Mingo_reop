@@ -1,0 +1,23 @@
+<div style="display:flex" class="flex-container">
+    <div class="section-left">
+        {% section 'main-cart-items' %}
+    </div>
+    <div class="section-right">
+        {% section 'main-cart-footer' %}
+    </div>
+</div>
+
+{% schema %}
+{
+    "name": "flex-cart",
+    "settings": [
+
+    ],
+  "presets": [
+        {
+            "name": "flex-cart",
+            "category": "Collections"
+        }
+    ]
+}
+{% endschema %}

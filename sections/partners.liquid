@@ -1,0 +1,176 @@
+<script src="{{ 'partners.js' | asset_url }}" defer="defer"></script>
+
+<div class="partner-main ">
+  <div class="">
+    <div class="partner-content page-width">
+      <h1>{{ section.settings.partner_heading }}</h1>
+      <p>{{ section.settings.partner_description }}</p>
+    </div>
+  </div>
+
+  <div class="partner" data-speed="slow">
+    <div class="scroller__inner">
+      {% for block in section.blocks %}
+      {% if block.settings.partner_img %}
+      <div class="partner-img">
+        <img src="{{ block.settings.partner_img | img_url: 'original' }}" alt="Partner Image" width="300" height="300">
+      </div>
+      {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<style>
+  .partner-img img {
+    height: 120px;
+    width: 245px;
+  }
+  .partner-main{
+   display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    margin-top:8rem;
+  }
+  .partner-img {
+    padding: 0 1rem;
+  }
+
+  .partner-content {
+    display: flex;
+    align-items: center;
+    gap:18rem;
+    margin-bottom:2rem;
+  }
+
+  .partner-content h1 {
+    margin: 20px 10px 10px;
+    font-size: 32px;
+    font-weight: 700;
+    color: #80079E;
+    margin:0px;
+  }
+
+  .partner-content p {
+    max-width: 800px;
+    margin: 0px;
+    line-height: 23px;
+    font-weight:400;
+    color:#000000;
+  }
+
+  .partner {
+    display: flex;
+    padding: 0.5rem 1rem;
+    min-width:100%;
+  }
+
+  .scroller__inner {
+    padding-block: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .partner[data-animated="true"] {
+  overflow: hidden;
+  -webkit-mask: linear-gradient(
+    90deg,
+    white,
+    white
+  );
+  mask: linear-gradient(90deg, white, white);
+}
+
+  .partner[data-animated="true"] .scroller__inner {
+    width: max-content;
+    flex-wrap: nowrap;
+    animation: scroll var(--_animation-duration, 40s)
+      var(--_animation-direction, forwards) linear infinite;
+  }
+
+  .partner[data-direction="right"] {
+    --_animation-direction: reverse;
+  }
+
+  .partner[data-direction="left"] {
+    --_animation-direction: forwards;
+  }
+
+  .partner[data-speed="fast"] {
+    --_animation-duration: 20s;
+  }
+
+  .partner[data-speed="slow"] {
+    --_animation-duration: 60s;
+  }
+
+  @keyframes scroll {
+    to {
+      transform: translate(calc(-50% - 0.5rem));
+    }
+  }
+  @media (max-width:1252px){
+    .partner-content{
+      flex-direction:column;
+      text-align:center;
+    }
+    .partner-content{
+      gap:1rem;
+    }
+  }
+  @media (max-width:600px){
+    .partner-content h1 {
+      font-size:26px;
+    }
+    .partner-main{
+      margin-top:2rem;
+    }
+  }
+
+    @media (max-width:490px){
+    .partner-img img{
+    height: 82px;
+    width: 150px;
+    }
+      .partner-content p{
+        font-size:14px;
+      }
+</style>
+
+{% schema %}
+{
+    "name": "partner_img",
+    "settings": [
+      {
+        "type": "text",
+        "id": "partner_heading",
+        "label": "Heading"
+      },
+      {
+        "type": "textarea",
+        "id": "partner_description",
+        "label": "Description"
+      }
+    ],
+    "blocks": [
+        {
+            "type": "image",
+            "name": "Partner Image",
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "partner_img",
+                    "label": "Select image"
+                }
+            ]
+        }
+    ],
+  "presets": [
+        {
+            "name": "partners",
+            "category": "Collections"
+        }
+    ]
+}
+{% endschema %}

@@ -1,0 +1,298 @@
+<section class="team-section">
+  <header class="team-header page-width">
+    <h2 class="team-title">{{ section.settings.our_team-heading }}</h2>
+    <p class="team-description">{{ section.settings.our_team-desc }}</p>
+  </header>
+  <div class="team-members">
+    <div class="team-grid">
+      {% for block in section.blocks %}
+        {% if block.settings.our_team_img %}
+          <article class="team-member" onclick="openModal('{{ block.settings.our_team_img | img_url: 'original' }}', '{{ block.settings.our_team_title }}', '{{ block.settings.our_team_right }}', '{{ block.settings.our_team_text }}')">
+            <img loading="lazy" src="{{ block.settings.our_team_img | img_url: 'original' }}" class="member-image" alt="Team member {{ block.settings.our_team_title }}" width="174" height="174"/>
+            <div class="member-info">
+              <h3 class="member-name">{{ block.settings.our_team_title }}</h3>
+              <div class="member-details">
+                <p class="member-position">{{ block.settings.our_team_right }}</p>
+              </div>
+            </div>
+          </article>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img id="modal-image" class="modal-image" src="" alt="Team member full view" />
+    <div class="modal-info">
+      <h3 id="modal-name" class="modal-name"></h3>
+      <p id="modal-position" class="modal-position"></p>
+      <p id="modal-bio" class="modal-bio"></p>
+    </div>
+  </div>
+</div>
+<style>
+  .team-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top:8rem;
+  }
+  
+  .team-header {
+    align-self: center;
+    display: flex;
+        width: 100%;
+    justify-content: space-between;
+  }
+  
+  .team-title {
+    color: #80079e;
+    font-weight: 600 ;
+    font-size:32px;
+    line-height:1.4;
+  }
+  
+  .team-description {
+    color: #000000;
+    font-weight: 400 ; 
+    font-size:16px;
+    line-height:23px;
+    max-width:750px;
+  }
+  
+  .team-members {
+    display: flex;
+  margin-top: 32px;
+  width: 100%;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-image: url("https://cdn.shopify.com/s/files/1/0640/4830/0241/files/team_BG.png?v=1733207086");
+  background-size: cover; /* Ensures the background image fills the section */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /
+  }
+  
+  .team-grid {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    gap: 10rem;
+    justify-content: center;
+    padding:8rem 0;
+  }
+  
+  .team-member {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: auto 0;
+  }
+  
+  .member-image {
+    aspect-ratio: 1.01;
+    object-fit: contain;
+    object-position: center;
+    width: 175px;
+    border-radius: 7px;
+  }
+  
+  .member-info {
+    display: flex;
+    margin-top: 10px;
+    width: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  
+  .member-name {
+    color: #000;
+    text-align:center;
+  }
+  
+  .member-details {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    font-weight: 400;
+    justify-content: flex-start;
+  }
+  
+  .member-position {
+    color: #282828;
+    text-align:center;
+  }
+  
+  .member-bio {
+    color: #3D3D3D;
+    margin-top: 8px;
+    font: 12px Nunito, sans-serif;
+  }
+  
+  @media (max-width: 991px) {
+    .team-title,
+    .team-description,
+    .team-members,
+    .team-grid {
+      max-width: 100%;
+      gap:3rem;
+      flex-direction:column;
+    }
+  }
+  
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  @media (max-width:590px){
+    .member-image{
+      width:165px;
+    }
+    .team-title{
+      font-size:26px;
+    }
+    .team-section{
+      margin-top:6rem;
+    }
+    .team-description{
+      font-size:14px;
+    }
+  }
+
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  .modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+  }
+  
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .modal-image {
+    width: 100%;
+    height: auto;
+    max-width: 300px;
+    border-radius: 7px;
+  }
+  
+  .modal-info {
+    margin-top: 20px;
+  }
+  
+  /* Blur effect when modal is open */
+  .blurred {
+    filter: blur(5px);
+  }
+</style>
+
+
+<script>
+  function openModal(imageSrc, name, position, bio) {
+    document.getElementById('modal-image').src = imageSrc;
+    document.getElementById('modal-name').textContent = name;
+    document.getElementById('modal-position').textContent = position;
+    document.getElementById('modal-bio').textContent = bio;
+    document.getElementById('modal').style.display = 'block';
+
+    // Apply blur to the background
+    document.querySelector('.team-section').classList.add('blurred');
+  }
+
+  function closeModal() {
+    document.getElementById('modal').style.display = 'none';
+    
+    // Remove blur from the background
+    document.querySelector('.team-section').classList.remove('blurred');
+  }
+</script>
+
+{% schema %}
+{
+  "name": "Our_team",
+  "settings": [
+    {
+      "type": "text",
+      "id": "our_team-heading",
+      "label": "Heading"
+    },
+    {
+      "type": "textarea",
+      "id": "our_team-desc",
+      "label": "Description"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "our_team-block",
+      "name": "our_team-block",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "our_team_img",
+          "label": "Select image"
+        },
+        {
+          "type": "text",
+          "id": "our_team_title",
+          "label": "Name"
+        },
+        {
+          "type": "text",
+          "id": "our_team_right",
+          "label": "Designation"
+        },
+        {
+          "type": "textarea",
+          "id": "our_team_text",
+          "label": "Description"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Our-team",
+      "category": "Our-team"
+    }
+  ]
+}
+{% endschema %}
+

@@ -1,0 +1,289 @@
+<!-- collections-tabs.liquid -->
+<section class="collections-tabs">
+  <div class="tab-buttons">
+    {% for block in section.blocks %}
+      <button class="tab-btn" data-tab="tab-{{ block.id }}">{{ block.settings.tab_title }}</button>
+    {% endfor %}
+  </div>
+
+  <div class="tab-content">
+    {% for block in section.blocks %}
+    <div id="tab-{{ block.id }}" class="collection-tab {% if forloop.first %}active{% endif %}">
+      {% if collections[block.settings.collection] %}
+        <div class="products-wrapper">
+          {% for product in collections[block.settings.collection].products %}
+          <div class="product-item">
+            <div class="product-image">
+              <img src="{{ product.featured_image | img_url: 'large' }}" alt="{{ product.title }}">
+              {% if product.images.size > 1 %}
+                <img class="hover-image" src="{{ product.images[1] | img_url: 'large' }}" alt="{{ product.title }}">
+              {% endif %}
+            </div>
+            <h3>{{ product.title }}</h3>
+            <p>{{ product.price | money }}</p>
+            <form method="post" action="/cart/add" class="product-form" data-product-id="{{ product.id }}">
+              <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+              <button type="submit" class="add-to-cart-btn">Add to Cart</button>
+            </form>
+            {% if settings.enable-wishlist %}
+                  <button onclick="toggleWishlist()" class="wishlist_button">
+                    <svg width="30px" height="30px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <rect x="0" fill="none" width="24" height="24"/>
+
+                      <g>
+
+                      <path d="M16.5 4.5c2.206 0 4 1.794 4 4 0 4.67-5.543 8.94-8.5 11.023C9.043 17.44 3.5 13.17 3.5 8.5c0-2.206 1.794-4 4-4 1.298 0 2.522.638 3.273 1.706L12 7.953l1.227-1.746c.75-1.07 1.975-1.707 3.273-1.707m0-1.5c-1.862 0-3.505.928-4.5 2.344C11.005 3.928 9.362 3 7.5 3 4.462 3 2 5.462 2 8.5c0 5.72 6.5 10.438 10 12.85 3.5-2.412 10-7.13 10-12.85C22 5.462 19.538 3 16.5 3z"/>
+
+                      </g>
+                    </svg>
+                  </button>
+                {% endif %}
+          </div>
+          {% endfor %}
+        </div>
+      {% else %}
+        <p>No products found in this collection.</p>
+      {% endif %}
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<style>
+  /* Styling for tabs and product items */
+  .tab-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .tab-btn {
+    padding: 10px 20px;
+    margin: 0 5px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  .tab-btn.active {
+    background-color: #0056b3;
+  }
+
+  .tab-content {
+    overflow: hidden; /* Hide overflow content */
+  }
+
+  .collection-tab {
+    display: none; /* Hide all tabs by default */
+  }
+
+  .collection-tab.active {
+    display: block; /* Show only active tab */
+  }
+
+  .products-wrapper {
+    display: flex;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    gap: 20px; /* Space between items */
+    padding: 10px 0;
+  }
+
+  .product-item {
+    flex: 0 0 auto; /* Prevent flex items from shrinking */
+    width: 400px; /* Fixed width for product items */
+    text-align: center;
+    position: relative;
+  }
+
+  .product-image {
+    position: relative;
+    width: 100%;
+    height: 400px; /* Fixed height for images */
+    overflow: hidden; /* Hide overflowing parts of images */
+  }
+
+  .product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Maintain aspect ratio and cover the container */
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .hover-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .product-image:hover .hover-image {
+    opacity: 1;
+  }
+
+  .add-to-cart-btn {
+    background-color: #28a745;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  .add-to-cart-btn:hover {
+    background-color: #218838;
+  }
+
+  /* Popup notification styling */
+  .cart-popup {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: #4caf50;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    display: none;
+    z-index: 1000;
+  }
+
+  /* Cart icon count (optional styling) */
+  .cart-count {
+    font-size: 16px;
+    background-color: red;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 50%;
+    position: absolute;
+    top: -5px;
+    right: -10px;
+  }
+</style>
+
+<!-- Popup Notification for Add to Cart -->
+<div id="cart-popup" class="cart-popup">
+  Product added to cart!
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Handle tab switching
+    var tabButtons = document.querySelectorAll('.tab-btn');
+    var tabContents = document.querySelectorAll('.collection-tab');
+
+    tabButtons.forEach(function(button) {
+      button.addEventListener('click', function() {
+        var tab = this.getAttribute('data-tab');
+
+        tabButtons.forEach(function(btn) {
+          btn.classList.remove('active');
+        });
+        this.classList.add('active');
+
+        tabContents.forEach(function(content) {
+          content.classList.remove('active');
+        });
+        document.getElementById(tab).classList.add('active');
+      });
+    });
+
+    // AJAX Add to Cart with Cart Popup and Cart Count Update
+    var forms = document.querySelectorAll('.product-form');
+    forms.forEach(function(form) {
+      form.addEventListener('submit', function(e) {
+        e.preventDefault(); // Prevent the page from reloading
+
+        var formData = new FormData(form);
+        fetch('/cart/add.js', {
+          method: 'POST',
+          body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+          // Store product in localStorage
+          storeProductInLocalStorage(data);
+
+          // Show the "Product added to cart" popup
+          var popup = document.getElementById('cart-popup');
+          popup.style.display = 'block';
+
+          setTimeout(function() {
+            popup.style.display = 'none';
+          }, 3000); // Hide after 3 seconds
+
+          // Optionally update cart count or cart icon
+          updateCartCount();
+        })
+        .catch(error => {
+          console.error('Error adding product to cart:', error);
+          alert('There was a problem adding the product to the cart.');
+        });
+      });
+    });
+
+    // Function to store product in localStorage
+    function storeProductInLocalStorage(data) {
+      var cart = JSON.parse(localStorage.getItem('cart')) || [];
+      var productIndex = cart.findIndex(product => product.id === data.id);
+      if (productIndex > -1) {
+        cart[productIndex].quantity += 1; // Update quantity if already in cart
+      } else {
+        cart.push({
+          id: data.id,
+          title: data.title,
+          price: data.price,
+          quantity: 1
+        });
+      }
+      localStorage.setItem('cart', JSON.stringify(cart));
+    }
+
+    // Function to update the cart count (optional)
+    function updateCartCount() {
+      var cart = JSON.parse(localStorage.getItem('cart')) || [];
+      var cartCount = document.querySelector('.cart-count');
+      if (cartCount) {
+        cartCount.textContent = cart.reduce((total, item) => total + item.quantity, 0);
+      }
+    }
+
+    // Call updateCartCount on page load to ensure cart count is always accurate
+    updateCartCount();
+  });
+</script>
+
+
+{% schema %}
+{
+  "name": "Collections with Tabs",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "collection_tab",
+      "name": "Collection Tab",
+      "settings": [
+        {
+          "type": "text",
+          "id": "tab_title",
+          "label": "Tab Title"
+        },
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Select Collection"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collections with Tabs",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

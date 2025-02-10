@@ -1,0 +1,161 @@
+{% schema %}
+{
+  "name": "features-home",
+  "settings": [
+    
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "heading"
+    },
+    {
+      "type": "textarea",
+      "id": "desc",
+      "label": "text-here"
+    }
+  ],
+  "presets": [
+    {
+      "name": "features-home",
+      "category": "Collections"
+    }
+  ]
+}
+
+{%  endschema %}
+
+<div class="feature-backgrd">
+  <div class="features-main page-width">
+  
+  <div class="left-content">
+    <h2 class="scroll-trigger animate--slide-in">{{ section.settings.heading }}</h2>
+    <p class="scroll-trigger animate--slide-in">{{ section.settings.desc }}</p>
+  </div>
+
+  <div class="flex-main scroll-trigger animate--slide-in">
+    <div class="row">
+      <div class="flex-one scroll-trigger animate--slide-in">
+        <img src="https://cdn.shopify.com/s/files/1/0640/4830/0241/files/5.gif?v=1734519829" alt="Image 1" height="" width="">
+        <h3>Vegan</h3>
+      </div>
+      <div class="flex-one">
+        <img src="https://cdn.shopify.com/s/files/1/0640/4830/0241/files/2.gif?v=1734519813" alt="Image 2" height="" width="">
+        <h3>Patented technology </h3>
+      </div>
+      <div class="flex-one scroll-trigger animate--slide-in">
+        <img src="https://cdn.shopify.com/s/files/1/0640/4830/0241/files/quality.gif?v=1735203334" alt="Image 3" height="" width="">
+             <h3>Quality Control</h3>
+      </div>
+    </div>
+  <div class="row2 scroll-trigger animate--slide-in">
+    <div class="flex-two">
+      <img src="https://cdn.shopify.com/s/files/1/0640/4830/0241/files/1.gif?v=1734519813" alt="Image 4" height="" width="">
+           <h3>Bioavailable</h3>
+    </div>
+      <div class="flex-two">
+      <img src="https://cdn.shopify.com/s/files/1/0640/4830/0241/files/3.gif?v=1734519813" alt="Image 4" height="" width="">
+           <h3>Gluten, Peanut & Soy Free</h3>
+      </div>
+  </div>
+  </div>
+</div> 
+</div>
+
+
+<style>
+  .flex-one h3, .flex-two h3{
+    text-align:center;
+    margin:1rem 0;
+  }
+ .features-main {
+  display: flex;
+   gap:5rem;
+  justify-content: space-between;
+   padding:3rem 0;
+   align-items:center;
+}
+.left-content{
+  max-width:500px;
+}
+.left-content h2 {
+  font-size: 32px;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 2rem;
+  color: #80079E;
+}
+
+.left-content p {
+  line-height: 23px;
+  font-weight: 400;
+  color: #121212;
+  margin: 10px 0;
+}
+.feature-backgrd{
+  background:#fff;
+}
+.flex-main {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem; /* Space between rows */
+}
+.flex-two img{
+  height:auto;
+  width:100%;
+}
+.flex-two,.flex-one{
+  width:150px;
+}
+.row {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem; /* Space between images */
+}
+  .row2{
+    display:flex;
+    justify-content:space-around;
+    margin: auto 5rem;
+  }
+.flex-one img {
+  height: auto;
+  width: 100%;
+  max-width: 100%; /* Ensure images don’t overflow their container */
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .row {
+    flex-wrap: wrap; /* Allow wrapping of images in smaller screens */
+    justify-content: center; /* Center-align images */
+  }
+  .flex-one {
+    flex: 1 1 calc(33.33% - 1rem); /* 3 images per row with spacing */
+    max-width: calc(33.33% - 1rem);
+  }
+}
+
+@media (max-width: 768px) {
+  .flex-one {
+    max-width: calc(50% - 1rem);
+  }
+  .features-main{
+    flex-direction:column;
+  }
+  .flex-two, .flex-one{
+  width:auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .row {
+    gap: 1rem; /* Reduce gap on smaller screens */
+  }
+  .left-content h2 {
+    font-size: 26px; /* Adjust heading size */
+  }
+  .left-content p {
+    font-size: 14px; /* Adjust paragraph size */
+  }
+}
+
+</style>

@@ -1,0 +1,234 @@
+{% schema %}
+{
+  "name": "Testimonial Slider",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Add your testimonials below"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+        {
+          "id": "image",
+          "type": "image_picker",
+          "label": "Customer Image"
+        },
+        {
+          "id": "name",
+          "type": "text",
+          "label": "Customer Name",
+          "default": "John Doe"
+        },
+        {
+          "id": "testimonial_text",
+          "type": "textarea",
+          "label": "Testimonial Text",
+          "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        },
+        {
+          "id": "role",
+          "type": "text",
+          "label": "Customer Role",
+          "default": "CEO, Company A"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Testimonial Slider",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
+ <style>
+   
+  .testimonials-main {
+      width: 100%;
+      position: relative;
+      margin-top:30px;
+      font-family: 'Nutio', sans-serif;
+    
+  }
+  .testimonial {
+      display: flex;
+      position: relative;
+  }
+  .testimonials-main h1 {
+      font-weight: 600;
+      color: #80079E;
+      font-size:32px;
+      text-align: center;
+  }
+  .testimonial-start {
+      display: flex;
+
+  }
+   .swiper-slide{
+     margin:0px;
+   }
+  .testimonial {
+      height: 270px;
+      margin-top:36px;
+  }
+  .testimonial_container {
+      position: relative;
+      height: 94px;
+      max-width: 580px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  .testimonial_container img {
+      border-radius: 50%;
+      width: 85px;
+      height: 85px;
+     z-index: 1;
+  }
+  .testimonials_info {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 50%;
+  }
+  .testimonials_desc {
+      padding: 50px 54px 16px 54px;
+      text-align: center;
+      background-color: #E9EFFF;
+      border-radius: 7px;
+     font-family: 'Nutio', sans-serif;
+    height:151px;
+    margin-right:0px;
+    
+  }
+   .testimonials_desc h3{
+     margin:1.5rem 0;
+    font-size: 16px;
+    font-weight: 400;
+    color: #000000;
+    line-height: 22px;
+   }
+  .testimonials_desc p {
+      line-height: 20px;
+      text-align:start;
+      font-weight:400;
+      color:#000000;
+    font-size:14px;
+  }
+  .testimonials_desc h5 {
+      text-align: end;
+      font-size: 16px;
+      font-weight:600;
+      margin-top:12px;
+  }
+
+  /* Custom navigation buttons */
+  .swiper-button-prev, .swiper-button-next {
+      position: absolute;
+    top: 50%;
+    transform: translateY(150%);
+    z-index: 1;
+    width: 40px;
+    color: #226DFF;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1px;
+    cursor: pointer;
+  }
+  .swiper-wrapper{
+    margin:0px;
+  }
+  .swiper-button-prev, {
+      botttom:10px;
+
+  }
+  .swiper-button-next{
+    right: 5px;
+
+  }
+.swiper-button-prev:after, .swiper-button-next:after{
+  font-size:20px;
+}
+
+  /* Adjust button size and padding for smaller screens */
+  @media (max-width: 760px) {
+      .swiper-button-prev, .swiper-button-next {
+          width: 30px;
+          height: 30px;
+          font-size: 1rem;
+          display:none;
+      }
+    .testimonials_desc{
+      padding:34px;
+    }
+    .testimonials_desc p{
+      margin-bottom:.7rem;
+    }
+  }
+</style>
+
+
+<div class="testimonials-main page-width">
+    <h1>What people are saying </h1>
+    <div class="testimonial swiper ">
+        <!-- Left navigation button -->
+        <div class="testimonial-start swiper-wrapper" style="margin:0px;">
+            {% for block in section.blocks %}
+            <div class="testimonial_container swiper-slide">
+                {% if block.settings.image != blank %}
+                <img src="{{ block.settings.image | img_url: '85x85' }}" alt="{{ block.settings.name }}" class="centered-image" height=85px width=85px/>
+                {% endif %}
+                <div class="testimonials_info">
+                    <div class="testimonials_desc">
+                        <h3>{{ block.settings.name }}</h3>
+                        <p>{{ block.settings.testimonial_text }}</p>
+                        <h5>{{ block.settings.role }}</h5>
+                    </div>
+              </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="swiper-button-prev">.</div>
+        <!-- Right navigation button -->
+        <div class="swiper-button-next">.</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var swiper = new Swiper('.swiper', {
+      slidesPerView: 'auto',
+      spaceBetween: 30,
+      freeMode: true,
+      loop: true,
+      loopedSlides: {{ section.blocks | size }},
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      breakpoints: {
+        760: {
+          slidesPerView: 1,
+          direction: 'vertical',
+        },
+        761: {
+          slidesPerView: 'auto',
+          direction: 'horizontal',
+        }
+      }
+    });
+  });
+</script>

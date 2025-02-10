@@ -1,0 +1,128 @@
+{% schema %}
+{
+  "name": "Accordion",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "accordion_item",
+      "name": "Accordion Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "textarea",
+          "id": "content",
+          "label": "Content"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Accordion",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
+
+<div class="accordion-wrapper page-width">
+  <h2>FAQ's</h2>
+  {% for block in section.blocks %}
+    <button class="accordion">
+      {{ block.settings.title }}
+      <span class="icon">
+        <svg class="icon icon-caret" viewBox="0 0 10 6"><path fill="currentColor" fill-rule="evenodd" d="M9.354.646a.5.5 0 0 0-.708 0L5 4.293 1.354.646a.5.5 0 0 0-.708.708l4 4a.5.5 0 0 0 .708 0l4-4a.5.5 0 0 0 0-.708" clip-rule="evenodd"></path></svg>
+      </span>
+    </button>
+    <div class="panel">
+      <p>{{ block.settings.content }}</p>
+    </div>
+  {% endfor %}
+</div>
+
+
+<style>
+.accordion {
+  background-color: #e5d7e2;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 20px;
+  transition: 0.4s;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.icon {
+  transition: transform 0.4s ease;
+}
+
+.icon-svg {
+  stroke: #444;
+}
+
+.active .icon {
+  transform: rotate(180deg);
+}
+
+.panel p {
+  max-width: 90rem;
+  margin-bottom:15px;
+  line-height:23px;
+}
+
+.accordion-wrapper {
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.active, .accordion:hover {
+
+}
+
+.accordion-wrapper h2 {
+  font-size: 32px;
+  font-weight: 600;
+  color: #80079e;
+  text-align: left;
+  line-height: 28.13px;
+  margin-bottom: 3rem;
+}
+
+.panel {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+}
+
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var acc = document.getElementsByClassName("accordion");
+
+  for (var i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var panel = this.nextElementSibling;
+      if (panel.style.display === "block") {
+        panel.style.display = "none";
+      } else {
+        panel.style.display = "block";
+      }
+    });
+  }
+});
+
+</script>

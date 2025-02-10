@@ -1,0 +1,159 @@
+{{ 'section-contact-form.css' | asset_url | stylesheet_tag }}
+
+<style>
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+
+  @media (max-width:990px){
+    .contact-1{
+      flex-direction:column;
+    }
+  }
+</style>
+
+  <div class="contact page-width">
+    <div class="contact-form-container page-width">
+ <form method="post" action="/contact#contact_form" id="contact_form" accept-charset="UTF-8" class="contact-form" enctype="multipart/form-data">
+    <input type="hidden" name="form_type" value="contact" />
+    <input type="hidden" name="utf8" value="✓" />
+          <div class="contactss-text">
+    <h2>Contact us</h2>
+    <p>{{ section.settings.contact_descc }}</p>
+  </div>
+    <div class="contact-1">
+          <!-- Full Name -->
+        <div class="form-group">
+          <p for="ContactFormName">Full Name </p>
+          <input type="text" id="ContactFormName" name="contact[name]" required>
+          <!-- Phone Number --></div>
+        <div class="form-group">
+          <p for="ContactFormPhone">Phone Number</p>
+          <input type="tel" id="ContactFormPhone" name="contact[phone]" required>
+        </div>
+    </div>
+    
+    <!-- Email ID -->
+   <div class="contact-1">
+      <div class="form-group">
+      <p for="ContactFormEmail">Email ID </p>
+      <input type="email" id="ContactFormEmail" name="contact[email]" required>
+    </div>
+    <span class="form-group">
+    <p for="ContactFormEmail">Company</p>
+    <input type="text" id="ContactFormEmail" name="contact[text]" required>
+    </span>
+   </div>
+   <!--purpose  -->
+   <div class="form-group">
+      <p for="ContactFormEmail">Purpose</p>
+      <select id="inquiry" name="inquiry" required>
+        <option value=""> Select purpose</option>
+        <option value="White label with us">White label with us</option>
+        <option value="Co-create">Co-create</option>
+        <option value="Feature our products">Feature our products</option>
+      </select>
+    </div>
+    <!-- Message -->
+    <div class="form-group">
+         <p for="ContactFormmessage">Your message </p>
+      <textarea placeholder="Your message" id="ContactFormMessage" name="contact[body]" rows="10" required></textarea>
+    </div>
+  
+    <!-- Submit Button -->
+    <div class="form-group">
+      <button type="submit" class="btn">Submit</button>
+    </div>
+  </form>
+
+      <!-- Handle errors and success messages -->
+    {% if form.posted_successfully %}
+      <p>Thank you for contacting us. We will get back to you as soon as possible.</p>
+    {% elsif form.errors %}
+      <ul>
+        {% for field in form.errors %}
+          <li>{{ field | capitalize }}: {{ form.errors.messages[field] }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+
+
+{% schema %}
+{
+  "name": "Contact Form",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "default": "Contact Us",
+      "label": "Heading"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        { "value": "h2", "label": "H2" },
+        { "value": "h1", "label": "H1" },
+        { "value": "h0", "label": "H0" },
+        { "value": "hxl", "label": "HXL" },
+        { "value": "hxxl", "label": "HXXL" }
+      ],
+      "default": "h1",
+      "label": "Heading Size"
+    },
+    {
+      "type": "textarea",
+      "id": "contact_descc",
+      "label": "desc"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color Scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "Section Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 36
+    }
+  ],
+  "presets": [
+    {
+      "name": "Contact Form"
+    }
+  ]
+}
+{% endschema %}

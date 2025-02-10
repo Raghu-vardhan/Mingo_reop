@@ -1,0 +1,31 @@
+<div class="Sprod-banner page-width">
+  
+     <img src="{{ section.settings.Sprod-banner_img | img_url: 'original' }}" alt="Product Image" width="120" height="120">
+
+</div>
+
+<style>
+  .Sprod-banner img{
+    width:100%;
+    height:auto;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Spod-banner",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "Sprod-banner_img",
+      "label": "select image"
+    },
+  ],
+  "presets": [
+    {
+      "name": "Spod-banner",
+      "category": "Spod-banner"
+    }
+  ]
+}
+{% endschema %}

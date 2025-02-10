@@ -1,0 +1,25 @@
+    <nav class="breadcrumb page-width">
+      <a href="{{ routes.root_url }}">Home</a>
+      <span aria-hidden="true"> > </span>
+      <span>{{ page.title }}</span>
+    </nav>
+<style>
+  .breadcrumb{
+    height:100px;
+    display:flex;
+    align-items:center;
+  }
+</style>
+{% schema %}
+{
+  "name": "breadcrumb",
+  "settings": [
+  ],
+  "presets": [
+    {
+      "name": "breadcrumb",
+      "category": "breadcrumb"
+    }
+  ]
+}
+{% endschema %}
