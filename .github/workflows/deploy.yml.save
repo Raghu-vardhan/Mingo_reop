@@ -1,0 +1,22 @@
+name: Deploy to Shopify
+
+on:
+  push:
+    branches:
+      - main  # Replace with your branch name if you're using a different branch like 'master'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Shopify CLI
+        run: |
+          curl -sS https://shopify.dev/cli/install | bash
+          shopify login --api-key ${{ secrets.SHOPIFY_API_KEY }} --password ${{ secrets.SHOPIFY_PASSWORD }} --store ${{ secrets.SHOPIFY_STORE }}
+
+      - name: Deploy theme to Shopify
+        run: shopify theme push --allow-live  # Use '--allow-live' for live deployment (optional)
