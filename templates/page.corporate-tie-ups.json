@@ -1,1 +1,163 @@
-{"sections":{"breadcrumb_3GDDaL":{"type":"breadcrumb","disabled":true,"settings":{}},"main":{"type":"main-page","disabled":true,"settings":{"padding_top":28,"padding_bottom":28}},"main_banner_i8MjPR":{"type":"main-banner","settings":{"banner_image":"shopify:\/\/shop_images\/Corporate-Tie-ups_Banner_1_424c755c-59a3-45aa-bcd0-b2e3a7093738.png","svg_icon":""}},"corp_partner_6XHRMU":{"type":"corp-partner","settings":{"corp-partner-heading":"Partner with us","corp-partner-desc":"At Mingo, we’re always seeking new partnerships to expand our mission of making wellness accessible and enjoyable for everyone.Whether you're a retailer, distributor, or part of the health and wellness industry, we invite you to join us.","corp-part_img":"shopify:\/\/shop_images\/Rectangle_266_a07d92c4-93b1-4f30-9825-c82a47569222.jpg"}},"partners_emMLex":{"type":"partners","blocks":{"image_6XbXh4":{"type":"image","settings":{"partner_img":"shopify:\/\/shop_images\/Rectangle_266.jpg"}},"image_kGpQen":{"type":"image","settings":{"partner_img":"shopify:\/\/shop_images\/Rectangle_266.jpg"}},"image_UdQKDk":{"type":"image","settings":{"partner_img":"shopify:\/\/shop_images\/Rectangle_266.jpg"}},"image_GhGLEa":{"type":"image","settings":{"partner_img":"shopify:\/\/shop_images\/Rectangle_266.jpg"}},"image_baWnRH":{"type":"image","settings":{"partner_img":"shopify:\/\/shop_images\/Rectangle_266.jpg"}},"image_aUFq7m":{"type":"image","settings":{"partner_img":"shopify:\/\/shop_images\/Rectangle_266.jpg"}},"image_dbcYAp":{"type":"image","settings":{"partner_img":"shopify:\/\/shop_images\/Rectangle_266.jpg"}},"image_3iPU7V":{"type":"image","settings":{}}},"block_order":["image_6XbXh4","image_kGpQen","image_UdQKDk","image_GhGLEa","image_baWnRH","image_aUFq7m","image_dbcYAp","image_3iPU7V"],"custom_css":[".partner-main {gap: 0px; margin-top: 70px;}"],"settings":{"partner_heading":"Our Partners","partner_description":""}},"corp_team_UN363N":{"type":"corp-team","blocks":{"image_eCQWk6":{"type":"image","settings":{"corp-team-img":"shopify:\/\/shop_images\/Layer_1_1.svg","corp-team_title":"Innovative, High-Quality Products","corp-team_desc-li":"Crafted using the latest nutritional science, our range is not only clinically approved but also designed to meet modern dietary preferences.","corp-team1-img":"shopify:\/\/shop_images\/Layer_1_1.svg","corp-team_title1":"Growing Market Demand","corp-team_desc-li1":"Partnering with us means tapping into a rapidly expanding market focused on health-conscious individuals","corp-team2-img":"shopify:\/\/shop_images\/Layer_1_1.svg","corp-team_title2":"Customizable Solutions","corp-team_desc-li2":"Whether you’re looking for bulk orders or co-branded products, our team is ready to collaborate and tailor our offerings to align with your goals.","corp-team3-img":"shopify:\/\/shop_images\/Layer_1_1.svg","corp-team_title3":"Trusted Brand with Strong Consumer Appeal","corp-team_desc-li3":"Our dedication to inclusivity, with vegan, gelatin-free, peanut-free, and soy-free products, caters to a wide audience, enhancing your business’s value proposition."}}},"block_order":["image_eCQWk6"],"settings":{"corp-team_heading":"Why partner with us","corp-team_desc":"Together, we can create a healthier, more balanced world—one delicious supplement at a time. \nLet’s collaborate and grow stronger together."}},"contact_form_DFUEnR":{"type":"contact-form","custom_css":[".form-group {margin-top: 1rem;}","h2 {color: #80079e;}"],"settings":{"heading":"Contact Us","heading_size":"h2","contact_descc":"","color_scheme":"","padding_top":36,"padding_bottom":36}}},"order":["breadcrumb_3GDDaL","main","main_banner_i8MjPR","corp_partner_6XHRMU","partners_emMLex","corp_team_UN363N","contact_form_DFUEnR"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "breadcrumb_3GDDaL": {
+      "type": "breadcrumb",
+      "disabled": true,
+      "settings": {}
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "main_banner_i8MjPR": {
+      "type": "main-banner",
+      "settings": {
+        "banner_image": "shopify://shop_images/Corporate-Tie-ups_Banner_1_424c755c-59a3-45aa-bcd0-b2e3a7093738.png",
+        "mobile_banner_image": "shopify://shop_images/Corporate-Tie-ups_Banner_1_d32f757d-84f2-4ee0-9a7f-28568b6b92eb.png",
+        "svg_icon": ""
+      }
+    },
+    "corp_partner_6XHRMU": {
+      "type": "corp-partner",
+      "settings": {
+        "corp-partner-heading": "Partner with us",
+        "corp-partner-desc": "At Mingo, we’re always seeking new partnerships to expand our mission of making wellness accessible and enjoyable for everyone.Whether you're a retailer, distributor, or part of the health and wellness industry, we invite you to join us.",
+        "corp-part_img": "shopify://shop_images/Rectangle_266_a07d92c4-93b1-4f30-9825-c82a47569222.jpg"
+      }
+    },
+    "partners_emMLex": {
+      "type": "partners",
+      "blocks": {
+        "image_6XbXh4": {
+          "type": "image",
+          "settings": {
+            "partner_img": "shopify://shop_images/Rectangle_266.jpg"
+          }
+        },
+        "image_kGpQen": {
+          "type": "image",
+          "settings": {
+            "partner_img": "shopify://shop_images/Rectangle_266.jpg"
+          }
+        },
+        "image_UdQKDk": {
+          "type": "image",
+          "settings": {
+            "partner_img": "shopify://shop_images/Rectangle_266.jpg"
+          }
+        },
+        "image_GhGLEa": {
+          "type": "image",
+          "settings": {
+            "partner_img": "shopify://shop_images/Rectangle_266.jpg"
+          }
+        },
+        "image_baWnRH": {
+          "type": "image",
+          "settings": {
+            "partner_img": "shopify://shop_images/Rectangle_266.jpg"
+          }
+        },
+        "image_aUFq7m": {
+          "type": "image",
+          "settings": {
+            "partner_img": "shopify://shop_images/Rectangle_266.jpg"
+          }
+        },
+        "image_dbcYAp": {
+          "type": "image",
+          "settings": {
+            "partner_img": "shopify://shop_images/Rectangle_266.jpg"
+          }
+        },
+        "image_3iPU7V": {
+          "type": "image",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "image_6XbXh4",
+        "image_kGpQen",
+        "image_UdQKDk",
+        "image_GhGLEa",
+        "image_baWnRH",
+        "image_aUFq7m",
+        "image_dbcYAp",
+        "image_3iPU7V"
+      ],
+      "custom_css": [
+        ".partner-main {gap: 0px; margin-top: 70px;}"
+      ],
+      "settings": {
+        "partner_heading": "Our Partners",
+        "partner_description": ""
+      }
+    },
+    "corp_team_UN363N": {
+      "type": "corp-team",
+      "blocks": {
+        "image_eCQWk6": {
+          "type": "image",
+          "settings": {
+            "corp-team-img": "shopify://shop_images/Layer_1_1.svg",
+            "corp-team_title": "Innovative, High-Quality Products",
+            "corp-team_desc-li": "Crafted using the latest nutritional science, our range is not only clinically approved but also designed to meet modern dietary preferences.",
+            "corp-team1-img": "shopify://shop_images/Layer_1_1.svg",
+            "corp-team_title1": "Growing Market Demand",
+            "corp-team_desc-li1": "Partnering with us means tapping into a rapidly expanding market focused on health-conscious individuals",
+            "corp-team2-img": "shopify://shop_images/Layer_1_1.svg",
+            "corp-team_title2": "Customizable Solutions",
+            "corp-team_desc-li2": "Whether you’re looking for bulk orders or co-branded products, our team is ready to collaborate and tailor our offerings to align with your goals.",
+            "corp-team3-img": "shopify://shop_images/Layer_1_1.svg",
+            "corp-team_title3": "Trusted Brand with Strong Consumer Appeal",
+            "corp-team_desc-li3": "Our dedication to inclusivity, with vegan, gelatin-free, peanut-free, and soy-free products, caters to a wide audience, enhancing your business’s value proposition."
+          }
+        }
+      },
+      "block_order": [
+        "image_eCQWk6"
+      ],
+      "settings": {
+        "corp-team_heading": "Why partner with us",
+        "corp-team_desc": "Together, we can create a healthier, more balanced world—one delicious supplement at a time. \nLet’s collaborate and grow stronger together."
+      }
+    },
+    "contact_form_DFUEnR": {
+      "type": "contact-form",
+      "custom_css": [
+        ".form-group {margin-top: 1rem;}",
+        "h2 {color: #80079e;}"
+      ],
+      "settings": {
+        "heading": "Contact Us",
+        "heading_size": "h2",
+        "contact_descc": "",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "breadcrumb_3GDDaL",
+    "main",
+    "main_banner_i8MjPR",
+    "corp_partner_6XHRMU",
+    "partners_emMLex",
+    "corp_team_UN363N",
+    "contact_form_DFUEnR"
+  ]
+}
