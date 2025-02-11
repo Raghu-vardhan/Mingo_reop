@@ -1,1 +1,331 @@
-{"sections":{"rich_text":{"type":"rich-text","blocks":{"heading":{"type":"heading","disabled":true,"settings":{"heading":"Talk about your brand","heading_size":"h1"}},"text":{"type":"text","disabled":true,"settings":{"text":"<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"}}},"block_order":["heading","text"],"disabled":true,"settings":{"desktop_content_position":"center","content_alignment":"center","color_scheme":"scheme-1","full_width":true,"padding_top":40,"padding_bottom":0}},"video_img_banner_Yh7kJm":{"type":"video-img-banner","settings":{"slide_interval":7}},"collage_grid_ndUiBn":{"type":"collage-grid","custom_css":[".coll-head {}","@media (max-width: 600px) {.coll-head {margin-bottom: 4rem; }}"],"settings":{"collection_img":"shopify:\/\/shop_images\/Rectangle_266_a07d92c4-93b1-4f30-9825-c82a47569222.jpg","collection_url":"shopify:\/\/collections\/gogummies","image1":"shopify:\/\/shop_images\/momints_1.webp","image1_url":"shopify:\/\/collections\/momints","image1_url1":"shopify:\/\/collections\/syn"}},"main_banner_a9W3Pk":{"type":"main-banner","settings":{"banner_image":"shopify:\/\/shop_images\/banner.png","mobile_banner_image":"shopify:\/\/shop_images\/Mingo_Homepage_mobile.png","svg_icon":""}},"abouthome_mjrUJg":{"type":"abouthome","settings":{"abt_img":"shopify:\/\/shop_images\/Rectangle_231.png","desc1":"<p>We’re taking wellness to the next level with innovative technologies and smart formulations. Our NanoDrop Technology<strong> <\/strong>delivers nutrients with over 95% bioavailability, ensuring your body gets what it needs quickly and efficiently. With nanocarrier systems like liposomes and solid lipid nanoparticles, we’ve found a way to maximize absorption and stability for every active ingredient. <\/p><p>Our encapsulation technology locks in the goodness, while our opaque gummies<strong> <\/strong>bring you real fruit flavors, natural colors, and a satisfying chew without the medicinal aftertaste. Plus, everything is designed for high bioavailability, so nothing goes to waste!<\/p>","abt_heading":"Transforming Wellness with Cutting-Edge Science"}},"features_hm_WAd7RR":{"type":"features-hm","settings":{"heading":"Chew. Melt. Thrive","desc":"Packed with the perfect fusion of flavor and wellness, Mingo supplements make getting your nutrients a treat, not a task. Crafted with plant-based, soy-free ingredients, they’re safe, wholesome, and made for everyone to enjoy."}},"product_features_79mwrm":{"type":"Product-features","disabled":true,"settings":{}},"featured_collection_7EHj3j":{"type":"featured-collection","custom_css":[".inline-richtext {font-weight: 600;}",".stars {justify-content: left;}"],"settings":{"title":"Featured Collection","para":"","shop_url":"","heading_size":"h1","description":"","show_description":false,"description_style":"body","collection":"best-sellers","products_to_show":4,"columns_desktop":4,"full_width":true,"show_view_all":false,"view_all_style":"solid","enable_desktop_slider":false,"color_scheme":"","image_ratio":"square","image_shape":"default","show_secondary_image":true,"show_vendor":false,"show_rating":false,"quick_add":"standard","columns_mobile":"2","swipe_on_mobile":false,"padding_top":60,"padding_bottom":4}},"people_saying_6p3jQR":{"type":"People-saying","blocks":{"box_wwVr6P":{"type":"box","settings":{"image":"shopify:\/\/shop_images\/6_f4c40df7-1875-4a09-8829-0ce6ac4308ff.png","title":"Partner Name","quote":"Customer Quote","description":"Our trusted partners share our commitment to quality, innovation, and well-being, collaborating with us to bring the best in health and wellness."}},"box_3CprMU":{"type":"box","settings":{"image":"shopify:\/\/shop_images\/5_ff9c1baa-f85f-49bd-8430-b17228f728ec.png","title":"Partner Name","quote":"Customer Quote","description":"Our trusted partners share our commitment to quality, innovation, and well-being, collaborating with us to bring the best in health and wellness."}},"box_AcWwNA":{"type":"box","settings":{"image":"shopify:\/\/shop_images\/1_80233810-fb1e-4def-aab5-06ec930d9fb6.png","title":"Partner Name","quote":"Customer Quote","description":"Our trusted partners share our commitment to quality, innovation, and well-being, collaborating with us to bring the best in health and wellness."}},"box_p7QxJM":{"type":"box","settings":{"image":"shopify:\/\/shop_images\/3_f651ea0f-8089-414e-8359-3511222e23cd.png","title":"Partner Name","quote":"Customer Quote","description":"Our trusted partners share our commitment to quality, innovation, and well-being, collaborating with us to bring the best in health and wellness."}},"box_gKgEf7":{"type":"box","settings":{"image":"shopify:\/\/shop_images\/4_0d33ad2b-3ab8-427f-952e-bfaae6c7776a.png","title":"Partner Name","quote":"Customer Quote","description":"Our trusted partners share our commitment to quality, innovation, and well-being, collaborating with us to bring the best in health and wellness."}},"box_E6Y7qW":{"type":"box","settings":{"title":"Partner Name","quote":"Customer Quote","description":"Our trusted partners share our commitment to quality, innovation, and well-being, collaborating with us to bring the best in health and wellness."}}},"block_order":["box_wwVr6P","box_3CprMU","box_AcWwNA","box_p7QxJM","box_gKgEf7","box_E6Y7qW"],"settings":{"heading":"What People are Saying"}},"partners_yMbjmb":{"type":"partners","blocks":{"image_mRpyQK":{"type":"image","settings":{"partner_img":"shopify:\/\/shop_images\/Rectangle_17_1.png"}},"image_KmWhya":{"type":"image","settings":{"partner_img":"shopify:\/\/shop_images\/Rectangle_17_1.png"}},"image_Tkdcc7":{"type":"image","settings":{"partner_img":"shopify:\/\/shop_images\/Rectangle_17_1.png"}},"image_Vd3kL3":{"type":"image","settings":{"partner_img":"shopify:\/\/shop_images\/Rectangle_17_1.png"}},"image_4Knzyn":{"type":"image","settings":{"partner_img":"shopify:\/\/shop_images\/Rectangle_17_1.png"}},"image_wrLAQx":{"type":"image","settings":{"partner_img":"shopify:\/\/shop_images\/Rectangle_17_1.png"}},"image_W4rKCx":{"type":"image","settings":{"partner_img":"shopify:\/\/shop_images\/Rectangle_17_1.png"}},"image_kA7y6P":{"type":"image","settings":{"partner_img":"shopify:\/\/shop_images\/Rectangle_17_1.png"}},"image_9kAAgH":{"type":"image","settings":{"partner_img":"shopify:\/\/shop_images\/Rectangle_17_1.png"}}},"block_order":["image_mRpyQK","image_KmWhya","image_Tkdcc7","image_Vd3kL3","image_4Knzyn","image_wrLAQx","image_W4rKCx","image_kA7y6P","image_9kAAgH"],"settings":{"partner_heading":"Our Partners","partner_description":"Our trusted partners share our commitment to quality, innovation, and well-being, collaborating with us to bring the best in health and wellness."}},"reels_ELBUYi":{"type":"Reels","blocks":{"video_mJxYTc":{"type":"video","settings":{"product_description_video":"https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/dfb8c60859194987bb4389334b1ab7eb.mp4"}},"video_TTFXF8":{"type":"video","settings":{"product_description_video":"https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/dfb8c60859194987bb4389334b1ab7eb.mp4"}},"video_6zLm7F":{"type":"video","settings":{"product_description_video":"https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/dfb8c60859194987bb4389334b1ab7eb.mp4"}},"video_8YPXya":{"type":"video","settings":{"product_description_video":"https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/dfb8c60859194987bb4389334b1ab7eb.mp4"}},"video_a6LX7U":{"type":"video","settings":{"product_description_video":"https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/dfb8c60859194987bb4389334b1ab7eb.mp4"}}},"block_order":["video_mJxYTc","video_TTFXF8","video_6zLm7F","video_8YPXya","video_a6LX7U"],"custom_css":[".custom_grid-img {background: inherit;}",".custom_grid-img {padding: 0;}"],"settings":{}}},"order":["rich_text","video_img_banner_Yh7kJm","collage_grid_ndUiBn","main_banner_a9W3Pk","abouthome_mjrUJg","features_hm_WAd7RR","product_features_79mwrm","featured_collection_7EHj3j","people_saying_6p3jQR","partners_yMbjmb","reels_ELBUYi"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "rich_text": {
+      "type": "rich-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "Talk about your brand",
+            "heading_size": "h1"
+          }
+        },
+        "text": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "text"
+      ],
+      "disabled": true,
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-1",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 0
+      }
+    },
+    "video_img_banner_Yh7kJm": {
+      "type": "video-img-banner",
+      "settings": {
+        "slide_interval": 7
+      }
+    },
+    "collage_grid_ndUiBn": {
+      "type": "collage-grid",
+      "custom_css": [
+        ".coll-head {}",
+        "@media (max-width: 600px) {.coll-head {margin-bottom: 4rem; }}"
+      ],
+      "settings": {
+        "collection_img": "shopify://shop_images/Rectangle_266_a07d92c4-93b1-4f30-9825-c82a47569222.jpg",
+        "collection_url": "shopify://collections/gogummies",
+        "image1": "shopify://shop_images/momints_1.webp",
+        "image1_url": "shopify://collections/momints",
+        "image1_url1": "shopify://collections/syn"
+      }
+    },
+    "main_banner_a9W3Pk": {
+      "type": "main-banner",
+      "settings": {
+        "banner_image": "shopify://shop_images/Mingo-banner.jpg",
+        "mobile_banner_image": "shopify://shop_images/Mingo_Homepage_mobile.png",
+        "svg_icon": ""
+      }
+    },
+    "abouthome_mjrUJg": {
+      "type": "abouthome",
+      "settings": {
+        "abt_img": "shopify://shop_images/Rectangle_231.png",
+        "desc1": "<p>We’re taking wellness to the next level with innovative technologies and smart formulations. Our NanoDrop Technology<strong> </strong>delivers nutrients with over 95% bioavailability, ensuring your body gets what it needs quickly and efficiently. With nanocarrier systems like liposomes and solid lipid nanoparticles, we’ve found a way to maximize absorption and stability for every active ingredient. </p><p>Our encapsulation technology locks in the goodness, while our opaque gummies<strong> </strong>bring you real fruit flavors, natural colors, and a satisfying chew without the medicinal aftertaste. Plus, everything is designed for high bioavailability, so nothing goes to waste!</p>",
+        "abt_heading": "Transforming Wellness with Cutting-Edge Science"
+      }
+    },
+    "features_hm_WAd7RR": {
+      "type": "features-hm",
+      "settings": {
+        "heading": "Chew. Melt. Thrive",
+        "desc": "Packed with the perfect fusion of flavor and wellness, Mingo supplements make getting your nutrients a treat, not a task. Crafted with plant-based, soy-free ingredients, they’re safe, wholesome, and made for everyone to enjoy."
+      }
+    },
+    "product_features_79mwrm": {
+      "type": "Product-features",
+      "disabled": true,
+      "settings": {}
+    },
+    "featured_collection_7EHj3j": {
+      "type": "featured-collection",
+      "custom_css": [
+        ".inline-richtext {font-weight: 600;}",
+        ".stars {justify-content: left;}"
+      ],
+      "settings": {
+        "title": "Featured Collection",
+        "para": "",
+        "shop_url": "",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "best-sellers",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "full_width": true,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "standard",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 60,
+        "padding_bottom": 4
+      }
+    },
+    "people_saying_6p3jQR": {
+      "type": "People-saying",
+      "blocks": {
+        "box_wwVr6P": {
+          "type": "box",
+          "settings": {
+            "image": "shopify://shop_images/6_f4c40df7-1875-4a09-8829-0ce6ac4308ff.png",
+            "title": "Partner Name",
+            "quote": "Customer Quote",
+            "description": "Our trusted partners share our commitment to quality, innovation, and well-being, collaborating with us to bring the best in health and wellness."
+          }
+        },
+        "box_3CprMU": {
+          "type": "box",
+          "settings": {
+            "image": "shopify://shop_images/5_ff9c1baa-f85f-49bd-8430-b17228f728ec.png",
+            "title": "Partner Name",
+            "quote": "Customer Quote",
+            "description": "Our trusted partners share our commitment to quality, innovation, and well-being, collaborating with us to bring the best in health and wellness."
+          }
+        },
+        "box_AcWwNA": {
+          "type": "box",
+          "settings": {
+            "image": "shopify://shop_images/1_80233810-fb1e-4def-aab5-06ec930d9fb6.png",
+            "title": "Partner Name",
+            "quote": "Customer Quote",
+            "description": "Our trusted partners share our commitment to quality, innovation, and well-being, collaborating with us to bring the best in health and wellness."
+          }
+        },
+        "box_p7QxJM": {
+          "type": "box",
+          "settings": {
+            "image": "shopify://shop_images/3_f651ea0f-8089-414e-8359-3511222e23cd.png",
+            "title": "Partner Name",
+            "quote": "Customer Quote",
+            "description": "Our trusted partners share our commitment to quality, innovation, and well-being, collaborating with us to bring the best in health and wellness."
+          }
+        },
+        "box_gKgEf7": {
+          "type": "box",
+          "settings": {
+            "image": "shopify://shop_images/4_0d33ad2b-3ab8-427f-952e-bfaae6c7776a.png",
+            "title": "Partner Name",
+            "quote": "Customer Quote",
+            "description": "Our trusted partners share our commitment to quality, innovation, and well-being, collaborating with us to bring the best in health and wellness."
+          }
+        },
+        "box_E6Y7qW": {
+          "type": "box",
+          "settings": {
+            "title": "Partner Name",
+            "quote": "Customer Quote",
+            "description": "Our trusted partners share our commitment to quality, innovation, and well-being, collaborating with us to bring the best in health and wellness."
+          }
+        }
+      },
+      "block_order": [
+        "box_wwVr6P",
+        "box_3CprMU",
+        "box_AcWwNA",
+        "box_p7QxJM",
+        "box_gKgEf7",
+        "box_E6Y7qW"
+      ],
+      "settings": {
+        "heading": "What People are Saying"
+      }
+    },
+    "partners_yMbjmb": {
+      "type": "partners",
+      "blocks": {
+        "image_mRpyQK": {
+          "type": "image",
+          "settings": {
+            "partner_img": "shopify://shop_images/Rectangle_17_1.png"
+          }
+        },
+        "image_KmWhya": {
+          "type": "image",
+          "settings": {
+            "partner_img": "shopify://shop_images/Rectangle_17_1.png"
+          }
+        },
+        "image_Tkdcc7": {
+          "type": "image",
+          "settings": {
+            "partner_img": "shopify://shop_images/Rectangle_17_1.png"
+          }
+        },
+        "image_Vd3kL3": {
+          "type": "image",
+          "settings": {
+            "partner_img": "shopify://shop_images/Rectangle_17_1.png"
+          }
+        },
+        "image_4Knzyn": {
+          "type": "image",
+          "settings": {
+            "partner_img": "shopify://shop_images/Rectangle_17_1.png"
+          }
+        },
+        "image_wrLAQx": {
+          "type": "image",
+          "settings": {
+            "partner_img": "shopify://shop_images/Rectangle_17_1.png"
+          }
+        },
+        "image_W4rKCx": {
+          "type": "image",
+          "settings": {
+            "partner_img": "shopify://shop_images/Rectangle_17_1.png"
+          }
+        },
+        "image_kA7y6P": {
+          "type": "image",
+          "settings": {
+            "partner_img": "shopify://shop_images/Rectangle_17_1.png"
+          }
+        },
+        "image_9kAAgH": {
+          "type": "image",
+          "settings": {
+            "partner_img": "shopify://shop_images/Rectangle_17_1.png"
+          }
+        }
+      },
+      "block_order": [
+        "image_mRpyQK",
+        "image_KmWhya",
+        "image_Tkdcc7",
+        "image_Vd3kL3",
+        "image_4Knzyn",
+        "image_wrLAQx",
+        "image_W4rKCx",
+        "image_kA7y6P",
+        "image_9kAAgH"
+      ],
+      "settings": {
+        "partner_heading": "Our Partners",
+        "partner_description": "Our trusted partners share our commitment to quality, innovation, and well-being, collaborating with us to bring the best in health and wellness."
+      }
+    },
+    "reels_ELBUYi": {
+      "type": "Reels",
+      "blocks": {
+        "video_mJxYTc": {
+          "type": "video",
+          "settings": {
+            "product_description_video": "https://cdn.shopify.com/videos/c/o/v/dfb8c60859194987bb4389334b1ab7eb.mp4"
+          }
+        },
+        "video_TTFXF8": {
+          "type": "video",
+          "settings": {
+            "product_description_video": "https://cdn.shopify.com/videos/c/o/v/dfb8c60859194987bb4389334b1ab7eb.mp4"
+          }
+        },
+        "video_6zLm7F": {
+          "type": "video",
+          "settings": {
+            "product_description_video": "https://cdn.shopify.com/videos/c/o/v/dfb8c60859194987bb4389334b1ab7eb.mp4"
+          }
+        },
+        "video_8YPXya": {
+          "type": "video",
+          "settings": {
+            "product_description_video": "https://cdn.shopify.com/videos/c/o/v/dfb8c60859194987bb4389334b1ab7eb.mp4"
+          }
+        },
+        "video_a6LX7U": {
+          "type": "video",
+          "settings": {
+            "product_description_video": "https://cdn.shopify.com/videos/c/o/v/dfb8c60859194987bb4389334b1ab7eb.mp4"
+          }
+        }
+      },
+      "block_order": [
+        "video_mJxYTc",
+        "video_TTFXF8",
+        "video_6zLm7F",
+        "video_8YPXya",
+        "video_a6LX7U"
+      ],
+      "custom_css": [
+        ".custom_grid-img {background: inherit;}",
+        ".custom_grid-img {padding: 0;}"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "rich_text",
+    "video_img_banner_Yh7kJm",
+    "collage_grid_ndUiBn",
+    "main_banner_a9W3Pk",
+    "abouthome_mjrUJg",
+    "features_hm_WAd7RR",
+    "product_features_79mwrm",
+    "featured_collection_7EHj3j",
+    "people_saying_6p3jQR",
+    "partners_yMbjmb",
+    "reels_ELBUYi"
+  ]
+}
