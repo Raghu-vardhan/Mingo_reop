@@ -1,1 +1,220 @@
-{"sections":{"main":{"type":"main-page","disabled":true,"settings":{"padding_top":28,"padding_bottom":28}},"breadcrumb_3GDDaL":{"type":"breadcrumb","disabled":true,"settings":{}},"main_banner_Xc8WPX":{"type":"main-banner","settings":{"banner_image":"shopify:\/\/shop_images\/About-US_7721017b-ff39-4f7d-8a7e-26dcd2f7efa3.png","svg_icon":""}},"about_uss_aDgcdH":{"type":"About-uss","blocks":{"brand_HPWean":{"type":"Brand","settings":{"desc":"GoGummies are a colorful fusion of nutrients and flavors"}},"brand_yQnKha":{"type":"Brand","settings":{"desc":"Momints are refreshing oral strips combined with medicinal supplements"}},"brand_W7UyrF":{"type":"Brand","settings":{"desc":"Momints are refreshing oral strips combined with medicinal supplements"}}},"block_order":["brand_HPWean","brand_yQnKha","brand_W7UyrF"],"settings":{"about_heading":"About Us","desc_about":"<p>Mingo is a brand rooted in subtle sophistication, combining a science-driven, vibrant, and indulgent approach to wellness. <\/p><p>Our mission is to inspire self-care for everyone, making urban living effortlessly simple and guilt-free.<\/p><p>Our diverse product range is thoughtfully curated and inclusive, featuring:<\/p><ul><li><strong>MoMints<\/strong>: Pocket-sized oral strips.<\/li><li><strong>Go Gummies<\/strong>: Chewable opaque gummies designed for holistic health.<\/li><li><strong>Syn<\/strong>: Delicious probiotic and prebiotic chocolates.<\/li><\/ul><p>Each product is crafted to cater to adults while offering special editions for kids, promoting overall well-being, enhancing self-care routines, and redefining the way we approach health.<\/p>","brand_heading":""}},"video_9yzhtb":{"type":"video","custom_css":[".isolate {width: 60%;}"],"settings":{"heading":"","heading_size":"h1","enable_video_looping":false,"video_url":"","description":"","full_width":false,"color_scheme":"","padding_top":36,"padding_bottom":36}},"about_second_k3U4Te":{"type":"about-second","settings":{"about-second_img":"shopify:\/\/shop_images\/Rectangle_231_1_c66e9cf2-9ad1-4f08-96f8-2876626113c7.png","sec-abt_heading":"Our Mission","sec-abt_desc":"At Mingo, our mission is to revolutionize wellness by offering convenient, enjoyable, and nutritional solutions that fit effortlessly into the modern lifestyle. Through innovation and a commitment to health, we strive to empower individuals to take charge of their well-being with high-quality and inclusive products, one delicious bite at a time.","sec1-abt_heading":"Our Vision","sec1-abt_desc":"Our vision is to become the leading brand in the wellness space, known for blending health and convenience. By continually expanding our range of innovative products and staying at the forefront of wellness trends, Mingo aims to help people everywhere live healthier and happier."}},"our_team_btM339":{"type":"Our-team","blocks":{"our_team_block_yXAiVn":{"type":"our_team-block","settings":{"our_team_img":"shopify:\/\/shop_images\/Srilakshmi-Yarlagadda_v1.png","our_team_title":"Srilakshmi Yarlagadda","our_team_right":"Founder","our_team_text":""}},"our_team_block_rx6wVd":{"type":"our_team-block","settings":{"our_team_img":"shopify:\/\/shop_images\/Harry-Ganesh_v1.png","our_team_title":"Harry Ganesh","our_team_right":"founder","our_team_text":""}},"our_team_block_KWYDmf":{"type":"our_team-block","settings":{"our_team_img":"shopify:\/\/shop_images\/Dr.-Trinath-Tummepalli_v1.png","our_team_title":"Dr. Trinath Tummepalli","our_team_right":"Director","our_team_text":""}},"our_team_block_TEqEyp":{"type":"our_team-block","settings":{"our_team_title":"","our_team_right":"","our_team_text":""}}},"block_order":["our_team_block_yXAiVn","our_team_block_rx6wVd","our_team_block_KWYDmf","our_team_block_TEqEyp"],"settings":{"our_team-heading":"Our Visionaries","our_team-desc":"Our team is a group of passionate individuals dedicated to making wellness accessible, bringing together experts from nutrition, science, and innovation to create products that seamlessly fit into modern lifestyles."}},"carousal_Qb4d7L":{"type":"carousal","blocks":{"image_MYUcfW":{"type":"image","settings":{"carousel_image":"shopify:\/\/shop_images\/Rectangle_266_a07d92c4-93b1-4f30-9825-c82a47569222.jpg","alt_text":"Carousel Image"}},"image_DVHFJe":{"type":"image","settings":{"carousel_image":"shopify:\/\/shop_images\/Rectangle_266_a07d92c4-93b1-4f30-9825-c82a47569222.jpg","alt_text":"Carousel Image"}},"image_7FPAiq":{"type":"image","settings":{"carousel_image":"shopify:\/\/shop_images\/Rectangle_266_a07d92c4-93b1-4f30-9825-c82a47569222.jpg","alt_text":"Carousel Image"}},"image_DbwmfU":{"type":"image","settings":{"carousel_image":"shopify:\/\/shop_images\/Rectangle_266_a07d92c4-93b1-4f30-9825-c82a47569222.jpg","alt_text":"Carousel Image"}},"image_aaHVKb":{"type":"image","settings":{"carousel_image":"shopify:\/\/shop_images\/Rectangle_266_a07d92c4-93b1-4f30-9825-c82a47569222.jpg","alt_text":"Carousel Image"}},"image_pTi8qB":{"type":"image","settings":{"carousel_image":"shopify:\/\/shop_images\/Rectangle_266_a07d92c4-93b1-4f30-9825-c82a47569222.jpg","alt_text":"Carousel Image"}},"image_Xfigw4":{"type":"image","settings":{"carousel_image":"shopify:\/\/shop_images\/Rectangle_266_a07d92c4-93b1-4f30-9825-c82a47569222.jpg","alt_text":"Carousel Image"}}},"block_order":["image_MYUcfW","image_DVHFJe","image_7FPAiq","image_DbwmfU","image_aaHVKb","image_pTi8qB","image_Xfigw4"],"settings":{"auto_slide_duration":3,"heading":"Countries we are Present"}}},"order":["main","breadcrumb_3GDDaL","main_banner_Xc8WPX","about_uss_aDgcdH","video_9yzhtb","about_second_k3U4Te","our_team_btM339","carousal_Qb4d7L"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "breadcrumb_3GDDaL": {
+      "type": "breadcrumb",
+      "disabled": true,
+      "settings": {}
+    },
+    "main_banner_Xc8WPX": {
+      "type": "main-banner",
+      "settings": {
+        "banner_image": "shopify://shop_images/About_Us_Banner.png",
+        "svg_icon": ""
+      }
+    },
+    "about_uss_aDgcdH": {
+      "type": "About-uss",
+      "blocks": {
+        "brand_HPWean": {
+          "type": "Brand",
+          "settings": {
+            "desc": "GoGummies are a colorful fusion of nutrients and flavors"
+          }
+        },
+        "brand_yQnKha": {
+          "type": "Brand",
+          "settings": {
+            "desc": "Momints are refreshing oral strips combined with medicinal supplements"
+          }
+        },
+        "brand_W7UyrF": {
+          "type": "Brand",
+          "settings": {
+            "desc": "Momints are refreshing oral strips combined with medicinal supplements"
+          }
+        }
+      },
+      "block_order": [
+        "brand_HPWean",
+        "brand_yQnKha",
+        "brand_W7UyrF"
+      ],
+      "settings": {
+        "about_heading": "About Us",
+        "desc_about": "<p>Mingo is a brand rooted in subtle sophistication, combining a science-driven, vibrant, and indulgent approach to wellness. </p><p>Our mission is to inspire self-care for everyone, making urban living effortlessly simple and guilt-free.</p><p>Our diverse product range is thoughtfully curated and inclusive, featuring:</p><ul><li><strong>MoMints</strong>: Pocket-sized oral strips.</li><li><strong>Go Gummies</strong>: Chewable opaque gummies designed for holistic health.</li><li><strong>Syn</strong>: Delicious probiotic and prebiotic chocolates.</li></ul><p>Each product is crafted to cater to adults while offering special editions for kids, promoting overall well-being, enhancing self-care routines, and redefining the way we approach health.</p>",
+        "brand_heading": ""
+      }
+    },
+    "video_9yzhtb": {
+      "type": "video",
+      "custom_css": [
+        ".isolate {width: 60%;}"
+      ],
+      "settings": {
+        "heading": "",
+        "heading_size": "h1",
+        "enable_video_looping": false,
+        "video_url": "",
+        "description": "",
+        "full_width": false,
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "about_second_k3U4Te": {
+      "type": "about-second",
+      "settings": {
+        "about-second_img": "shopify://shop_images/Rectangle_231_1_c66e9cf2-9ad1-4f08-96f8-2876626113c7.png",
+        "sec-abt_heading": "Our Mission",
+        "sec-abt_desc": "At Mingo, our mission is to revolutionize wellness by offering convenient, enjoyable, and nutritional solutions that fit effortlessly into the modern lifestyle. Through innovation and a commitment to health, we strive to empower individuals to take charge of their well-being with high-quality and inclusive products, one delicious bite at a time.",
+        "sec1-abt_heading": "Our Vision",
+        "sec1-abt_desc": "Our vision is to become the leading brand in the wellness space, known for blending health and convenience. By continually expanding our range of innovative products and staying at the forefront of wellness trends, Mingo aims to help people everywhere live healthier and happier."
+      }
+    },
+    "our_team_btM339": {
+      "type": "Our-team",
+      "blocks": {
+        "our_team_block_yXAiVn": {
+          "type": "our_team-block",
+          "settings": {
+            "our_team_img": "shopify://shop_images/Srilakshmi-Yarlagadda_v1.png",
+            "our_team_title": "Srilakshmi Yarlagadda",
+            "our_team_right": "Founder",
+            "our_team_text": ""
+          }
+        },
+        "our_team_block_rx6wVd": {
+          "type": "our_team-block",
+          "settings": {
+            "our_team_img": "shopify://shop_images/Harry-Ganesh_v1.png",
+            "our_team_title": "Harry Ganesh",
+            "our_team_right": "founder",
+            "our_team_text": ""
+          }
+        },
+        "our_team_block_KWYDmf": {
+          "type": "our_team-block",
+          "settings": {
+            "our_team_img": "shopify://shop_images/Dr.-Trinath-Tummepalli_v1.png",
+            "our_team_title": "Dr. Trinath Tummepalli",
+            "our_team_right": "Director",
+            "our_team_text": ""
+          }
+        },
+        "our_team_block_TEqEyp": {
+          "type": "our_team-block",
+          "settings": {
+            "our_team_title": "",
+            "our_team_right": "",
+            "our_team_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "our_team_block_yXAiVn",
+        "our_team_block_rx6wVd",
+        "our_team_block_KWYDmf",
+        "our_team_block_TEqEyp"
+      ],
+      "settings": {
+        "our_team-heading": "Our Visionaries",
+        "our_team-desc": "Our team is a group of passionate individuals dedicated to making wellness accessible, bringing together experts from nutrition, science, and innovation to create products that seamlessly fit into modern lifestyles."
+      }
+    },
+    "carousal_Qb4d7L": {
+      "type": "carousal",
+      "blocks": {
+        "image_MYUcfW": {
+          "type": "image",
+          "settings": {
+            "carousel_image": "shopify://shop_images/Rectangle_266_a07d92c4-93b1-4f30-9825-c82a47569222.jpg",
+            "alt_text": "Carousel Image"
+          }
+        },
+        "image_DVHFJe": {
+          "type": "image",
+          "settings": {
+            "carousel_image": "shopify://shop_images/Rectangle_266_a07d92c4-93b1-4f30-9825-c82a47569222.jpg",
+            "alt_text": "Carousel Image"
+          }
+        },
+        "image_7FPAiq": {
+          "type": "image",
+          "settings": {
+            "carousel_image": "shopify://shop_images/Rectangle_266_a07d92c4-93b1-4f30-9825-c82a47569222.jpg",
+            "alt_text": "Carousel Image"
+          }
+        },
+        "image_DbwmfU": {
+          "type": "image",
+          "settings": {
+            "carousel_image": "shopify://shop_images/Rectangle_266_a07d92c4-93b1-4f30-9825-c82a47569222.jpg",
+            "alt_text": "Carousel Image"
+          }
+        },
+        "image_aaHVKb": {
+          "type": "image",
+          "settings": {
+            "carousel_image": "shopify://shop_images/Rectangle_266_a07d92c4-93b1-4f30-9825-c82a47569222.jpg",
+            "alt_text": "Carousel Image"
+          }
+        },
+        "image_pTi8qB": {
+          "type": "image",
+          "settings": {
+            "carousel_image": "shopify://shop_images/Rectangle_266_a07d92c4-93b1-4f30-9825-c82a47569222.jpg",
+            "alt_text": "Carousel Image"
+          }
+        },
+        "image_Xfigw4": {
+          "type": "image",
+          "settings": {
+            "carousel_image": "shopify://shop_images/Rectangle_266_a07d92c4-93b1-4f30-9825-c82a47569222.jpg",
+            "alt_text": "Carousel Image"
+          }
+        }
+      },
+      "block_order": [
+        "image_MYUcfW",
+        "image_DVHFJe",
+        "image_7FPAiq",
+        "image_DbwmfU",
+        "image_aaHVKb",
+        "image_pTi8qB",
+        "image_Xfigw4"
+      ],
+      "settings": {
+        "auto_slide_duration": 3,
+        "heading": "Countries we are Present"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "breadcrumb_3GDDaL",
+    "main_banner_Xc8WPX",
+    "about_uss_aDgcdH",
+    "video_9yzhtb",
+    "about_second_k3U4Te",
+    "our_team_btM339",
+    "carousal_Qb4d7L"
+  ]
+}
