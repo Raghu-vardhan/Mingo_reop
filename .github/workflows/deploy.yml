@@ -20,3 +20,4 @@ jobs:
 
       - name: Deploy theme to Shopify
         run: shopify theme push --allow-live  # Use '--allow-live' for live deployment (optional)
+ 
