@@ -189,6 +189,9 @@
         "box_gKgEf7",
         "box_E6Y7qW"
       ],
+      "custom_css": [
+        ".box-main{background:#fff;}"
+      ],
       "settings": {
         "heading": "What People are Saying"
       }
