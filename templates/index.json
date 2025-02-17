@@ -171,14 +171,6 @@
             "quote": "Happy Customer",
             "description": "I never thought supplements could be this fun! From delicious Go Gummies to melt-in-your-mouth MoMints, Mingo has changed the way I take my daily nutrients. Health has never felt this effortless!"
           }
-        },
-        "box_E6Y7qW": {
-          "type": "box",
-          "settings": {
-            "title": "Partner Name",
-            "quote": "Customer Quote",
-            "description": "Our trusted partners share our commitment to quality, innovation, and well-being, collaborating with us to bring the best in health and wellness."
-          }
         }
       },
       "block_order": [
@@ -186,11 +178,10 @@
         "box_3CprMU",
         "box_AcWwNA",
         "box_p7QxJM",
-        "box_gKgEf7",
-        "box_E6Y7qW"
+        "box_gKgEf7"
       ],
       "custom_css": [
-        ".box-main{background:#fff;}"
+        ".box-main {background: #fff;}"
       ],
       "settings": {
         "heading": "What People are Saying"
