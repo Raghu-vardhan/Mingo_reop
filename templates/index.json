@@ -256,6 +256,7 @@
         "image_kA7y6P",
         "image_9kAAgH"
       ],
+      "disabled": true,
       "settings": {
         "partner_heading": "Our Partners",
         "partner_description": "Our trusted partners share our commitment to quality, innovation, and well-being, collaborating with us to bring the best in health and wellness."
@@ -302,6 +303,7 @@
         "video_8YPXya",
         "video_a6LX7U"
       ],
+      "disabled": true,
       "custom_css": [
         ".custom_grid-img {background: inherit;}",
         ".custom_grid-img {padding: 0;}"

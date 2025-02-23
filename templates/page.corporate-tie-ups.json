@@ -32,6 +32,7 @@
     },
     "corp_partner_6XHRMU": {
       "type": "corp-partner",
+      "disabled": true,
       "settings": {
         "corp-partner-heading": "Partner with us",
         "corp-partner-desc": "At Mingo, we’re always seeking new partnerships to expand our mission of making wellness accessible and enjoyable for everyone.Whether you're a retailer, distributor, or part of the health and wellness industry, we invite you to join us.",
@@ -98,6 +99,7 @@
         "image_dbcYAp",
         "image_3iPU7V"
       ],
+      "disabled": true,
       "custom_css": [
         ".partner-main {gap: 0px; margin-top: 70px;}"
       ],

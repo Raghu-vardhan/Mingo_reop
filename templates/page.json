@@ -64,6 +64,7 @@
     },
     "video_9yzhtb": {
       "type": "video",
+      "disabled": true,
       "custom_css": [
         ".isolate {width: 60%;}"
       ],
@@ -201,6 +202,7 @@
         "image_pTi8qB",
         "image_Xfigw4"
       ],
+      "disabled": true,
       "settings": {
         "auto_slide_duration": 3,
         "heading": "Countries we are Present"
