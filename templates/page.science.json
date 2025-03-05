@@ -161,9 +161,8 @@
         "image_yELKWf",
         "image_bEtta7"
       ],
-      "disabled": true,
       "settings": {
-        "auto_slide_duration": 3,
+        "auto_slide_duration": 5,
         "heading": "Clinical Research"
       }
     }
