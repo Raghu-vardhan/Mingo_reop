@@ -45,59 +45,110 @@
         "image_6XbXh4": {
           "type": "image",
           "settings": {
-            "partner_img": "shopify://shop_images/Rectangle_266.jpg"
-          }
-        },
-        "image_kGpQen": {
-          "type": "image",
-          "settings": {
-            "partner_img": "shopify://shop_images/Rectangle_266.jpg"
-          }
-        },
-        "image_UdQKDk": {
-          "type": "image",
-          "settings": {
-            "partner_img": "shopify://shop_images/Rectangle_266.jpg"
+            "partner_img": "shopify://shop_images/imageedit_27_6028751756.png"
           }
         },
         "image_GhGLEa": {
           "type": "image",
           "settings": {
-            "partner_img": "shopify://shop_images/Rectangle_266.jpg"
+            "partner_img": "shopify://shop_images/cargo.png"
+          }
+        },
+        "image_8xwJei": {
+          "type": "image",
+          "settings": {
+            "partner_img": "shopify://shop_images/green_nature.png"
+          }
+        },
+        "image_bUeKMr": {
+          "type": "image",
+          "settings": {
+            "partner_img": "shopify://shop_images/sdex.png"
+          }
+        },
+        "image_UdQKDk": {
+          "type": "image",
+          "settings": {
+            "partner_img": "shopify://shop_images/biophore.png"
+          }
+        },
+        "image_kGpQen": {
+          "type": "image",
+          "settings": {
+            "partner_img": "shopify://shop_images/amma.png"
+          }
+        },
+        "image_CbQ7mN": {
+          "type": "image",
+          "settings": {
+            "partner_img": "shopify://shop_images/neuland.png"
           }
         },
         "image_baWnRH": {
           "type": "image",
           "settings": {
-            "partner_img": "shopify://shop_images/Rectangle_266.jpg"
+            "partner_img": "shopify://shop_images/Dideu.png"
           }
         },
         "image_aUFq7m": {
           "type": "image",
           "settings": {
-            "partner_img": "shopify://shop_images/Rectangle_266.jpg"
+            "partner_img": "shopify://shop_images/esthetic_i.png"
           }
         },
         "image_dbcYAp": {
           "type": "image",
           "settings": {
-            "partner_img": "shopify://shop_images/Rectangle_266.jpg"
+            "partner_img": "shopify://shop_images/joshpa.png"
           }
         },
-        "image_3iPU7V": {
+        "image_ycFhNn": {
           "type": "image",
-          "settings": {}
+          "settings": {
+            "partner_img": "shopify://shop_images/omni.png"
+          }
+        },
+        "image_PVHRLg": {
+          "type": "image",
+          "settings": {
+            "partner_img": "shopify://shop_images/Picture_1.png"
+          }
+        },
+        "image_JjNBtM": {
+          "type": "image",
+          "settings": {
+            "partner_img": "shopify://shop_images/realcade.png"
+          }
+        },
+        "image_GqUKgV": {
+          "type": "image",
+          "settings": {
+            "partner_img": "shopify://shop_images/seasons.png"
+          }
+        },
+        "image_hJdmfG": {
+          "type": "image",
+          "settings": {
+            "partner_img": "shopify://shop_images/sk_healthcare.png"
+          }
         }
       },
       "block_order": [
         "image_6XbXh4",
-        "image_kGpQen",
-        "image_UdQKDk",
         "image_GhGLEa",
+        "image_8xwJei",
+        "image_bUeKMr",
+        "image_UdQKDk",
+        "image_kGpQen",
+        "image_CbQ7mN",
         "image_baWnRH",
         "image_aUFq7m",
         "image_dbcYAp",
-        "image_3iPU7V"
+        "image_ycFhNn",
+        "image_PVHRLg",
+        "image_JjNBtM",
+        "image_GqUKgV",
+        "image_hJdmfG"
       ],
       "disabled": true,
       "custom_css": [
@@ -106,6 +157,137 @@
       "settings": {
         "partner_heading": "Our Partners",
         "partner_description": ""
+      }
+    },
+    "carousal_eRdUMd": {
+      "type": "carousal",
+      "blocks": {
+        "image_XfQkhQ": {
+          "type": "image",
+          "settings": {
+            "carousel_image": "shopify://shop_images/cargo.png",
+            "alt_text": "Carousel Image"
+          }
+        },
+        "image_hwG3Bw": {
+          "type": "image",
+          "settings": {
+            "carousel_image": "shopify://shop_images/sdex.png",
+            "alt_text": "Carousel Image"
+          }
+        },
+        "image_DNPfk8": {
+          "type": "image",
+          "settings": {
+            "carousel_image": "shopify://shop_images/imageedit_27_6028751756.png",
+            "alt_text": "Carousel Image"
+          }
+        },
+        "image_3nAp88": {
+          "type": "image",
+          "settings": {
+            "carousel_image": "shopify://shop_images/esthetic_i.png",
+            "alt_text": "Carousel Image"
+          }
+        },
+        "image_JHmbtM": {
+          "type": "image",
+          "settings": {
+            "carousel_image": "shopify://shop_images/sk_healthcare.png",
+            "alt_text": "Carousel Image"
+          }
+        },
+        "image_rNTBtn": {
+          "type": "image",
+          "settings": {
+            "carousel_image": "shopify://shop_images/seasons.png",
+            "alt_text": "Carousel Image"
+          }
+        },
+        "image_QPPp9B": {
+          "type": "image",
+          "settings": {
+            "carousel_image": "shopify://shop_images/realcade.png",
+            "alt_text": "Carousel Image"
+          }
+        },
+        "image_wnmGtF": {
+          "type": "image",
+          "settings": {
+            "carousel_image": "shopify://shop_images/Picture_1.png",
+            "alt_text": "Carousel Image"
+          }
+        },
+        "image_mbcwLX": {
+          "type": "image",
+          "settings": {
+            "carousel_image": "shopify://shop_images/omni.png",
+            "alt_text": "Carousel Image"
+          }
+        },
+        "image_33pTaJ": {
+          "type": "image",
+          "settings": {
+            "carousel_image": "shopify://shop_images/neuland.png",
+            "alt_text": "Carousel Image"
+          }
+        },
+        "image_aeGqtr": {
+          "type": "image",
+          "settings": {
+            "carousel_image": "shopify://shop_images/joshpa.png",
+            "alt_text": "Carousel Image"
+          }
+        },
+        "image_cJwUzU": {
+          "type": "image",
+          "settings": {
+            "carousel_image": "shopify://shop_images/green_nature.png",
+            "alt_text": "Carousel Image"
+          }
+        },
+        "image_CVUPAi": {
+          "type": "image",
+          "settings": {
+            "carousel_image": "shopify://shop_images/Dideu.png",
+            "alt_text": "Carousel Image"
+          }
+        },
+        "image_dXfL8y": {
+          "type": "image",
+          "settings": {
+            "carousel_image": "shopify://shop_images/biophore.png",
+            "alt_text": "Carousel Image"
+          }
+        },
+        "image_DjpKBU": {
+          "type": "image",
+          "settings": {
+            "carousel_image": "shopify://shop_images/amma.png",
+            "alt_text": "Carousel Image"
+          }
+        }
+      },
+      "block_order": [
+        "image_XfQkhQ",
+        "image_hwG3Bw",
+        "image_DNPfk8",
+        "image_3nAp88",
+        "image_JHmbtM",
+        "image_rNTBtn",
+        "image_QPPp9B",
+        "image_wnmGtF",
+        "image_mbcwLX",
+        "image_33pTaJ",
+        "image_aeGqtr",
+        "image_cJwUzU",
+        "image_CVUPAi",
+        "image_dXfL8y",
+        "image_DjpKBU"
+      ],
+      "settings": {
+        "auto_slide_duration": 5,
+        "heading": "Our Partners"
       }
     },
     "corp_team_UN363N": {
@@ -160,6 +342,7 @@
     "corp_partner_6XHRMU",
     "partners_emMLex",
     "corp_team_UN363N",
+    "carousal_eRdUMd",
     "contact_form_DFUEnR"
   ]
 }

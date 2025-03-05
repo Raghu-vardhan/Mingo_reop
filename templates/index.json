@@ -130,46 +130,46 @@
         "box_wwVr6P": {
           "type": "box",
           "settings": {
-            "image": "shopify://shop_images/6_f4c40df7-1875-4a09-8829-0ce6ac4308ff.png",
-            "title": "Ananya Mehta,",
-            "quote": "Yoga Expert",
-            "description": "As a yoga practitioner, I always look for natural ways to support my body. Go Gummies have been a game-changer, especially for hair and skin health. They’re easy to take, taste great, and fit perfectly into my wellness routine!\""
+            "image": "shopify://shop_images/thesdex_logo.jpg",
+            "title": "Anjan Roy",
+            "quote": "Founder, SDEX",
+            "description": "We have been using their products for over 3 years. Firstly, the taste is really good. The gummies are very chewy and you can’t resist after eating one. We use and promote their products through our network"
           }
         },
         "box_3CprMU": {
           "type": "box",
           "settings": {
-            "image": "shopify://shop_images/5_ff9c1baa-f85f-49bd-8430-b17228f728ec.png",
-            "title": "Rohan Iyer",
-            "quote": "Student",
-            "description": "\"With my hectic study schedule, I needed something quick and effective. MoMints oral strips are perfect instant energy and focus without the hassle of water or pills. Absolute lifesaver during exams!\""
+            "image": "shopify://shop_images/cargo-exchange-india-pvt-ltd-jubilee-hills-hyderabad-corporate-companies-wlvnlpkvzr-250.webp",
+            "title": "Srihari",
+            "quote": "Founder, Cargo Exchange",
+            "description": "Superb product portfolio. I have tasted their gummies and chocolates. Their products – Gogummies, Momints and SYN are one of its kind. We use and promote their products in our national and international networks"
           }
         },
         "box_AcWwNA": {
           "type": "box",
           "settings": {
-            "image": "shopify://shop_images/1_80233810-fb1e-4def-aab5-06ec930d9fb6.png",
-            "title": "Nikita Sharma",
-            "quote": " Vegan Consumer",
-            "description": "\"Finding good vegan supplements is tough, but Mingo makes it easy. Their plant-based Go Gummies give me all the nutrients I need without compromising my lifestyle. Finally, a supplement that works and tastes amazing!\""
+            "image": "shopify://shop_images/Untitled_design.png",
+            "title": "Amma Hospitals",
+            "quote": "Healthcare Provider",
+            "description": "It has been 3 years that we have their products in our pharmacies. Their oral strips are very effective and a better alternative for tablets and capsules. They have about 20 health supplements products like Vitamin C, D, Multivitamin, B Complex, Iron, women health etc."
+          }
+        },
+        "box_zDYidg": {
+          "type": "box",
+          "settings": {
+            "image": "shopify://shop_images/Untitled_design_1.png",
+            "title": "Aarka Hospitals",
+            "quote": "Healthcare Provider",
+            "description": "We are a wellness hospital and our patients strive on asking health supplements that are natural, safe and effective. Now we found the right partner who supply gummies and oral strips with a wide range of products. We are very happy with Momints and Gogummies."
           }
         },
         "box_p7QxJM": {
           "type": "box",
           "settings": {
-            "image": "shopify://shop_images/3_f651ea0f-8089-414e-8359-3511222e23cd.png",
-            "title": "Dr. Arvind Kapoor",
-            "quote": " Nutritionist",
-            "description": "\"Mingo’s science backed approach to wellness is impressive. Their bioavailable formulas ensure maximum absorption, making supplements more effective. I confidently recommend them to my clients looking for smart, convenient nutrition.\""
-          }
-        },
-        "box_gKgEf7": {
-          "type": "box",
-          "settings": {
-            "image": "shopify://shop_images/4_0d33ad2b-3ab8-427f-952e-bfaae6c7776a.png",
-            "title": "Neha Verm",
-            "quote": "Happy Customer",
-            "description": "I never thought supplements could be this fun! From delicious Go Gummies to melt-in-your-mouth MoMints, Mingo has changed the way I take my daily nutrients. Health has never felt this effortless!"
+            "image": "shopify://shop_images/Untitled_design_c081e634-b399-4540-9e40-3d1e780ae598.png",
+            "title": "Mr. Ganesh M R",
+            "quote": "SK Healthcare",
+            "description": "We are very happy with the product range of Mingo nutrition. We use and promote their products across our customer network."
           }
         }
       },
@@ -177,8 +177,8 @@
         "box_wwVr6P",
         "box_3CprMU",
         "box_AcWwNA",
-        "box_p7QxJM",
-        "box_gKgEf7"
+        "box_zDYidg",
+        "box_p7QxJM"
       ],
       "custom_css": [
         ".box-main {background: #fff;}"

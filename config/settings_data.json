@@ -19,7 +19,7 @@
     "type_body_font": "bricolage_grotesque_n4",
     "body_scale": 100,
     "page_width": 1300,
-    "spacing_sections": 0,
+    "spacing_sections": 20,
     "spacing_grid_horizontal": 12,
     "spacing_grid_vertical": 40,
     "animations_reveal_on_scroll": true,
@@ -225,6 +225,17 @@
           "background": "{{ shop.brand.colors.primary[0].background }}",
           "background_gradient": "",
           "text": "#121212",
+          "button": "#121212",
+          "button_label": "#ffffff",
+          "secondary_button_label": "#121212",
+          "shadow": "#121212"
+        }
+      },
+      "scheme-5b30bd8b-278d-435f-a802-843c4d0b489b": {
+        "settings": {
+          "background": "#ffffff",
+          "background_gradient": "",
+          "text": "#7505af",
           "button": "#121212",
           "button_label": "#ffffff",
           "secondary_button_label": "#121212",
