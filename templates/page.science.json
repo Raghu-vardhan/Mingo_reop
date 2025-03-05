@@ -182,6 +182,7 @@
         "image_iANamd",
         "image_C9Qcii"
       ],
+      "disabled": true,
       "settings": {
         "auto_slide_duration": 5,
         "heading": "Clinical Research"
@@ -196,7 +197,7 @@
             "image": "shopify://shop_images/Your_paragraph_text_1.png",
             "title": "",
             "text": "",
-            "link_label": "",
+            "link_label": "nljl",
             "link": "https://cpdclinicalbiochem.co.uk/article/the-association-of-screen-time-quality-of-sleep-and-dry-eye-506/"
           }
         },
