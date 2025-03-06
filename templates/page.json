@@ -82,6 +82,7 @@
     },
     "about_second_k3U4Te": {
       "type": "about-second",
+      "disabled": true,
       "settings": {
         "about-second_img": "shopify://shop_images/Rectangle_231_1_c66e9cf2-9ad1-4f08-96f8-2876626113c7.png",
         "sec-abt_heading": "Our Mission",
