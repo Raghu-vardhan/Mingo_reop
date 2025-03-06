@@ -82,7 +82,6 @@
     },
     "about_second_k3U4Te": {
       "type": "about-second",
-      "disabled": true,
       "settings": {
         "about-second_img": "shopify://shop_images/Rectangle_231_1_c66e9cf2-9ad1-4f08-96f8-2876626113c7.png",
         "sec-abt_heading": "Our Mission",
@@ -136,6 +135,7 @@
         "our_team_block_KWYDmf",
         "our_team_block_TEqEyp"
       ],
+      "disabled": true,
       "settings": {
         "our_team-heading": "Our Visionaries",
         "our_team-desc": "Our team is a group of passionate individuals dedicated to making wellness accessible, bringing together experts from nutrition, science, and innovation to create products that seamlessly fit into modern lifestyles."
