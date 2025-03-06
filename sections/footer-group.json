@@ -40,7 +40,7 @@
           "type": "text",
           "settings": {
             "heading": "Contact Us",
-            "custom_html": "<ul class=\"address_book\">\n    <li>\n        <img src=\"https://cdn.shopify.com/s/files/1/0640/4830/0241/files/Location_on.svg?v=1723353773\">\n        <p class=\"hd_book\">\n            Mingo Nutrition, IP Foods Division, B5, TIE PHASE II, Balanagar Industrial Estate, Balanagar, Hyderabad 500037      </p>\n    </li>\n    <li>\n        <img src=\"https://cdn.shopify.com/s/files/1/0640/4830/0241/files/Email_1.svg?v=1723353741\">\n        <p> Services@mingo.com</p>\n    </li>\n    <li>   \n        <img src=\"https://cdn.shopify.com/s/files/1/0640/4830/0241/files/Call.svg?v=1723353741\">\n        <p>+91 0123456789 </p>\n    </li>\n</ul>"
+            "custom_html": "<ul class=\"address_book\">\n    <li>\n        <img src=\"https://cdn.shopify.com/s/files/1/0640/4830/0241/files/Location_on.svg?v=1723353773\">\n        <p class=\"hd_book\">\n            Mingo Nutrition, IP Foods Division, B5, TIE PHASE II, Balanagar Industrial Estate, Balanagar, Hyderabad 500037      </p>\n    </li>\n    <li>\n        <img src=\"https://cdn.shopify.com/s/files/1/0640/4830/0241/files/Email_1.svg?v=1723353741\">\n        <p> hey@heymingo.com</p>\n    </li>\n    <li>   \n        <img src=\"https://cdn.shopify.com/s/files/1/0640/4830/0241/files/Call.svg?v=1723353741\">\n        <p>+91 0123456789 </p>\n    </li>\n</ul>"
           }
         }
       },
