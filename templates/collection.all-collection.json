@@ -113,6 +113,7 @@
     },
     "featured_collection_C4crxC": {
       "type": "featured-collection",
+      "disabled": true,
       "custom_css": [
         "#shop_now {display: none;}"
       ],
@@ -212,6 +213,7 @@
     },
     "featured_collection_MxfBzm": {
       "type": "featured-collection",
+      "disabled": true,
       "custom_css": [
         "#shop_now {display: none;}"
       ],
