@@ -88,6 +88,49 @@
         "layout": "text-left"
       }
     },
+    "rich_text_gV4thR": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_ciFgPW": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>Clinical Research</strong>",
+            "heading_size": "h1"
+          }
+        },
+        "text_Q3MpKf": {
+          "type": "text",
+          "settings": {
+            "text": "<h2></h2><ul><li><br/>      🖥️ <strong>The Association of Screen Time, Quality of Sleep and Dry Eye</strong><br/><br/>      <a href=\"https://yourlink1.com\" target=\"_blank\">👉 Read more</a><br/>    </li><li><br/>      🌿 <strong>Clinical Efficacy of Vegan Nutraceuticals: A Study on Gummies & Strips</strong><br/><br/>      <a href=\"https://yourlink2.com\" target=\"_blank\">👉 Read more</a><br/>    </li><li><br/>      🍫 <strong>Probiotic Chocolates: A Sweet Path to Health</strong><br/><br/>      <a href=\"https://yourlink3.com\" target=\"_blank\">👉 Read more</a><br/>    </li><li><br/>      🍬 <strong>The Rise of Nutraceutical Gummies: Health Benefits & Preferences</strong><br/><br/>      <a href=\"https://yourlink4.com\" target=\"_blank\">👉 Read more</a><br/>    </li><li><br/>      🚀 <strong>Advancements in Gummy Delivery Systems for Better Bioavailability</strong><br/><br/>      <a href=\"https://yourlink5.com\" target=\"_blank\">👉 Read more</a><br/>    </li><li><br/>      🧃 <strong>Edible Innovations: Gummy Supplements & Nutritional Impact</strong><br/><br/>      <a href=\"https://yourlink6.com\" target=\"_blank\">👉 Read more</a><br/>    </li></ul>"
+          }
+        },
+        "button_ANEAiJ": {
+          "type": "button",
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_ciFgPW",
+        "text_Q3MpKf",
+        "button_ANEAiJ"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
     "img_content_JjTEKe": {
       "type": "img-content",
       "disabled": true,
@@ -281,6 +324,7 @@
     "img_content_npVy7n",
     "img_content_k7V9bx",
     "img_content_P8M7FH",
+    "rich_text_gV4thR",
     "img_content_JjTEKe",
     "carousal_VdWGDk",
     "multicolumn_NVBJmm"
