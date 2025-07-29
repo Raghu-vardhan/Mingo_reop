@@ -88,49 +88,6 @@
         "layout": "text-left"
       }
     },
-    "rich_text_gV4thR": {
-      "type": "rich-text",
-      "blocks": {
-        "heading_ciFgPW": {
-          "type": "heading",
-          "settings": {
-            "heading": "<strong>Clinical Research</strong>",
-            "heading_size": "h1"
-          }
-        },
-        "text_Q3MpKf": {
-          "type": "text",
-          "settings": {
-            "text": "<h2></h2><ul><li><br/>      🖥️ <strong>The Association of Screen Time, Quality of Sleep and Dry Eye</strong><br/><br/>      <a href=\"https://yourlink1.com\" target=\"_blank\">👉 Read more</a><br/>    </li><li><br/>      🌿 <strong>Clinical Efficacy of Vegan Nutraceuticals: A Study on Gummies & Strips</strong><br/><br/>      <a href=\"https://yourlink2.com\" target=\"_blank\">👉 Read more</a><br/>    </li><li><br/>      🍫 <strong>Probiotic Chocolates: A Sweet Path to Health</strong><br/><br/>      <a href=\"https://yourlink3.com\" target=\"_blank\">👉 Read more</a><br/>    </li><li><br/>      🍬 <strong>The Rise of Nutraceutical Gummies: Health Benefits & Preferences</strong><br/><br/>      <a href=\"https://yourlink4.com\" target=\"_blank\">👉 Read more</a><br/>    </li><li><br/>      🚀 <strong>Advancements in Gummy Delivery Systems for Better Bioavailability</strong><br/><br/>      <a href=\"https://yourlink5.com\" target=\"_blank\">👉 Read more</a><br/>    </li><li><br/>      🧃 <strong>Edible Innovations: Gummy Supplements & Nutritional Impact</strong><br/><br/>      <a href=\"https://yourlink6.com\" target=\"_blank\">👉 Read more</a><br/>    </li></ul>"
-          }
-        },
-        "button_ANEAiJ": {
-          "type": "button",
-          "settings": {
-            "button_label": "Button label",
-            "button_link": "",
-            "button_style_secondary": false,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
-        }
-      },
-      "block_order": [
-        "heading_ciFgPW",
-        "text_Q3MpKf",
-        "button_ANEAiJ"
-      ],
-      "name": "t:sections.rich-text.presets.name",
-      "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
-        "color_scheme": "",
-        "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 52
-      }
-    },
     "img_content_JjTEKe": {
       "type": "img-content",
       "disabled": true,
@@ -231,6 +188,88 @@
         "heading": "Clinical Research"
       }
     },
+    "collapsible_content_PjnNwb": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_D3nzwQ": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "The association of Screen Time, Quality of Sleep and Dry Eye",
+            "icon": "chat_bubble",
+            "row_content": "<p><a href=\"https://cpdclinicalbiochem.co.uk/article/the-association-of-screen-time-quality-of-sleep-and-dry-eye-506/\" target=\"_blank\" title=\"https://cpdclinicalbiochem.co.uk/article/the-association-of-screen-time-quality-of-sleep-and-dry-eye-506/\">View More</a></p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_zAddQN": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Clinical Efficacy and Patient Outcomes with Novel Vegan Nutraceuticals: A Study on Gummies and Oral Dissolving Strips",
+            "icon": "chat_bubble",
+            "row_content": "<p><a href=\"https://jccpractice.com/article/clinical-efficacy-and-patient-outcomes-with-novel-vegan-nutraceuticals-a-study-on-gummies-and-oral-dissolving-strips-263/\" target=\"_blank\" title=\"https://jccpractice.com/article/clinical-efficacy-and-patient-outcomes-with-novel-vegan-nutraceuticals-a-study-on-gummies-and-oral-dissolving-strips-263/\">View More</a></p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_eAkgD4": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Probiotic Chocolates: A Sweet Path to Health",
+            "icon": "chat_bubble",
+            "row_content": "<p><a href=\"https://www.jcdronline.org/paper.php?slug=probiotic-chocolates-a-sweet-path-to-health\" target=\"_blank\" title=\"https://www.jcdronline.org/paper.php?slug=probiotic-chocolates-a-sweet-path-to-health\">View More</a></p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_6xVYBM": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "The Rise of Nutraceutical Gummies: A Comprehensive Review of Health Benefits and Consumer Preferences",
+            "icon": "chat_bubble",
+            "row_content": "<p><a href=\"https://jamdsr.com/abstractissue.php?id=6933\" target=\"_blank\" title=\"https://jamdsr.com/abstractissue.php?id=6933\">View More</a></p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_cKJB9Y": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Advancements in Gummy Delivery Systems: Enhancing Bioavailability of Vitamins and Supplements",
+            "icon": "chat_bubble",
+            "row_content": "<p><a href=\"https://ijlbpr.com/abstractissue.php?id=4676\" target=\"_blank\" title=\"https://ijlbpr.com/abstractissue.php?id=4676\">View More</a></p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_JWeP46": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Edible Innovations: The Impact of Gummy Supplements on Nutritional Intake and Health Outcomes",
+            "icon": "chat_bubble",
+            "row_content": "<p><a href=\"https://ijrhas.com/abstractissue.php?id=1723\" target=\"_blank\" title=\"https://ijrhas.com/abstractissue.php?id=1723\">View More</a></p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_D3nzwQ",
+        "collapsible_row_zAddQN",
+        "collapsible_row_eAkgD4",
+        "collapsible_row_6xVYBM",
+        "collapsible_row_cKJB9Y",
+        "collapsible_row_JWeP46"
+      ],
+      "name": "t:sections.collapsible_content.presets.name",
+      "settings": {
+        "caption": "",
+        "heading": "Collapsible content",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "layout": "none",
+        "color_scheme": "",
+        "container_color_scheme": "",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "multicolumn_NVBJmm": {
       "type": "multicolumn",
       "blocks": {
@@ -324,9 +363,9 @@
     "img_content_npVy7n",
     "img_content_k7V9bx",
     "img_content_P8M7FH",
-    "rich_text_gV4thR",
     "img_content_JjTEKe",
     "carousal_VdWGDk",
+    "collapsible_content_PjnNwb",
     "multicolumn_NVBJmm"
   ]
 }
