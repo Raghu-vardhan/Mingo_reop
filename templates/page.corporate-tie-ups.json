@@ -63,7 +63,7 @@
         "image_bUeKMr": {
           "type": "image",
           "settings": {
-            "partner_img": "shopify://shop_images/sdex.png"
+            "partner_img": "shopify://shop_images/Artboard_1_1.png"
           }
         },
         "image_UdQKDk": {
@@ -157,6 +157,35 @@
       "settings": {
         "partner_heading": "Our Partners",
         "partner_description": ""
+      }
+    },
+    "corp_team_UN363N": {
+      "type": "corp-team",
+      "blocks": {
+        "image_eCQWk6": {
+          "type": "image",
+          "settings": {
+            "corp-team-img": "shopify://shop_images/Innovation-_-High-quality-products-icon.png",
+            "corp-team_title": "Science Backed Products",
+            "corp-team_desc-li": "Clinically approved and crafted with the latest nutritional innovations to meet modern dietary needs.",
+            "corp-team1-img": "shopify://shop_images/Growing-market-demand-icons.png",
+            "corp-team_title1": "Thriving Market Demand",
+            "corp-team_desc-li1": "Tap into a fast-growing health-conscious consumer base with our trusted wellness solutions.",
+            "corp-team2-img": "shopify://shop_images/Customized-solutions.png",
+            "corp-team_title2": "Customizable & Scalable",
+            "corp-team_desc-li2": "From bulk orders to co-branded collaborations, we tailor solutions to fit your business needs.",
+            "corp-team3-img": "shopify://shop_images/trusted-icon.png",
+            "corp-team_title3": "Inclusive & Trusted Brand",
+            "corp-team_desc-li3": "Vegan, gelatin-free, peanut-free, and soy-free—our products cater to diverse lifestyles, ensuring strong consumer appeal."
+          }
+        }
+      },
+      "block_order": [
+        "image_eCQWk6"
+      ],
+      "settings": {
+        "corp-team_heading": "Why partner with us",
+        "corp-team_desc": "Together, we can create a healthier, more balanced world—one delicious supplement at a time. \nLet’s collaborate and grow stronger together."
       }
     },
     "carousal_eRdUMd": {
@@ -288,35 +317,6 @@
       "settings": {
         "auto_slide_duration": 5,
         "heading": "Our Partners"
-      }
-    },
-    "corp_team_UN363N": {
-      "type": "corp-team",
-      "blocks": {
-        "image_eCQWk6": {
-          "type": "image",
-          "settings": {
-            "corp-team-img": "shopify://shop_images/Innovation-_-High-quality-products-icon.png",
-            "corp-team_title": "Science Backed Products",
-            "corp-team_desc-li": "Clinically approved and crafted with the latest nutritional innovations to meet modern dietary needs.",
-            "corp-team1-img": "shopify://shop_images/Growing-market-demand-icons.png",
-            "corp-team_title1": "Thriving Market Demand",
-            "corp-team_desc-li1": "Tap into a fast-growing health-conscious consumer base with our trusted wellness solutions.",
-            "corp-team2-img": "shopify://shop_images/Customized-solutions.png",
-            "corp-team_title2": "Customizable & Scalable",
-            "corp-team_desc-li2": "From bulk orders to co-branded collaborations, we tailor solutions to fit your business needs.",
-            "corp-team3-img": "shopify://shop_images/trusted-icon.png",
-            "corp-team_title3": "Inclusive & Trusted Brand",
-            "corp-team_desc-li3": "Vegan, gelatin-free, peanut-free, and soy-free—our products cater to diverse lifestyles, ensuring strong consumer appeal."
-          }
-        }
-      },
-      "block_order": [
-        "image_eCQWk6"
-      ],
-      "settings": {
-        "corp-team_heading": "Why partner with us",
-        "corp-team_desc": "Together, we can create a healthier, more balanced world—one delicious supplement at a time. \nLet’s collaborate and grow stronger together."
       }
     },
     "contact_form_DFUEnR": {
