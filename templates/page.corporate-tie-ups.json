@@ -250,7 +250,7 @@
         "image_mbcwLX": {
           "type": "image",
           "settings": {
-            "carousel_image": "shopify://shop_images/Artboard_1_6_1.png",
+            "carousel_image": "shopify://shop_images/Artboard_1_6.png",
             "alt_text": "Carousel Image"
           }
         },
