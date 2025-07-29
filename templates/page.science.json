@@ -257,98 +257,15 @@
       "name": "t:sections.collapsible_content.presets.name",
       "settings": {
         "caption": "",
-        "heading": "Collapsible content",
-        "heading_size": "h1",
-        "heading_alignment": "center",
+        "heading": "<strong>Clinical Research</strong>",
+        "heading_size": "h0",
+        "heading_alignment": "left",
         "layout": "none",
-        "color_scheme": "",
-        "container_color_scheme": "",
+        "color_scheme": "scheme-67f77afc-af53-47db-aba4-3535e5d8f302",
+        "container_color_scheme": "scheme-67f77afc-af53-47db-aba4-3535e5d8f302",
         "open_first_collapsible_row": false,
         "image_ratio": "adapt",
         "desktop_layout": "image_second",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "multicolumn_NVBJmm": {
-      "type": "multicolumn",
-      "blocks": {
-        "column_bQjLq3": {
-          "type": "column",
-          "settings": {
-            "title": "",
-            "text": "",
-            "link_label": "The association of Screen Time, Quality of Sleep and Dry Eye",
-            "link": "https://cpdclinicalbiochem.co.uk/article/the-association-of-screen-time-quality-of-sleep-and-dry-eye-506/"
-          }
-        },
-        "column_MmcE6X": {
-          "type": "column",
-          "settings": {
-            "title": "",
-            "text": "",
-            "link_label": "Clinical Efficacy and Patient Outcomes with Novel Vegan Nutraceuticals: A Study on Gummies and Oral Dissolving Strips",
-            "link": "https://jccpractice.com/article/clinical-efficacy-and-patient-outcomes-with-novel-vegan-nutraceuticals-a-study-on-gummies-and-oral-dissolving-strips-263/"
-          }
-        },
-        "column_XGdfGY": {
-          "type": "column",
-          "settings": {
-            "title": "",
-            "text": "",
-            "link_label": "Probiotic Chocolates: A Sweet Path to Health",
-            "link": "https://www.jcdronline.org/paper.php?slug=probiotic-chocolates-a-sweet-path-to-health"
-          }
-        },
-        "column_TpdnqD": {
-          "type": "column",
-          "settings": {
-            "title": "",
-            "text": "",
-            "link_label": "The Rise of Nutraceutical Gummies: A Comprehensive Review of Health Benefits and Consumer Preferences",
-            "link": "https://jamdsr.com/abstractissue.php?id=6933"
-          }
-        },
-        "column_nCDFz9": {
-          "type": "column",
-          "settings": {
-            "title": "",
-            "text": "",
-            "link_label": "Advancements in Gummy Delivery Systems: Enhancing Bioavailability of Vitamins and Supplements",
-            "link": "https://ijlbpr.com/abstractissue.php?id=4676"
-          }
-        },
-        "column_CKEwz3": {
-          "type": "column",
-          "settings": {
-            "title": "",
-            "text": "",
-            "link_label": "Edible Innovations: The Impact of Gummy Supplements on Nutritional Intake and Health Outcomes",
-            "link": "https://ijrhas.com/abstractissue.php?id=1723"
-          }
-        }
-      },
-      "block_order": [
-        "column_bQjLq3",
-        "column_MmcE6X",
-        "column_XGdfGY",
-        "column_TpdnqD",
-        "column_nCDFz9",
-        "column_CKEwz3"
-      ],
-      "settings": {
-        "title": "<strong>Clinical Research</strong>",
-        "heading_size": "h1",
-        "image_width": "full",
-        "image_ratio": "adapt",
-        "columns_desktop": 3,
-        "column_alignment": "left",
-        "background_style": "none",
-        "button_label": "",
-        "button_link": "",
-        "color_scheme": "scheme-5b30bd8b-278d-435f-a802-843c4d0b489b",
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
         "padding_top": 36,
         "padding_bottom": 36
       }
@@ -365,7 +282,6 @@
     "img_content_P8M7FH",
     "img_content_JjTEKe",
     "carousal_VdWGDk",
-    "collapsible_content_PjnNwb",
-    "multicolumn_NVBJmm"
+    "collapsible_content_PjnNwb"
   ]
 }
