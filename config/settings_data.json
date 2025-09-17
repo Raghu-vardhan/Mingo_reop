@@ -431,6 +431,8 @@
     }
   },
   "platform_customizations": {
-    "custom_css": []
+    "custom_css": [
+      ".product-image-wrapper img {height: 300px; /* Fixed height */ object-fit: cover; /* Ensures image covers the area without distortion */ width: 100%; /* Makes image responsive to width */}"
+    ]
   }
 }
