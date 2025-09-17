@@ -194,6 +194,13 @@
         "image_XfQkhQ": {
           "type": "image",
           "settings": {
+            "carousel_image": "shopify://shop_images/WhatsApp_Image_2025-09-16_at_5.40.47_PM.jpg",
+            "alt_text": "Carousel Image"
+          }
+        },
+        "image_y94enT": {
+          "type": "image",
+          "settings": {
             "carousel_image": "shopify://shop_images/Artboard_1_1_82f7899d-bb36-438c-9c7c-ba48a7159ba5.png",
             "alt_text": "Carousel Image"
           }
@@ -299,6 +306,7 @@
       },
       "block_order": [
         "image_XfQkhQ",
+        "image_y94enT",
         "image_hwG3Bw",
         "image_DNPfk8",
         "image_3nAp88",
