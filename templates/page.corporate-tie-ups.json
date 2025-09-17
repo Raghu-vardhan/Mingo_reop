@@ -323,7 +323,7 @@
         "image_DjpKBU"
       ],
       "custom_css": [
-        "img {height: 100px; /* Fixed height */ /*object-fit: cover; /* Ensures image covers the area without distortion */ width: 100%; /* Makes image responsive to width */}"
+        "img {height: 90px; /* Fixed height */ object-fit: cover; /* Ensures image covers the area without distortion */ width: 100%; /* Makes image responsive to width */}"
       ],
       "settings": {
         "auto_slide_duration": 3,
