@@ -1,0 +1,146 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "breadcrumb_3GDDaL": {
+      "type": "breadcrumb",
+      "settings": {}
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "corp_partner_6XHRMU": {
+      "type": "corp-partner",
+      "settings": {
+        "corp-partner-heading": "",
+        "corp-partner-desc": "Begin an innovative journey with Imojee, where we serve as your strategic companion. Join our vibrant Partner Community and showcase your unique portfolio. As a seller, manufacturer, or creator, collaborate with us to bring your exceptional products to a broader audience. When orders arrive,    ",
+        "corp-part_img": "shopify://shop_images/Rectangle_266.jpg"
+      }
+    },
+    "partners_emMLex": {
+      "type": "partners",
+      "blocks": {
+        "image_6XbXh4": {
+          "type": "image",
+          "settings": {
+            "partner_img": "shopify://shop_images/Rectangle_266.jpg"
+          }
+        },
+        "image_kGpQen": {
+          "type": "image",
+          "settings": {
+            "partner_img": "shopify://shop_images/Rectangle_266.jpg"
+          }
+        },
+        "image_UdQKDk": {
+          "type": "image",
+          "settings": {
+            "partner_img": "shopify://shop_images/Rectangle_266.jpg"
+          }
+        },
+        "image_GhGLEa": {
+          "type": "image",
+          "settings": {
+            "partner_img": "shopify://shop_images/Rectangle_266.jpg"
+          }
+        },
+        "image_baWnRH": {
+          "type": "image",
+          "settings": {
+            "partner_img": "shopify://shop_images/Rectangle_266.jpg"
+          }
+        },
+        "image_aUFq7m": {
+          "type": "image",
+          "settings": {
+            "partner_img": "shopify://shop_images/Rectangle_266.jpg"
+          }
+        },
+        "image_dbcYAp": {
+          "type": "image",
+          "settings": {
+            "partner_img": "shopify://shop_images/Rectangle_266.jpg"
+          }
+        },
+        "image_3iPU7V": {
+          "type": "image",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "image_6XbXh4",
+        "image_kGpQen",
+        "image_UdQKDk",
+        "image_GhGLEa",
+        "image_baWnRH",
+        "image_aUFq7m",
+        "image_dbcYAp",
+        "image_3iPU7V"
+      ],
+      "settings": {
+        "partner_heading": "Partners",
+        "partner_description": ""
+      }
+    },
+    "corp_team_UN363N": {
+      "type": "corp-team",
+      "blocks": {
+        "image_7GxNFF": {
+          "type": "image",
+          "settings": {
+            "corp-team-img": "shopify://shop_images/Layer_1_1.svg",
+            "corp-team_title": "Customer <br>Consulting",
+            "corp-team_desc-li": "Lorem Ipsum is simply dummy ext of the printing and typesettingindustry. Lorem Ipsum has been theindustry's",
+            "corp-team1-img": "shopify://shop_images/Layer_1_1.svg",
+            "corp-team_title1": "Customer<br>Consulting",
+            "corp-team_desc-li1": "Lorem Ipsum is simply dummy ext of the printing and typesettingindustry. Lorem Ipsum has been theindustry's",
+            "corp-team2-img": "shopify://shop_images/Layer_1_1.svg",
+            "corp-team_title2": "Customer <br>Consulting",
+            "corp-team_desc-li2": "Lorem Ipsum is simply dummy ext of the printing and typesettingindustry. Lorem Ipsum has been theindustry's",
+            "corp-team3-img": "shopify://shop_images/Layer_1_1.svg",
+            "corp-team_title3": "Customer <br> Consulting",
+            "corp-team_desc-li3": "Lorem Ipsum is simply dummy ext of the printing and typesettingindustry. Lorem Ipsum has been theindustry's"
+          }
+        }
+      },
+      "block_order": [
+        "image_7GxNFF"
+      ],
+      "settings": {
+        "corp-team_heading": "Partner with us",
+        "corp-team_desc": "Begin an innovative journey with Imojee, where we serve as your strategic companion. Join our vibrant Partner Community and showcase your unique portfolio."
+      }
+    },
+    "contact_form_BE4aNP": {
+      "type": "contact-form",
+      "settings": {
+        "heading": "Contact Us",
+        "heading_size": "h1",
+        "contact_descc": "",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "breadcrumb_3GDDaL",
+    "main",
+    "corp_partner_6XHRMU",
+    "partners_emMLex",
+    "corp_team_UN363N",
+    "contact_form_BE4aNP"
+  ]
+}
