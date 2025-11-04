@@ -20,13 +20,14 @@
     "main_banner_fpG8EC": {
       "type": "main-banner",
       "settings": {
-        "banner_image": "shopify://shop_images/Science_mingo.png",
+        "banner_image": "shopify://shop_images/Frame_4_1.png",
         "mobile_banner_image": "shopify://shop_images/Rectangle_266.jpg",
         "svg_icon": ""
       }
     },
     "img_content_Kif46G": {
       "type": "img-content",
+      "disabled": true,
       "custom_css": [
         "h2 {font-weight: 700;}",
         ".text-content p {margin: 10px 0;}",
@@ -44,12 +45,52 @@
     "science_heading_gNcm7p": {
       "type": "science-heading",
       "settings": {
-        "heading": " The Marvel of Modern Wellness",
-        "desc": "Advanced technologies driving smarter, faster, and more effective health solutions."
+        "heading": "Chewy. Delicious. Effective.",
+        "desc": "Health Meets Happiness."
+      }
+    },
+    "main_banner_jqEKFg": {
+      "type": "main-banner",
+      "name": "Single Banner",
+      "settings": {
+        "banner_image": "shopify://shop_images/Screenshot_2025-11-04_at_17.53.54.png",
+        "svg_icon": ""
+      }
+    },
+    "main_banner_cT7a4z": {
+      "type": "main-banner",
+      "name": "Single Banner",
+      "settings": {
+        "banner_image": "shopify://shop_images/Screenshot_2025-11-04_at_17.54.08.png",
+        "svg_icon": ""
+      }
+    },
+    "science_heading_mLyxn3": {
+      "type": "science-heading",
+      "settings": {
+        "heading": "Fast. Potent. Undeniable.",
+        "desc": "Ditch the Pills, Own the Moment."
+      }
+    },
+    "main_banner_KXEAxX": {
+      "type": "main-banner",
+      "name": "Single Banner",
+      "settings": {
+        "banner_image": "shopify://shop_images/Screenshot_2025-11-04_at_18.12.43.png",
+        "svg_icon": ""
+      }
+    },
+    "main_banner_B7WRnE": {
+      "type": "main-banner",
+      "name": "Single Banner",
+      "settings": {
+        "banner_image": "shopify://shop_images/Screenshot_2025-11-04_at_18.12.48.png",
+        "svg_icon": ""
       }
     },
     "img_content_UHECUR": {
       "type": "img-content",
+      "disabled": true,
       "settings": {
         "heading": "First of its kind Gummies",
         "desc": "",
@@ -60,6 +101,7 @@
     },
     "img_content_npVy7n": {
       "type": "img-content",
+      "disabled": true,
       "settings": {
         "heading": "Bioavailability",
         "desc": "",
@@ -70,6 +112,7 @@
     },
     "img_content_k7V9bx": {
       "type": "img-content",
+      "disabled": true,
       "settings": {
         "heading": "Encapsulation",
         "desc": "",
@@ -80,6 +123,7 @@
     },
     "img_content_P8M7FH": {
       "type": "img-content",
+      "disabled": true,
       "settings": {
         "heading": "Nanodrop Technology",
         "desc": "",
@@ -261,7 +305,7 @@
         "heading_size": "h0",
         "heading_alignment": "left",
         "layout": "none",
-        "color_scheme": "scheme-67f77afc-af53-47db-aba4-3535e5d8f302",
+        "color_scheme": "scheme-5b30bd8b-278d-435f-a802-843c4d0b489b",
         "container_color_scheme": "scheme-67f77afc-af53-47db-aba4-3535e5d8f302",
         "open_first_collapsible_row": false,
         "image_ratio": "adapt",
@@ -276,6 +320,11 @@
     "main_banner_fpG8EC",
     "img_content_Kif46G",
     "science_heading_gNcm7p",
+    "main_banner_jqEKFg",
+    "main_banner_cT7a4z",
+    "science_heading_mLyxn3",
+    "main_banner_KXEAxX",
+    "main_banner_B7WRnE",
     "img_content_UHECUR",
     "img_content_npVy7n",
     "img_content_k7V9bx",
