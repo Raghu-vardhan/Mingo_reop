@@ -54,6 +54,7 @@
       "name": "Single Banner",
       "settings": {
         "banner_image": "shopify://shop_images/Screenshot_2025-11-04_at_17.53.54.png",
+        "mobile_banner_image": "shopify://shop_images/Screenshot_2025-11-04_at_17.53.54.png",
         "svg_icon": ""
       }
     },
@@ -62,6 +63,7 @@
       "name": "Single Banner",
       "settings": {
         "banner_image": "shopify://shop_images/Screenshot_2025-11-04_at_17.54.08.png",
+        "mobile_banner_image": "shopify://shop_images/Screenshot_2025-11-04_at_17.54.08.png",
         "svg_icon": ""
       }
     },
@@ -77,6 +79,7 @@
       "name": "Single Banner",
       "settings": {
         "banner_image": "shopify://shop_images/Screenshot_2025-11-04_at_18.12.43.png",
+        "mobile_banner_image": "shopify://shop_images/Screenshot_2025-11-04_at_18.12.43.png",
         "svg_icon": ""
       }
     },
@@ -85,6 +88,7 @@
       "name": "Single Banner",
       "settings": {
         "banner_image": "shopify://shop_images/Screenshot_2025-11-04_at_18.12.48.png",
+        "mobile_banner_image": "shopify://shop_images/Screenshot_2025-11-04_at_18.12.48.png",
         "svg_icon": ""
       }
     },
