@@ -127,6 +127,22 @@
     "people_saying_6p3jQR": {
       "type": "People-saying",
       "blocks": {
+        "box_ERcKTt": {
+          "type": "box",
+          "settings": {
+            "title": "Dr. Raghavendra Hunasgi, India",
+            "quote": "Multivit, Skincare",
+            "description": ""
+          }
+        },
+        "box_6wQ79e": {
+          "type": "box",
+          "settings": {
+            "title": "Partner Name",
+            "quote": "Customer Quote",
+            "description": "Our trusted partners share our commitment to quality, innovation, and well-being, collaborating with us to bring the best in health and wellness."
+          }
+        },
         "box_wwVr6P": {
           "type": "box",
           "settings": {
@@ -174,6 +190,8 @@
         }
       },
       "block_order": [
+        "box_ERcKTt",
+        "box_6wQ79e",
         "box_wwVr6P",
         "box_3CprMU",
         "box_AcWwNA",
