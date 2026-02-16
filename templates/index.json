@@ -127,6 +127,14 @@
     "people_saying_6p3jQR": {
       "type": "People-saying",
       "blocks": {
+        "box_EycQPH": {
+          "type": "box",
+          "settings": {
+            "title": "Naren N, UK",
+            "quote": "Immunity and Sleep",
+            "description": "Me and my kids love your products. We get these boxes specially from India through parcel. And we would love to see your products in UK. I live in central London."
+          }
+        },
         "box_VeT44d": {
           "type": "box",
           "settings": {
@@ -254,6 +262,7 @@
         }
       },
       "block_order": [
+        "box_EycQPH",
         "box_VeT44d",
         "box_BfaQRY",
         "box_YfiK4X",
