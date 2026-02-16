@@ -127,6 +127,14 @@
     "people_saying_6p3jQR": {
       "type": "People-saying",
       "blocks": {
+        "box_zCDtf7": {
+          "type": "box",
+          "settings": {
+            "title": "Bharat Vihol, India",
+            "quote": "Stress management",
+            "description": "Since 3 years I get their products specially from Hyderabad to Ahmedabad. I use and I suggested to a lot of my friends. The product really works."
+          }
+        },
         "box_r4MXMp": {
           "type": "box",
           "settings": {
@@ -198,6 +206,7 @@
         }
       },
       "block_order": [
+        "box_zCDtf7",
         "box_r4MXMp",
         "box_ERcKTt",
         "box_6wQ79e",
