@@ -127,6 +127,14 @@
     "people_saying_6p3jQR": {
       "type": "People-saying",
       "blocks": {
+        "box_mAhVEy": {
+          "type": "box",
+          "settings": {
+            "title": "Sreeja, India",
+            "quote": "weight management",
+            "description": "I never believed a simple acv can work. But they have coupled it with certain natural ingredients that really work. In 2 months I saw a visble difference in my weight alomost 2 to 3 kgs. Of course without excercising."
+          }
+        },
         "box_hHtaRY": {
           "type": "box",
           "settings": {
@@ -222,6 +230,7 @@
         }
       },
       "block_order": [
+        "box_mAhVEy",
         "box_hHtaRY",
         "box_nNkPqt",
         "box_zCDtf7",
