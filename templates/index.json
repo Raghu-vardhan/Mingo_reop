@@ -127,6 +127,14 @@
     "people_saying_6p3jQR": {
       "type": "People-saying",
       "blocks": {
+        "box_nNkPqt": {
+          "type": "box",
+          "settings": {
+            "title": "Kranthi Tej, India",
+            "quote": "Sleepcare",
+            "description": "They have a science behind every product they formulate. Being from a science background, I am amazed how the actives are released timely to give me the necessary sleep in the most natural way"
+          }
+        },
         "box_zCDtf7": {
           "type": "box",
           "settings": {
@@ -206,6 +214,7 @@
         }
       },
       "block_order": [
+        "box_nNkPqt",
         "box_zCDtf7",
         "box_r4MXMp",
         "box_ERcKTt",
