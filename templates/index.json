@@ -127,6 +127,14 @@
     "people_saying_6p3jQR": {
       "type": "People-saying",
       "blocks": {
+        "box_WY4Xra": {
+          "type": "box",
+          "settings": {
+            "title": "Hasvith Y, India",
+            "quote": "Multivit Kids",
+            "description": "I am the mother of a 8 year old son. He is so adamant to have your gummies just for the taste and smoothness like a sweet. I am happy because it serves my purpose of multivitamins daily with absolutely no sugar. Thank you."
+          }
+        },
         "box_EycQPH": {
           "type": "box",
           "settings": {
@@ -262,6 +270,7 @@
         }
       },
       "block_order": [
+        "box_WY4Xra",
         "box_EycQPH",
         "box_VeT44d",
         "box_BfaQRY",
