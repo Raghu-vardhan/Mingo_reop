@@ -127,6 +127,14 @@
     "people_saying_6p3jQR": {
       "type": "People-saying",
       "blocks": {
+        "box_YfiK4X": {
+          "type": "box",
+          "settings": {
+            "title": "Anand, USA",
+            "quote": "weight management",
+            "description": "At some point we will do business together. I am amazed by their products and particularly their taste. It’s a different experience, you will never feel as if you had a gummy. And the product works."
+          }
+        },
         "box_mAhVEy": {
           "type": "box",
           "settings": {
@@ -230,6 +238,7 @@
         }
       },
       "block_order": [
+        "box_YfiK4X",
         "box_mAhVEy",
         "box_hHtaRY",
         "box_nNkPqt",
