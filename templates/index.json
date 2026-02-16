@@ -127,6 +127,14 @@
     "people_saying_6p3jQR": {
       "type": "People-saying",
       "blocks": {
+        "box_VeT44d": {
+          "type": "box",
+          "settings": {
+            "title": "Nick B, Australia",
+            "quote": "Skincare",
+            "description": "Australia needs products like yours. And I believe you are the best for skincare given our climate conditions here. I never miss my skincare gummy, the taste is superb. And more so, I am impressed as you use only natural ingredients."
+          }
+        },
         "box_BfaQRY": {
           "type": "box",
           "settings": {
@@ -246,6 +254,7 @@
         }
       },
       "block_order": [
+        "box_VeT44d",
         "box_BfaQRY",
         "box_YfiK4X",
         "box_mAhVEy",
