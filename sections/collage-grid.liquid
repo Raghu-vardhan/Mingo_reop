@@ -56,15 +56,17 @@
   height: 100%;
   align-self: stretch; /* Forces it to fill the grid height */
 }
+.product-list > a {
+  flex: 1;           /* Each child takes up equal vertical space */
+  display: block;
+  height: 100%;      /* Fills its share of the parent container */
+}
 
-/* Ensure content fills the grid cells */
-.product-showcase a, 
-.product-showcase video {
-  width: 100%;
+.product-list video, 
+.product-list img {
   height: 100%;
-  object-fit: cover;
-  /* text-decoration: none;
-    color: inherit;*/
+  width: 100%;
+  object-fit: cover; /* Prevents the video from squishing while filling the height */
 }
   /*newend*/
 
