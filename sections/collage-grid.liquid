@@ -40,30 +40,7 @@
   /*newstart*/
   /* Gummies (First child) occupies 75% width and full height */
   
-.product-showcase > a:first-child {
-  grid-column: span 3; /* Occupies 75% width */
-  grid-row: span 2;    /* Occupies 100% height */
-}
-.product-list {
-  grid-column: span 1;
-  display: flex !important;
-  flex-direction: column;
-  height: 100%;       /* This forces the container to fill the grid height */
-  align-self: stretch; 
-  gap: 20px;
-}
-.product-list > a {
-  flex: 1;            /* This splits the height 50/50 between the two videos */
-  display: flex;
-  height: 100%;
-}
 
-.product-list video, 
-.product-list img {
-  width: 100%;
-  height: 100% !important;
-  object-fit: cover;  /* This ensures the videos fill the box without distorting */
-}
 /* 1. Ensure the main container has a fixed height so children can fill it */
 .product-showcase {
   display: grid !important;
