@@ -6,21 +6,15 @@
     background-color:#FFEEDB;
   }
   
-  .product-showcase {
-/*new start*/
-    display: grid !important;
-  /* Creates 4 columns of equal size; we will use 3 for the first item (75%) */
-  grid-template-columns: repeat(4, 1fr); 
-  grid-template-rows: repeat(2, 1fr);
-  gap: 20px;
-  height: 800px;
-/*new end*/
+  /*.product-showcase {
+
+
 
    /* display: flex; */
-    gap: 20px;
+   /* gap: 20px;
     font-weight:600;
     padding-top: 2rem;
-  }
+  } */
 
   .coll-head h2 {
     color: #80079E;
@@ -70,7 +64,41 @@
   height: 100% !important;
   object-fit: cover;  /* This ensures the videos fill the box without distorting */
 }
+/* 1. Ensure the main container has a fixed height so children can fill it */
+.product-showcase {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  grid-template-rows: repeat(2, 1fr) !important;
+  gap: 20px !important;
+  height: 800px; /* This must be a fixed height (e.g., 800px or 80vh) */
+  align-items: stretch !important;
+}
 
+/* 2. Force the side column to fill the entire right side height */
+.product-list {
+  grid-column: span 1 !important;
+  grid-row: span 2 !important; /* Forces the column to span the same height as Gummies */
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100% !important;
+  gap: 20px !important;
+}
+
+/* 3. Make Momints and SYN each take up exactly 50% of that height */
+.product-list > a {
+  flex: 1 1 50% !important; 
+  display: flex !important;
+  height: 100% !important;
+  overflow: hidden;
+}
+
+/* 4. Ensure the video/image fills the newly stretched box */
+.product-list video, 
+.product-list img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important; /* Prevents squishing */
+}
   /*newend*/
 
  /* .product-list {
