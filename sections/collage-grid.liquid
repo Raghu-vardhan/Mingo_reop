@@ -64,23 +64,17 @@
   /* Gummies (First child) occupies 75% width and full height */
   
 
-
-/* 2. Force the side column to fill the entire right side height */
 .product-list {
-  grid-column: span 3 !important;
-  grid-row: span 3 !important; /* Forces the column to span the same height as Gummies */
-  display: flex !important;
-  flex-direction: column !important;
-  height: 100% !important;
-  gap: 20px !important;
+    flex: 0 0 25%; /* Keeps Momints/SYN at 25% width */
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100%;
+    gap: 20px;
 }
 
-/* 3. Make Momints and SYN each take up exactly 50% of that height */
 .product-list > a {
-  flex: 1 1 50% !important; 
-  display: flex !important;
-  height: 100% !important;
-  overflow: hidden;
+    flex: 1; /* Forces Momints and SYN to each take 50% of the height */
+    height: 100%;
 }
 
 /* 4. Ensure the video/image fills the newly stretched box */
