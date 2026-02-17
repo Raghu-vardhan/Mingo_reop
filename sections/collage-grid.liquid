@@ -48,18 +48,23 @@
     color: inherit;
   }*/
   /*newstart*/
+  .product-showcase {
+    display: flex !important;
+    align-items: stretch !important; /* Forces all children to have the same height */
+    gap: 20px;
+    height: 800px; /* Set a specific height so you can see the stretch clearly */
+}
+
+/* Force the Go Gummies link to fill the container height */
+.product-showcase > a {
+    flex: 0 0 75%; /* Keeps Gummies at 75% width */
+    height: 100%;
+    display: block;
+}
   /* Gummies (First child) occupies 75% width and full height */
   
 
-/* 1. Ensure the main container has a fixed height so children can fill it */
-.product-showcase {
-  display: grid !important;
-  grid-template-columns: repeat(4, 1fr) !important;
-  grid-template-rows: repeat(2, 1fr) !important;
-  gap: 20px !important;
-  height: 800px !important; /* This must be a fixed height (e.g., 800px or 80vh) */
-  align-items: stretch !important;
-}
+
 /* 2. Force the side column to fill the entire right side height */
 .product-list {
   grid-column: span 3 !important;
