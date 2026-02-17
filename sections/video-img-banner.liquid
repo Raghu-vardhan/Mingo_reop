@@ -196,7 +196,7 @@
     updateSlider(currentIndex);
 
     // Auto-slide interval
-    const interval = {{ section.settings.slide_interval | times: 100 }};
+    const interval = {{ section.settings.slide_interval | times: 1000 }};
     setInterval(autoSlide, interval);
   });
 </script>
