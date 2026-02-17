@@ -44,19 +44,17 @@
   }*/
   /*newstart*/
   /* Gummies (First child) occupies 75% width and full height */
-.product-showcase > a:nth-child(1) {
-  grid-column: span 3;
-  grid-row: span 2;
+.product-showcase > a:first-child {
+  grid-column: span 3; /* Occupies 75% width */
+  grid-row: span 2;    /* Occupies 100% height */
 }
 
-/* Momints (Second child) occupies the top-right 25% */
-.product-showcase > a:nth-child(2) {
+.product-list {
   grid-column: span 1;
-}
-
-/* SYN (Third child) occupies the bottom-right 25% */
-.product-showcase > a:nth-child(3) {
-  grid-column: span 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  align-self: stretch; /* Forces it to fill the grid height */
 }
 
 /* Ensure content fills the grid cells */
