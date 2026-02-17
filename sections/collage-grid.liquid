@@ -7,9 +7,6 @@
   }
   
   /*.product-showcase {
-
-
-
    /* display: flex; */
    /* gap: 20px;
     font-weight:600;
@@ -32,6 +29,7 @@
   min-height: 100%;
   object-fit: cover; 
   } */
+  
 /*start */
 
 .main-image {
@@ -47,14 +45,15 @@
     text-decoration: none;
     color: inherit;
   }*/
+
   /*newstart*/
   .product-showcase {
+    padding-top: 2rem;
     display: flex !important;
     align-items: stretch !important; /* Forces all children to have the same height */
     gap: 20px;
     height: 800px; /* Set a specific height so you can see the stretch clearly */
 }
-
 /* Force the Go Gummies link to fill the container height */
 .product-showcase > a {
     flex: 0 0 75%; /* Keeps Gummies at 75% width */
@@ -62,8 +61,6 @@
     display: block;
 }
   /* Gummies (First child) occupies 75% width and full height */
-  
-
 .product-list {
     flex: 0 0 25%; /* Keeps Momints/SYN at 25% width */
     display: flex !important;
