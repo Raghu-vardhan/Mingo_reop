@@ -50,14 +50,15 @@
   grid-column: span 3; /* Occupies 75% width */
   grid-row: span 2;    /* Occupies 100% height */
 }
-
 .product-list {
   grid-column: span 1;
-  display: flex;
+  display: flex !important;
   flex-direction: column;
-  height: 100%;
-  align-self: stretch; /* Forces it to fill the grid height */
+  height: 100%;       /* This forces the container to fill the grid height */
+  align-self: stretch; 
+  gap: 20px;
 }
+
 .product-list > a {
   flex: 1;           /* Each child takes up equal vertical space */
   display: block;
