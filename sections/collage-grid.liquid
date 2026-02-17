@@ -58,19 +58,19 @@
   align-self: stretch; 
   gap: 20px;
 }
-
 .product-list > a {
-  flex: 1;           /* Each child takes up equal vertical space */
-  display: block;
-  height: 100%;      /* Fills its share of the parent container */
+  flex: 1;            /* This splits the height 50/50 between the two videos */
+  display: flex;
+  height: 100%;
 }
 
 .product-list video, 
 .product-list img {
-  height: 100%;
   width: 100%;
-  object-fit: cover; /* Prevents the video from squishing while filling the height */
+  height: 100% !important;
+  object-fit: cover;  /* This ensures the videos fill the box without distorting */
 }
+
   /*newend*/
 
  /* .product-list {
