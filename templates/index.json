@@ -45,7 +45,7 @@
     "video_img_banner_Yh7kJm": {
       "type": "video-img-banner",
       "settings": {
-        "slide_interval": 7
+        "slide_interval": 2
       }
     },
     "collage_grid_ndUiBn": {
