@@ -13,7 +13,9 @@
   "sections": {
     "main_banner_4we3TB": {
       "type": "main-banner",
-      "custom_css": [],
+      "custom_css": [
+        ".banner-image{border: none !important;}"
+      ],
       "settings": {
         "banner_image": "shopify://shop_images/footer1.png",
         "mobile_banner_image": "shopify://shop_images/footer1.png",
