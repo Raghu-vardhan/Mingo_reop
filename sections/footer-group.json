@@ -53,7 +53,7 @@
       ],
       "custom_css": [
         ".hd_book {width: 202px;}",
-        ".footer:not(.color-scheme-1) {background: #80079e; border:none!important;}"
+        ".footer:not(.color-scheme-1) {background: #80079e;}"
       ],
       "settings": {
         "color_scheme": "scheme-5",
