@@ -126,7 +126,7 @@
 
   .slides {
     display: flex;
-    transition: transform 0.2s ease-in-out;
+    transition: transform 0.1s ease-in-out;
   }
 
   .slide {
@@ -206,7 +206,7 @@
     updateSlider(currentIndex);
 
     // Auto-slide interval
-    const interval = {{ section.settings.slide_interval | times: 1000 }};
+    const interval = {{ section.settings.slide_interval | times: 10 }};
     setInterval(autoSlide, interval);
   });
 </script>
