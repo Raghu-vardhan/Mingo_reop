@@ -137,7 +137,7 @@
 </style>
 
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
+  /* document.addEventListener("DOMContentLoaded", function () {
     const slider = document.querySelector(".slider");
     const indicators = document.querySelectorAll(".indicator");
     const slides = document.querySelectorAll(".box-main");
@@ -164,7 +164,48 @@
         });
       });
     });
-  });
+  }); */
+  /* start */
+  document.addEventListener("DOMContentLoaded", function () {
+    const slider = document.querySelector(".slider");
+    const indicators = document.querySelectorAll(".indicator");
+    const slides = document.querySelectorAll(".box-main");
+
+    if (!slider || indicators.length === 0) return; // Safety check
+
+    function updateIndicators() {
+      // Use offsetWidth of the first slide and add the gap
+      const blockWidth = slides[0].offsetWidth + 15; 
+      // Calculate index based on current scroll position
+      const activeIndex = Math.round(slider.scrollLeft / blockWidth);
+
+      indicators.forEach((indicator, i) => {
+        if (i === activeIndex) {
+          indicator.classList.add("active");
+        } else {
+          indicator.classList.remove("active");
+        }
+      });
+    }
+
+    // Listen for scroll events to update dots while swiping
+    slider.addEventListener("scroll", updateIndicators);
+
+    // Click functionality to scroll to the specific slide
+    indicators.forEach((indicator, index) => {
+      indicator.addEventListener("click", () => {
+        const blockWidth = slides[0].offsetWidth + 15;
+        slider.scrollTo({
+          left: index * blockWidth,
+          behavior: "smooth"
+        });
+      });
+    });
+
+    // Initialize state on load
+    updateIndicators();
+});
+  /* end */
 </script>
 
 {% schema %}
