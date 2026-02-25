@@ -127,6 +127,14 @@
     "people_saying_6p3jQR": {
       "type": "People-saying",
       "blocks": {
+        "box_ehktq9": {
+          "type": "box",
+          "settings": {
+            "title": "Dr. Raghavendra Hunasgi",
+            "quote": "Mingo Gummies",
+            "description": "The Mingo Gummies are a league apart, I have tried many supplements in gummy forms but nothing comes close to this. Hands down I would recommend these for all the health conscious folks out there. This product is a perfect 10 on 10"
+          }
+        },
         "box_WY4Xra": {
           "type": "box",
           "settings": {
@@ -270,6 +278,7 @@
         }
       },
       "block_order": [
+        "box_ehktq9",
         "box_WY4Xra",
         "box_EycQPH",
         "box_VeT44d",
