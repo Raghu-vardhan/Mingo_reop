@@ -2,31 +2,9 @@
   <h2>{{ section.settings.heading }}</h2>
 
   <div class="slider-container">
-   <!-- <div class="slider">
+    <div class="slider">
       {% for block in section.blocks %}
         <div class="box-main">
-          <div class="box-sub "> -->
-          <!--  <img src="{{ block.settings.image | img_url: '300x300' }}" alt="Image"> -->
-         <!--   <div class="content scroll-trigger animate--slide-in"> -->
-            <!--  <h4 class="scroll-trigger animate--slide-in">{{ block.settings.title }}</h4> -->
-          <!--    <h5  class="scroll-trigger animate--slide-in"> {{ block.settings.quote }}</h5>
-              <p  class="scroll-trigger animate--slide-in">{{ block.settings.description }}</p>
-              <div class="stars-say scroll-trigger animate--slide-in">
-                {% for i in (1..5) %}
-                  <span class="star1" data-value="{{ i }}">★</span>
-                {% endfor %}
-              </div>
-            </div>
-          </div>
-        </div>
-      {% endfor %}
-    </div> -->
-    <!-- start -->
-  <div class="testimonial-section-wrapper" data-section-type="testimonials" id="Testimonials-{{ section.id }}">
-  
-  <div class="testimonial-slider-container">
-     {% for block in section.blocks %}
-        <div class="testimonial-card">     <div class="box-main">
           <div class="box-sub ">
           <!--  <img src="{{ block.settings.image | img_url: '300x300' }}" alt="Image"> -->
             <div class="content scroll-trigger animate--slide-in">
@@ -40,7 +18,15 @@
               </div>
             </div>
           </div>
-        </div> </div>
+        </div>
+      {% endfor %}
+    </div>
+    <!-- start -->
+  <div class="testimonial-section-wrapper" data-section-type="testimonials" id="Testimonials-{{ section.id }}">
+  
+  <div class="testimonial-slider-container">
+     {% for block in section.blocks %}
+        <div class="testimonial-card"> ... </div>
      {% endfor %}
   </div>
 
@@ -226,41 +212,35 @@
   /* end */
 </script>
 
-
 <script>
   /* start */
+document.querySelectorAll('[data-section-type="testimonials"]').forEach(section => {
+  const slider = section.querySelector('.testimonial-slider-container');
+  const dots = section.querySelectorAll('.indicator');
 
-document.addEventListener('DOMContentLoaded', function() {
-  document.querySelectorAll('[data-section-type="testimonials"]').forEach(section => {
-    const slider = section.querySelector('.testimonial-slider-container');
-    const dots = section.querySelectorAll('.indicator');
-
-    dots.forEach(dot => {
-      dot.addEventListener('click', function() {
-        const index = this.getAttribute('data-index');
-        const slide = slider.querySelector('.testimonial-card');
+  dots.forEach(dot => {
+    dot.addEventListener('click', function() {
+      const index = this.getAttribute('data-index');
+      const slide = slider.querySelector('.testimonial-card');
+      
+      if (slide) {
+        const slideWidth = slide.offsetWidth;
         
-        if (slide) {
-          const slideWidth = slide.offsetWidth;
-          
-          // Move only the slider inside THIS specific section
-          slider.scrollTo({
-            left: slideWidth * index,
-            behavior: 'smooth'
-          });
+        // 1. Move only the slider within THIS section
+        slider.scrollTo({
+          left: slideWidth * index,
+          behavior: 'smooth'
+        });
 
-          // Update Active Class only for dots inside THIS specific section
-          dots.forEach(d => d.classList.remove('active'));
-          this.classList.add('active');
-        }
-      });
+        // 2. Update Active Class only for dots within THIS section
+        dots.forEach(d => d.classList.remove('active'));
+        this.classList.add('active');
+      }
     });
   });
 });
 /* end */
-
 </script>
-
 
 {% schema %}
 {
