@@ -251,6 +251,14 @@
     "people_saying_i3DUHm": {
       "type": "People-saying",
       "blocks": {
+        "box_Mq6mjh": {
+          "type": "box",
+          "settings": {
+            "title": "Gut health",
+            "quote": "Julain Xavier, China",
+            "description": "From poor to normal, their strips really helped in improving my gut health and now I can use them regularly"
+          }
+        },
         "box_b7EgyT": {
           "type": "box",
           "settings": {
@@ -307,6 +315,7 @@
         }
       },
       "block_order": [
+        "box_Mq6mjh",
         "box_b7EgyT",
         "box_tYXhDT",
         "box_mgtfhb",
