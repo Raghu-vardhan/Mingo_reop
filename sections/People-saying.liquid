@@ -21,11 +21,23 @@
         </div>
       {% endfor %}
     </div>
-    <div class="slider-indicators">
-  {% for block in section.blocks %}
-    <span class="indicator{% if forloop.first %} active{% endif %}" data-index="{{ forloop.index0 }}"></span> 
-  {% endfor %}
+    <!-- start -->
+  <div class="testimonial-section-wrapper" data-section-type="testimonials" id="Testimonials-{{ section.id }}">
+  
+  <div class="testimonial-slider-container">
+     {% for block in section.blocks %}
+        <div class="testimonial-card"> ... </div>
+     {% endfor %}
+  </div>
+
+  <div class="slider-indicators">
+    {% for block in section.blocks %}
+      <span class="indicator{% if forloop.first %} active{% endif %}" data-index="{{ forloop.index0 }}"></span> 
+    {% endfor %}
+  </div>
+
 </div>
+<!-- end -->
   <!--  <div class="slider-indicators">
       {% for block in section.blocks %}
         <span class="indicator" data-index="{{ forloop.index0 }}"></span> 
@@ -131,7 +143,7 @@
     background: #000;
   }  */
   /*start */
-  
+
   .slider-indicators {
   display: flex;
   justify-content: center;
@@ -200,27 +212,41 @@
   /* end */
 </script>
 
+
 <script>
   /* start */
-  document.querySelectorAll('.indicator').forEach(dot => {
-  dot.addEventListener('click', function() {
-    const index = this.getAttribute('data-index');
-    
-    // 1. Move your slider (Assumes you are using a standard slider container)
-    const slider = document.querySelector('.testimonial-slider-container');
-    const slideWidth = slider.querySelector('.testimonial-card').offsetWidth;
-    slider.scrollTo({
-      left: slideWidth * index,
-      behavior: 'smooth'
-    });
 
-    // 2. Update Active Class on Dots
-    document.querySelectorAll('.indicator').forEach(d => d.classList.remove('active'));
-    this.classList.add('active');
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('[data-section-type="testimonials"]').forEach(section => {
+    const slider = section.querySelector('.testimonial-slider-container');
+    const dots = section.querySelectorAll('.indicator');
+
+    dots.forEach(dot => {
+      dot.addEventListener('click', function() {
+        const index = this.getAttribute('data-index');
+        const slide = slider.querySelector('.testimonial-card');
+        
+        if (slide) {
+          const slideWidth = slide.offsetWidth;
+          
+          // Move only the slider inside THIS specific section
+          slider.scrollTo({
+            left: slideWidth * index,
+            behavior: 'smooth'
+          });
+
+          // Update Active Class only for dots inside THIS specific section
+          dots.forEach(d => d.classList.remove('active'));
+          this.classList.add('active');
+        }
+      });
+    });
   });
 });
 /* end */
+
 </script>
+
 
 {% schema %}
 {
