@@ -227,6 +227,14 @@
     "people_saying_QU8yMB": {
       "type": "People-saying",
       "blocks": {
+        "box_nqw9TL": {
+          "type": "box",
+          "settings": {
+            "title": "Ashwagandha",
+            "quote": "Ramarao T, India",
+            "description": "Since the beginning and till now I used a lot of their products. Now I use their pure ashwagandha gummies. The taste is really good and I feel very active"
+          }
+        },
         "box_pAtM96": {
           "type": "box",
           "settings": {
@@ -272,6 +280,7 @@
         }
       },
       "block_order": [
+        "box_nqw9TL",
         "box_pAtM96",
         "box_Wyxz77",
         "box_kdKgcP",
