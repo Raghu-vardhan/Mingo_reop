@@ -251,6 +251,14 @@
     "people_saying_i3DUHm": {
       "type": "People-saying",
       "blocks": {
+        "box_mVhVQa": {
+          "type": "box",
+          "settings": {
+            "title": "Coughcare",
+            "quote": "Arnav Roy",
+            "description": "It all started with my cough at its worst. A friend of mine gave a strip to me and with lots of hesitation I had one. And since then I never stopped using one. Now I am not concerned about my cough anymore. Its all natural and herbal."
+          }
+        },
         "box_yJHJhC": {
           "type": "box",
           "settings": {
@@ -331,6 +339,7 @@
         }
       },
       "block_order": [
+        "box_mVhVQa",
         "box_yJHJhC",
         "box_p6GC49",
         "box_Mq6mjh",
