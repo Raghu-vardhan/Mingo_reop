@@ -227,6 +227,14 @@
     "people_saying_QU8yMB": {
       "type": "People-saying",
       "blocks": {
+        "box_j43gg6": {
+          "type": "box",
+          "settings": {
+            "title": "Haircare",
+            "quote": "George Zheng, China",
+            "description": "I understand that your company is trying to establish business in China. I am from Xia'n China and I use your gummies products purchased through my Indian friend. I wish to buy it directly from China market. Do let me know when you start locally."
+          }
+        },
         "box_PidHnX": {
           "type": "box",
           "settings": {
@@ -296,6 +304,7 @@
         }
       },
       "block_order": [
+        "box_j43gg6",
         "box_PidHnX",
         "box_eC4KcV",
         "box_nqw9TL",
