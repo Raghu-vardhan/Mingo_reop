@@ -251,6 +251,14 @@
     "people_saying_i3DUHm": {
       "type": "People-saying",
       "blocks": {
+        "box_p6GC49": {
+          "type": "box",
+          "settings": {
+            "title": "Sleepcare",
+            "quote": "YV Sudha, India",
+            "description": "I have had issues with getting sound sleep. They have limited stores and online presence. So I initially hesitated to use. And now I am not able to stop. I asked my medical experts if the sleep strip is habit forming and I found out that all they use is natural ingredients and its not habit forming. Thank you."
+          }
+        },
         "box_Mq6mjh": {
           "type": "box",
           "settings": {
@@ -315,6 +323,7 @@
         }
       },
       "block_order": [
+        "box_p6GC49",
         "box_Mq6mjh",
         "box_b7EgyT",
         "box_tYXhDT",
