@@ -251,6 +251,14 @@
     "people_saying_i3DUHm": {
       "type": "People-saying",
       "blocks": {
+        "box_84M69b": {
+          "type": "box",
+          "settings": {
+            "title": "Stress Relief",
+            "quote": "Karthik Jayaraman, USA",
+            "description": "I was not sure to take it to USA for my personal use. Now I feel happy as it is cost effective, relieves my stress and anxiety. I have a good opinion about this company. They will become big one day."
+          }
+        },
         "box_mVhVQa": {
           "type": "box",
           "settings": {
@@ -339,6 +347,7 @@
         }
       },
       "block_order": [
+        "box_84M69b",
         "box_mVhVQa",
         "box_yJHJhC",
         "box_p6GC49",
