@@ -22,10 +22,15 @@
       {% endfor %}
     </div>
     <div class="slider-indicators">
+  {% for block in section.blocks %}
+    <span class="indicator{% if forloop.first %} active{% endif %}" data-index="{{ forloop.index0 }}"></span> 
+  {% endfor %}
+</div>
+  <!--  <div class="slider-indicators">
       {% for block in section.blocks %}
-        <span class="indicator" data-index="{{ forloop.index1 }}"></span> 
+        <span class="indicator" data-index="{{ forloop.index0 }}"></span> 
       {% endfor %}
-    </div>
+    </div> -->
   </div>
 </div>
 
@@ -111,7 +116,7 @@
     margin-top: 15px;
   }
 
-  .indicator {
+ /* .indicator {
     display: inline-block;
     width: 10px;
     height: 10px;
@@ -124,7 +129,33 @@
 
   .indicator.active {
     background: #000;
-  }
+  }  */
+  /*start */
+  
+  .slider-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  background-color: #ccc; /* Grey for inactive */
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.indicator.active {
+  background-color: #7a1fa2; /* Purple to match your Mingo theme */
+}
+
+.indicator:hover {
+  background-color: #9c4dcc;
+}
+  /* end */
 
   @media (max-width:600px){
     .peopelesay-main h2{
@@ -167,6 +198,28 @@
   });
   /* start */
   /* end */
+</script>
+
+<script>
+  /* start */
+  document.querySelectorAll('.indicator').forEach(dot => {
+  dot.addEventListener('click', function() {
+    const index = this.getAttribute('data-index');
+    
+    // 1. Move your slider (Assumes you are using a standard slider container)
+    const slider = document.querySelector('.testimonial-slider-container');
+    const slideWidth = slider.querySelector('.testimonial-card').offsetWidth;
+    slider.scrollTo({
+      left: slideWidth * index,
+      behavior: 'smooth'
+    });
+
+    // 2. Update Active Class on Dots
+    document.querySelectorAll('.indicator').forEach(d => d.classList.remove('active'));
+    this.classList.add('active');
+  });
+});
+/* end */
 </script>
 
 {% schema %}
