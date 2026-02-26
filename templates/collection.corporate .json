@@ -251,6 +251,22 @@
     "people_saying_i3DUHm": {
       "type": "People-saying",
       "blocks": {
+        "box_zHrbYL": {
+          "type": "box",
+          "settings": {
+            "title": "Cough and Sleep",
+            "quote": "Karthik Jayaraman, USA",
+            "description": ""
+          }
+        },
+        "box_Bq8W4g": {
+          "type": "box",
+          "settings": {
+            "title": "Cough and Sleep",
+            "quote": "Sudhakar, India",
+            "description": ""
+          }
+        },
         "box_iGpH9K": {
           "type": "box",
           "settings": {
@@ -363,6 +379,8 @@
         }
       },
       "block_order": [
+        "box_zHrbYL",
+        "box_Bq8W4g",
         "box_iGpH9K",
         "box_BJH8h8",
         "box_84M69b",
