@@ -251,36 +251,12 @@
     "people_saying_i3DUHm": {
       "type": "People-saying",
       "blocks": {
-        "box_c6zX3J": {
+        "box_84M69b": {
           "type": "box",
           "settings": {
-            "title": "Cough and Sleep",
-            "quote": "Madhav Rao U, India",
-            "description": ""
-          }
-        },
-        "box_zHrbYL": {
-          "type": "box",
-          "settings": {
-            "title": "Cough and Sleep",
+            "title": "Stress Relief",
             "quote": "Karthik Jayaraman, USA",
-            "description": ""
-          }
-        },
-        "box_Bq8W4g": {
-          "type": "box",
-          "settings": {
-            "title": "Cough and Sleep",
-            "quote": "Sudhakar, India",
-            "description": ""
-          }
-        },
-        "box_iGpH9K": {
-          "type": "box",
-          "settings": {
-            "title": "Cough and Sleep",
-            "quote": "Dr. A B Sastry, India",
-            "description": ""
+            "description": "I was not sure to take it to USA for my personal use. Now I feel happy as it is cost effective, relieves my stress and anxiety. I have a good opinion about this company. They will become big one day."
           }
         },
         "box_BJH8h8": {
@@ -289,14 +265,6 @@
             "title": "Sleepcare",
             "quote": "Mothi Bai E, India",
             "description": "I am using their products since one year. I am a 70 year old female and have always had issues with my sleep pattern. First of all it is not habit forming. It gives me peaceful sleep of 7 to 8 hours. Most of my worries are gone, my blessings to you"
-          }
-        },
-        "box_84M69b": {
-          "type": "box",
-          "settings": {
-            "title": "Stress Relief",
-            "quote": "Karthik Jayaraman, USA",
-            "description": "I was not sure to take it to USA for my personal use. Now I feel happy as it is cost effective, relieves my stress and anxiety. I have a good opinion about this company. They will become big one day."
           }
         },
         "box_mVhVQa": {
@@ -338,6 +306,38 @@
             "title": "Multivitamins",
             "quote": "Anson Zhao, China",
             "description": "The natural elements and the international certified products attracted me to ask my friend to buy these regularly for me. I am so happy using their products"
+          }
+        },
+        "box_c6zX3J": {
+          "type": "box",
+          "settings": {
+            "title": "Cough and Sleep",
+            "quote": "Madhav Rao U, India",
+            "description": ""
+          }
+        },
+        "box_zHrbYL": {
+          "type": "box",
+          "settings": {
+            "title": "Cough and Sleep",
+            "quote": "Karthik Jayaraman, USA",
+            "description": ""
+          }
+        },
+        "box_Bq8W4g": {
+          "type": "box",
+          "settings": {
+            "title": "Cough and Sleep",
+            "quote": "Sudhakar, India",
+            "description": ""
+          }
+        },
+        "box_iGpH9K": {
+          "type": "box",
+          "settings": {
+            "title": "Cough and Sleep",
+            "quote": "Dr. A B Sastry, India",
+            "description": ""
           }
         },
         "box_tYXhDT": {
@@ -387,17 +387,17 @@
         }
       },
       "block_order": [
-        "box_c6zX3J",
-        "box_zHrbYL",
-        "box_Bq8W4g",
-        "box_iGpH9K",
-        "box_BJH8h8",
         "box_84M69b",
+        "box_BJH8h8",
         "box_mVhVQa",
         "box_yJHJhC",
         "box_p6GC49",
         "box_Mq6mjh",
         "box_b7EgyT",
+        "box_c6zX3J",
+        "box_zHrbYL",
+        "box_Bq8W4g",
+        "box_iGpH9K",
         "box_tYXhDT",
         "box_mgtfhb",
         "box_yrttiT",
