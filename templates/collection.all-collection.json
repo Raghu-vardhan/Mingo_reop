@@ -227,6 +227,14 @@
     "people_saying_QU8yMB": {
       "type": "People-saying",
       "blocks": {
+        "box_TmcrK9": {
+          "type": "box",
+          "settings": {
+            "title": "Skincare",
+            "quote": "Nick B, Australia",
+            "description": "Our trusted partners share our commitment to quality, innovation, and well-being, collaborating with us to bring the best in health and wellness."
+          }
+        },
         "box_j43gg6": {
           "type": "box",
           "settings": {
@@ -304,6 +312,7 @@
         }
       },
       "block_order": [
+        "box_TmcrK9",
         "box_j43gg6",
         "box_PidHnX",
         "box_eC4KcV",
