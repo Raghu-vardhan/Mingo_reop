@@ -251,6 +251,14 @@
     "people_saying_i3DUHm": {
       "type": "People-saying",
       "blocks": {
+        "box_yJHJhC": {
+          "type": "box",
+          "settings": {
+            "title": "B complex",
+            "quote": "Ganesh MR, India",
+            "description": "I should say that this is an overall product that has all the necessary ingredients that are natural and vegan source. Being a medical professional, I recommend that their products really work"
+          }
+        },
         "box_p6GC49": {
           "type": "box",
           "settings": {
@@ -323,6 +331,7 @@
         }
       },
       "block_order": [
+        "box_yJHJhC",
         "box_p6GC49",
         "box_Mq6mjh",
         "box_b7EgyT",
