@@ -251,6 +251,14 @@
     "people_saying_i3DUHm": {
       "type": "People-saying",
       "blocks": {
+        "box_c6zX3J": {
+          "type": "box",
+          "settings": {
+            "title": "Cough and Sleep",
+            "quote": "Madhav Rao U, India",
+            "description": ""
+          }
+        },
         "box_zHrbYL": {
           "type": "box",
           "settings": {
@@ -379,6 +387,7 @@
         }
       },
       "block_order": [
+        "box_c6zX3J",
         "box_zHrbYL",
         "box_Bq8W4g",
         "box_iGpH9K",
