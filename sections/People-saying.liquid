@@ -21,23 +21,7 @@
         </div>
       {% endfor %}
     </div>
-    <!-- start -->
-  <div class="testimonial-section-wrapper" data-section-type="testimonials" id="Testimonials-{{ section.id }}">
-  
-  <div class="testimonial-slider-container">
-     {% for block in section.blocks %}
-        <div class="testimonial-card"> ... </div>
-     {% endfor %}
-  </div>
 
-  <div class="slider-indicators">
-    {% for block in section.blocks %}
-      <span class="indicator{% if forloop.first %} active{% endif %}" data-index="{{ forloop.index0 }}"></span> 
-    {% endfor %}
-  </div>
-
-</div>
-<!-- end -->
   <!--  <div class="slider-indicators">
       {% for block in section.blocks %}
         <span class="indicator" data-index="{{ forloop.index0 }}"></span> 
