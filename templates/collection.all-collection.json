@@ -294,14 +294,6 @@
             "description": "Given a chance, I will surely take an opportunity to promote their gummies. WOW is the only word I keep saying. Taste is tooooo good"
           }
         },
-        "box_rEV8BX": {
-          "type": "box",
-          "settings": {
-            "title": "Skincare and Sleep",
-            "quote": "Dr. Shruthi, India",
-            "description": ""
-          }
-        },
         "box_KbTW3M": {
           "type": "box",
           "settings": {
@@ -320,7 +312,6 @@
         "box_pAtM96",
         "box_Wyxz77",
         "box_kdKgcP",
-        "box_rEV8BX",
         "box_KbTW3M"
       ],
       "custom_css": [],
