@@ -293,14 +293,6 @@
             "quote": "Hansuja Y, India",
             "description": "I am the mother of a 8 year old son. He is so adamant to have your gummies just for the taste and smoothness like a sweet. I am happy because it serves my purpose of multivitamins daily with absolutely no sugar. Thank you."
           }
-        },
-        "box_KbTW3M": {
-          "type": "box",
-          "settings": {
-            "title": "Multivit, Skincare",
-            "quote": "Dr. Raghavendra Hunasgi, India",
-            "description": ""
-          }
         }
       },
       "block_order": [
@@ -311,8 +303,7 @@
         "box_nqw9TL",
         "box_pAtM96",
         "box_Wyxz77",
-        "box_kdKgcP",
-        "box_KbTW3M"
+        "box_kdKgcP"
       ],
       "custom_css": [],
       "settings": {
