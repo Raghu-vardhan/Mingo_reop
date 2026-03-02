@@ -227,6 +227,14 @@
     "people_saying_QU8yMB": {
       "type": "People-saying",
       "blocks": {
+        "box_YqVn4Q": {
+          "type": "box",
+          "settings": {
+            "title": "Multivit Kids",
+            "quote": "Hansuja YH, India",
+            "description": "Given a chance, I will surely take an opportunity to promote their gummies. WOW is the only word I keep saying. Taste is tooooo good"
+          }
+        },
         "box_nMkCYg": {
           "type": "box",
           "settings": {
@@ -304,6 +312,7 @@
         }
       },
       "block_order": [
+        "box_YqVn4Q",
         "box_nMkCYg",
         "box_TmcrK9",
         "box_j43gg6",
