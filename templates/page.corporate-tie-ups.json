@@ -200,6 +200,7 @@
         },
         "image_JE479N": {
           "type": "image",
+          "disabled": true,
           "settings": {
             "carousel_image": "shopify://shop_images/europeflag.png",
             "alt_text": "Carousel Image"
@@ -207,6 +208,7 @@
         },
         "image_UwhryF": {
           "type": "image",
+          "disabled": true,
           "settings": {
             "carousel_image": "shopify://shop_images/Flag-United-States-of-America.png",
             "alt_text": "Carousel Image"
