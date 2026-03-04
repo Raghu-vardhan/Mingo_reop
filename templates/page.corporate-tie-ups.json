@@ -191,6 +191,13 @@
     "carousal_eRdUMd": {
       "type": "carousal",
       "blocks": {
+        "image_JE479N": {
+          "type": "image",
+          "settings": {
+            "carousel_image": "shopify://shop_images/europeflag.png",
+            "alt_text": "Carousel Image"
+          }
+        },
         "image_UwhryF": {
           "type": "image",
           "settings": {
@@ -319,6 +326,7 @@
         }
       },
       "block_order": [
+        "image_JE479N",
         "image_UwhryF",
         "image_j7q6TY",
         "image_XfQkhQ",
