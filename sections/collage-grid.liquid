@@ -189,11 +189,27 @@
     }
   }
   /*start */
-  @media (max-width: 749px) {
-  .product-list video, .product-item video {
+/* Isolated Responsiveness for the Highlight Section Only */
+@media screen and (max-width: 749px) {
+  /* Targets the container specifically */
+  .product-showcase {
+    padding: 10px !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  /* Ensures the video and images in this section scale correctly */
+  .product-showcase .product-img, 
+  .product-showcase video.product-img {
     width: 100% !important;
     height: auto !important;
-    object-fit: cover !important; /* Fills the space naturally */
+    object-fit: contain !important; /* Prevents cropping */
+    max-height: 300px; /* Limits vertical height on small screens */
+  }
+
+  /* Adjusts the text overlay area within this section */
+  .product-showcase .product-item {
+    margin-bottom: 20px !important;
   }
 }
   /* end */
