@@ -191,6 +191,20 @@
     "carousal_eRdUMd": {
       "type": "carousal",
       "blocks": {
+        "image_UwhryF": {
+          "type": "image",
+          "settings": {
+            "carousel_image": "shopify://shop_images/Flag-United-States-of-America.png",
+            "alt_text": "Carousel Image"
+          }
+        },
+        "image_j7q6TY": {
+          "type": "image",
+          "settings": {
+            "carousel_image": "shopify://shop_images/joshpa.png",
+            "alt_text": "Carousel Image"
+          }
+        },
         "image_XfQkhQ": {
           "type": "image",
           "settings": {
@@ -305,6 +319,8 @@
         }
       },
       "block_order": [
+        "image_UwhryF",
+        "image_j7q6TY",
         "image_XfQkhQ",
         "image_y94enT",
         "image_hwG3Bw",
