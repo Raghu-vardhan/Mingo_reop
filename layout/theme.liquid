@@ -15,7 +15,27 @@
       <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
     {%- endunless -%}
 
-    <title>
+    <!-- sample start -->
+<title>
+  {% if collection.handle == 'all' %}
+    Shop All Sugar-Free Wellness Gummies & Supplements | Heymingo
+  {% else %}
+    {{ page_title }}
+    {%- if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%}
+    {%- if current_page != 1 %} &ndash; Page {{ current_page }}{% endif -%}
+    {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
+  {% endif %}
+</title>
+
+{% if collection.handle == 'all' %}
+  <meta name="description" content="Browse all Heymingo wellness gummies including beauty, immunity, sleep, gut and metabolism support. Sugar-free, science-backed and easy to enjoy daily.">
+{% elsif page_description %}
+  <meta name="description" content="{{ page_description | escape }}">
+{% endif %}
+
+   <!-- sample end  -->
+
+    <!-- <title>
       {{ page_title }}
       {%- if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%}
       {%- if current_page != 1 %} &ndash; Page {{ current_page }}{% endif -%}
@@ -25,7 +45,7 @@
 
     {% if page_description %}
       <meta name="description" content="{{ page_description | escape }}">
-    {% endif %}
+    {% endif %}  -->
 
     {% render 'meta-tags' %}
 
