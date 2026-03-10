@@ -27,7 +27,6 @@
     },
     "img_content_Kif46G": {
       "type": "img-content",
-      "disabled": true,
       "custom_css": [
         "h2 {font-weight: 700;}",
         ".text-content p {margin: 10px 0;}",
@@ -44,6 +43,7 @@
     },
     "science_heading_gNcm7p": {
       "type": "science-heading",
+      "disabled": true,
       "settings": {
         "heading": "Chewy. Delicious. Effective.",
         "desc": "Health Meets Happiness."
@@ -51,6 +51,7 @@
     },
     "main_banner_jqEKFg": {
       "type": "main-banner",
+      "disabled": true,
       "name": "Single Banner",
       "settings": {
         "banner_image": "shopify://shop_images/Screenshot_2025-11-04_at_17.53.54.png",
@@ -59,6 +60,7 @@
     },
     "main_banner_cT7a4z": {
       "type": "main-banner",
+      "disabled": true,
       "name": "Single Banner",
       "settings": {
         "banner_image": "shopify://shop_images/Screenshot_2025-11-04_at_17.54.08.png",
@@ -67,6 +69,7 @@
     },
     "science_heading_mLyxn3": {
       "type": "science-heading",
+      "disabled": true,
       "settings": {
         "heading": "Fast. Potent. Undeniable.",
         "desc": "Ditch the Pills, Own the Moment."
@@ -74,6 +77,7 @@
     },
     "main_banner_KXEAxX": {
       "type": "main-banner",
+      "disabled": true,
       "name": "Single Banner",
       "settings": {
         "banner_image": "shopify://shop_images/Screenshot_2025-11-04_at_18.12.43.png",
@@ -82,6 +86,7 @@
     },
     "main_banner_B7WRnE": {
       "type": "main-banner",
+      "disabled": true,
       "name": "Single Banner",
       "settings": {
         "banner_image": "shopify://shop_images/Screenshot_2025-11-04_at_18.12.48.png",
@@ -90,7 +95,6 @@
     },
     "img_content_UHECUR": {
       "type": "img-content",
-      "disabled": true,
       "settings": {
         "heading": "First of its kind Gummies",
         "desc": "",
@@ -101,7 +105,6 @@
     },
     "img_content_npVy7n": {
       "type": "img-content",
-      "disabled": true,
       "settings": {
         "heading": "Bioavailability",
         "desc": "",
@@ -112,7 +115,6 @@
     },
     "img_content_k7V9bx": {
       "type": "img-content",
-      "disabled": true,
       "settings": {
         "heading": "Encapsulation",
         "desc": "",
@@ -123,7 +125,6 @@
     },
     "img_content_P8M7FH": {
       "type": "img-content",
-      "disabled": true,
       "settings": {
         "heading": "Nanodrop Technology",
         "desc": "",
@@ -134,7 +135,6 @@
     },
     "img_content_JjTEKe": {
       "type": "img-content",
-      "disabled": true,
       "settings": {
         "heading": "Nanocarriers",
         "desc": "",
@@ -305,7 +305,6 @@
         "collapsible_row_cKJB9Y",
         "collapsible_row_JWeP46"
       ],
-      "disabled": true,
       "name": "t:sections.collapsible_content.presets.name",
       "settings": {
         "caption": "",
