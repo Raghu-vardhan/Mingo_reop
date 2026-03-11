@@ -130,6 +130,7 @@
     display: flex;
    /* transition: transform 0.8s ease-in; */
     animation: scroll 60s linear; /* Adjust '20s' for speed */
+    will-change: transform;
 
   }
 
@@ -143,7 +144,19 @@
     display: block;
     height: auto;
   }
-
+/*start */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    /* If you have 3 images, you should move -300%. 
+       If you have 5 images, move -500%.
+    */
+    transform: translateX(-100%); 
+  }
+}
+/* end */
   /*.dots {
     position: relative;
     bottom: 1rem;
