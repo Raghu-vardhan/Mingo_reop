@@ -18,8 +18,25 @@
         "color_scheme": "scheme-1"
       }
     },
+    "video_LJTqJQ": {
+      "type": "video",
+      "name": "t:sections.video.presets.name",
+      "settings": {
+        "heading": "",
+        "heading_size": "h1",
+        "enable_video_looping": false,
+        "video": "shopify://files/videos/Syn Short coming soon.mp4",
+        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "description": "",
+        "full_width": false,
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "main_banner_Xpx6my": {
       "type": "main-banner",
+      "disabled": true,
       "settings": {
         "banner_image": "shopify://shop_images/Shop_Gogummies_Banner_1.png",
         "svg_icon": ""
@@ -27,6 +44,7 @@
     },
     "probannerlast_YiNU6a": {
       "type": "probannerlast",
+      "disabled": true,
       "settings": {
         "last_img": "shopify://shop_images/Layer_1_2.svg",
         "last_heading": "Go Gummies",
@@ -160,6 +178,7 @@
         "box_HJeMxT",
         "box_hmPA4k"
       ],
+      "disabled": true,
       "settings": {
         "heading": "What People are Saying"
       }
@@ -210,11 +229,13 @@
         "accordion_item_hDnqiM",
         "accordion_item_VJ9Aw7"
       ],
+      "disabled": true,
       "settings": {}
     }
   },
   "order": [
     "banner",
+    "video_LJTqJQ",
     "main_banner_Xpx6my",
     "probannerlast_YiNU6a",
     "product-grid",
