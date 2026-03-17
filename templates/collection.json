@@ -23,10 +23,10 @@
       "name": "t:sections.video.presets.name",
       "settings": {
         "heading": "",
-        "heading_size": "h1",
+        "heading_size": "hxxl",
         "enable_video_looping": true,
         "video": "shopify://files/videos/Syn Short coming soon.mp4",
-        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "video_url": "",
         "description": "Comming soon",
         "full_width": false,
         "color_scheme": "",
