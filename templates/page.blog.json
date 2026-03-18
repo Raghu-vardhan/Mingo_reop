@@ -25,7 +25,8 @@
     "main_banner_Xc8WPX": {
       "type": "main-banner",
       "settings": {
-        "banner_image": "shopify://shop_images/About_Us_Banner.png",
+        "banner_image": "shopify://shop_images/Mingo_HomePage_2.png",
+        "mobile_banner_image": "shopify://shop_images/Mingo_HomePage_2.png",
         "svg_icon": ""
       }
     },
@@ -34,6 +35,7 @@
       "blocks": {
         "ai_gen_block_a06c1a0_yhEY6V": {
           "type": "ai_gen_block_a06c1a0",
+          "disabled": true,
           "settings": {
             "title": "Latest from our blog",
             "blog": "health",
@@ -81,7 +83,7 @@
           "type": "ai_gen_block_4ed2418",
           "settings": {
             "heading": "Our blogs",
-            "selection_type": "blog",
+            "selection_type": "manual",
             "article_1": "health/why-momints-wellness-strips-are-trending-in-the-supplement-industry",
             "article_2": "health/what-are-momints-oral-strips-and-how-do-they-work",
             "article_3": "health/how-nutrition-and-supplements-work-together-for-strong-immunity",
