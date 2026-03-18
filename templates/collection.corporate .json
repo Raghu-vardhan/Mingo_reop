@@ -14,6 +14,7 @@
       "blocks": {
         "banner_jftpwV": {
           "type": "banner",
+          "disabled": true,
           "settings": {
             "desktop_image": "shopify://shop_images/Momints_91ef007e-98b9-4816-924a-c1cedef12be6.png",
             "alt_text": "",
