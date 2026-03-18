@@ -1,6 +1,754 @@
+{% doc %}
+  @prompt
+    Generate a 3-column responsive grid for blog posts. Include a top-level navigation filter for blog categories and a manual selection toggle for specific featured posts. Use lazy-loading for images and asynchronous fetching to ensure fast loading speeds. Ensure the text 'Add to Cart' is replaced with 'Read Post' and that new blogs are dynamically added to the grid automatically with responsiveness
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-blog-grid-{{ ai_gen_id }} {
+    display: block;
+    width: 100%;
+    padding: {{ block.settings.section_padding }}px 0;
+  }
+
+  .ai-blog-grid-container-{{ ai_gen_id }} {
+    max-width: {{ block.settings.max_width }}px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .ai-blog-grid-header-{{ ai_gen_id }} {
+    margin-bottom: 40px;
+  }
+
+  .ai-blog-grid-title-{{ ai_gen_id }} {
+    font-size: {{ block.settings.title_size }}px;
+    color: {{ block.settings.title_color }};
+    margin: 0 0 20px;
+    text-align: {{ block.settings.text_alignment }};
+  }
+
+  .ai-blog-grid-filters-{{ ai_gen_id }} {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: {{ block.settings.text_alignment }};
+    margin-bottom: 30px;
+  }
+
+  .ai-blog-grid-filter-btn-{{ ai_gen_id }} {
+    padding: 10px 20px;
+    background-color: {{ block.settings.filter_bg_color }};
+    color: {{ block.settings.filter_text_color }};
+    border: 1px solid {{ block.settings.filter_border_color }};
+    border-radius: {{ block.settings.filter_border_radius }}px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+  }
+
+  .ai-blog-grid-filter-btn-{{ ai_gen_id }}:hover,
+  .ai-blog-grid-filter-btn-{{ ai_gen_id }}.active {
+    background-color: {{ block.settings.filter_active_bg_color }};
+    color: {{ block.settings.filter_active_text_color }};
+    border-color: {{ block.settings.filter_active_bg_color }};
+  }
+
+  .ai-blog-grid-toggle-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: {{ block.settings.text_alignment }};
+    margin-bottom: 20px;
+  }
+
+  .ai-blog-grid-toggle-label-{{ ai_gen_id }} {
+    font-size: 14px;
+    color: {{ block.settings.title_color }};
+  }
+
+  .ai-blog-grid-toggle-switch-{{ ai_gen_id }} {
+    position: relative;
+    width: 50px;
+    height: 26px;
+    background-color: {{ block.settings.filter_border_color }};
+    border-radius: 13px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .ai-blog-grid-toggle-switch-{{ ai_gen_id }}.active {
+    background-color: {{ block.settings.filter_active_bg_color }};
+  }
+
+  .ai-blog-grid-toggle-slider-{{ ai_gen_id }} {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 20px;
+    height: 20px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+  }
+
+  .ai-blog-grid-toggle-switch-{{ ai_gen_id }}.active .ai-blog-grid-toggle-slider-{{ ai_gen_id }} {
+    transform: translateX(24px);
+  }
+
+  .ai-blog-grid-posts-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: {{ block.settings.grid_gap }}px;
+    margin-bottom: 40px;
+  }
+
+  .ai-blog-grid-post-{{ ai_gen_id }} {
+    background-color: {{ block.settings.card_bg_color }};
+    border-radius: {{ block.settings.card_border_radius }}px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .ai-blog-grid-post-{{ ai_gen_id }}:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  .ai-blog-grid-post-image-{{ ai_gen_id }} {
+    position: relative;
+    width: 100%;
+    padding-bottom: 66.67%;
+    overflow: hidden;
+    background-color: #f4f4f4;
+  }
+
+  .ai-blog-grid-post-image-{{ ai_gen_id }} img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ai-blog-grid-post-content-{{ ai_gen_id }} {
+    padding: 24px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .ai-blog-grid-post-meta-{{ ai_gen_id }} {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 12px;
+    font-size: 12px;
+    color: {{ block.settings.meta_color }};
+  }
+
+  .ai-blog-grid-post-category-{{ ai_gen_id }} {
+    background-color: {{ block.settings.filter_active_bg_color }};
+    color: {{ block.settings.filter_active_text_color }};
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  .ai-blog-grid-post-title-{{ ai_gen_id }} {
+    font-size: {{ block.settings.post_title_size }}px;
+    color: {{ block.settings.post_title_color }};
+    margin: 0 0 12px;
+    line-height: 1.4;
+  }
+
+  .ai-blog-grid-post-title-{{ ai_gen_id }} a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .ai-blog-grid-post-title-{{ ai_gen_id }} a:hover {
+    color: {{ block.settings.filter_active_bg_color }};
+  }
+
+  .ai-blog-grid-post-excerpt-{{ ai_gen_id }} {
+    font-size: 14px;
+    color: {{ block.settings.excerpt_color }};
+    line-height: 1.6;
+    margin-bottom: 16px;
+    flex-grow: 1;
+  }
+
+  .ai-blog-grid-post-link-{{ ai_gen_id }} {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background-color: {{ block.settings.button_bg_color }};
+    color: {{ block.settings.button_text_color }};
+    text-decoration: none;
+    border-radius: {{ block.settings.button_border_radius }}px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    align-self: flex-start;
+  }
+
+  .ai-blog-grid-post-link-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.button_hover_bg_color }};
+    color: {{ block.settings.button_hover_text_color }};
+  }
+
+  .ai-blog-grid-loading-{{ ai_gen_id }} {
+    text-align: center;
+    padding: 40px;
+    font-size: 16px;
+    color: {{ block.settings.meta_color }};
+    display: none;
+  }
+
+  .ai-blog-grid-loading-{{ ai_gen_id }}.active {
+    display: block;
+  }
+
+  .ai-blog-grid-empty-{{ ai_gen_id }} {
+    text-align: center;
+    padding: 60px 20px;
+    color: {{ block.settings.meta_color }};
+    display: none;
+  }
+
+  .ai-blog-grid-empty-{{ ai_gen_id }}.active {
+    display: block;
+  }
+
+  @media screen and (max-width: 989px) {
+    .ai-blog-grid-posts-{{ ai_gen_id }} {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-blog-grid-posts-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+    }
+
+    .ai-blog-grid-filters-{{ ai_gen_id }} {
+      justify-content: center;
+    }
+
+    .ai-blog-grid-toggle-{{ ai_gen_id }} {
+      justify-content: center;
+    }
+  }
+{% endstyle %}
+
+<blog-grid-{{ ai_gen_id }}
+  class="ai-blog-grid-{{ ai_gen_id }}"
+  data-blog-handle="{{ block.settings.blog.handle }}"
+  data-featured-articles='{{ block.settings.featured_articles | json }}'
+  {{ block.shopify_attributes }}
+>
+  <div class="ai-blog-grid-container-{{ ai_gen_id }}">
+    <div class="ai-blog-grid-header-{{ ai_gen_id }}">
+      {% if block.settings.title != blank %}
+        <h2 class="ai-blog-grid-title-{{ ai_gen_id }}">{{ block.settings.title }}</h2>
+      {% endif %}
+
+      <div class="ai-blog-grid-toggle-{{ ai_gen_id }}">
+        <span class="ai-blog-grid-toggle-label-{{ ai_gen_id }}">Show featured posts only</span>
+        <div class="ai-blog-grid-toggle-switch-{{ ai_gen_id }}" data-toggle>
+          <div class="ai-blog-grid-toggle-slider-{{ ai_gen_id }}"></div>
+        </div>
+      </div>
+
+      <div class="ai-blog-grid-filters-{{ ai_gen_id }}" data-filters></div>
+    </div>
+
+    <div class="ai-blog-grid-posts-{{ ai_gen_id }}" data-posts-container></div>
+
+    <div class="ai-blog-grid-loading-{{ ai_gen_id }}" data-loading>
+      Loading posts...
+    </div>
+
+    <div class="ai-blog-grid-empty-{{ ai_gen_id }}" data-empty>
+      No posts found for this category.
+    </div>
+  </div>
+</blog-grid-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class BlogGrid{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+        this.blogHandle = this.dataset.blogHandle;
+        this.featuredArticles = JSON.parse(this.dataset.featuredArticles || '[]');
+        this.allArticles = [];
+        this.categories = new Set();
+        this.currentFilter = 'all';
+        this.showFeaturedOnly = false;
+        this.postsContainer = this.querySelector('[data-posts-container]');
+        this.filtersContainer = this.querySelector('[data-filters]');
+        this.loadingEl = this.querySelector('[data-loading]');
+        this.emptyEl = this.querySelector('[data-empty]');
+        this.toggleSwitch = this.querySelector('[data-toggle]');
+      }
+
+      connectedCallback() {
+        this.fetchArticles();
+        this.setupToggle();
+      }
+
+      setupToggle() {
+        if (this.toggleSwitch) {
+          this.toggleSwitch.addEventListener('click', () => {
+            this.showFeaturedOnly = !this.showFeaturedOnly;
+            this.toggleSwitch.classList.toggle('active');
+            this.renderPosts();
+          });
+        }
+      }
+
+      async fetchArticles() {
+        if (!this.blogHandle) return;
+
+        this.showLoading(true);
+
+        try {
+          let allFetchedArticles = [];
+          let page = 1;
+          let hasMore = true;
+
+          while (hasMore) {
+            const response = await fetch(`/blogs/${this.blogHandle}?view=json&page=${page}`);
+            
+            if (!response.ok) {
+              throw new Error('Failed to fetch articles');
+            }
+
+            const html = await response.text();
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(html, 'text/html');
+            const articlesData = doc.querySelector('[data-articles-json]');
+            
+            if (articlesData) {
+              const articles = JSON.parse(articlesData.textContent);
+              
+              if (articles && articles.length > 0) {
+                allFetchedArticles = allFetchedArticles.concat(articles);
+                page++;
+                
+                if (articles.length < 50) {
+                  hasMore = false;
+                }
+              } else {
+                hasMore = false;
+              }
+            } else {
+              hasMore = false;
+            }
+          }
+
+          this.allArticles = allFetchedArticles;
+          this.extractCategories();
+          this.renderFilters();
+          this.renderPosts();
+        } catch (error) {
+          console.error('Error fetching articles:', error);
+          this.showEmpty(true);
+        } finally {
+          this.showLoading(false);
+        }
+      }
+
+      extractCategories() {
+        this.allArticles.forEach(article => {
+          if (article.tags && Array.isArray(article.tags)) {
+            article.tags.forEach(tag => this.categories.add(tag));
+          }
+        });
+      }
+
+      renderFilters() {
+        if (!this.filtersContainer) return;
+
+        let filtersHTML = `
+          <button class="ai-blog-grid-filter-btn-{{ ai_gen_id }} active" data-filter="all">
+            All Posts
+          </button>
+        `;
+
+        this.categories.forEach(category => {
+          filtersHTML += `
+            <button class="ai-blog-grid-filter-btn-{{ ai_gen_id }}" data-filter="${category}">
+              ${category}
+            </button>
+          `;
+        });
+
+        this.filtersContainer.innerHTML = filtersHTML;
+
+        this.filtersContainer.querySelectorAll('[data-filter]').forEach(btn => {
+          btn.addEventListener('click', (e) => {
+            this.currentFilter = e.target.dataset.filter;
+            this.filtersContainer.querySelectorAll('[data-filter]').forEach(b => b.classList.remove('active'));
+            e.target.classList.add('active');
+            this.renderPosts();
+          });
+        });
+      }
+
+      renderPosts() {
+        if (!this.postsContainer) return;
+
+        let filteredArticles = this.allArticles;
+
+        if (this.showFeaturedOnly && this.featuredArticles.length > 0) {
+          filteredArticles = this.allArticles.filter(article => 
+            this.featuredArticles.some(featured => featured.id === article.id)
+          );
+        }
+
+        if (this.currentFilter !== 'all') {
+          filteredArticles = filteredArticles.filter(article => 
+            article.tags && article.tags.includes(this.currentFilter)
+          );
+        }
+
+        if (filteredArticles.length === 0) {
+          this.showEmpty(true);
+          this.postsContainer.innerHTML = '';
+          return;
+        }
+
+        this.showEmpty(false);
+
+        const postsHTML = filteredArticles.map(article => this.createPostCard(article)).join('');
+        this.postsContainer.innerHTML = postsHTML;
+
+        this.lazyLoadImages();
+      }
+
+      createPostCard(article) {
+        const category = article.tags && article.tags.length > 0 ? article.tags[0] : '';
+        const excerpt = article.excerpt ? this.truncateText(article.excerpt, 120) : '';
+        const imageUrl = article.image ? article.image : '';
+
+        return `
+          <article class="ai-blog-grid-post-{{ ai_gen_id }}">
+            <div class="ai-blog-grid-post-image-{{ ai_gen_id }}">
+              ${imageUrl ? `<img data-src="${imageUrl}" alt="${article.title}" loading="lazy">` : ''}
+            </div>
+            <div class="ai-blog-grid-post-content-{{ ai_gen_id }}">
+              <div class="ai-blog-grid-post-meta-{{ ai_gen_id }}">
+                ${category ? `<span class="ai-blog-grid-post-category-{{ ai_gen_id }}">${category}</span>` : ''}
+                <span>${this.formatDate(article.published_at)}</span>
+              </div>
+              <h3 class="ai-blog-grid-post-title-{{ ai_gen_id }}">
+                <a href="${article.url}">${article.title}</a>
+              </h3>
+              ${excerpt ? `<div class="ai-blog-grid-post-excerpt-{{ ai_gen_id }}">${excerpt}</div>` : ''}
+              <a href="${article.url}" class="ai-blog-grid-post-link-{{ ai_gen_id }}">
+                Read Post
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </div>
+          </article>
+        `;
+      }
+
+      lazyLoadImages() {
+        const images = this.postsContainer.querySelectorAll('img[data-src]');
+        
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const img = entry.target;
+              img.src = img.dataset.src;
+              img.removeAttribute('data-src');
+              observer.unobserve(img);
+            }
+          });
+        });
+
+        images.forEach(img => imageObserver.observe(img));
+      }
+
+      truncateText(text, maxLength) {
+        const strippedText = text.replace(/<[^>]*>/g, '');
+        if (strippedText.length <= maxLength) return strippedText;
+        return strippedText.substr(0, maxLength) + '...';
+      }
+
+      formatDate(dateString) {
+        const date = new Date(dateString);
+        const options = { year: 'numeric', month: 'short', day: 'numeric' };
+        return date.toLocaleDateString('en-US', options);
+      }
+
+      showLoading(show) {
+        if (this.loadingEl) {
+          this.loadingEl.classList.toggle('active', show);
+        }
+      }
+
+      showEmpty(show) {
+        if (this.emptyEl) {
+          this.emptyEl.classList.toggle('active', show);
+        }
+      }
+    }
+
+    customElements.define('blog-grid-{{ ai_gen_id }}', BlogGrid{{ ai_gen_id }});
+  })();
+</script>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Blog grid",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Latest from our blog"
+    },
+    {
+      "type": "blog",
+      "id": "blog",
+      "label": "Blog"
+    },
+    {
+      "type": "article_list",
+      "id": "featured_articles",
+      "label": "Featured articles",
+      "limit": 12
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Maximum width",
+      "min": 1000,
+      "max": 1600,
+      "step": 100,
+      "unit": "px",
+      "default": 1300
+    },
+    {
+      "type": "range",
+      "id": "section_padding",
+      "label": "Section padding",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "grid_gap",
+      "label": "Grid gap",
+      "min": 10,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "default": 30
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "label": "Title size",
+      "min": 20,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "post_title_size",
+      "label": "Post title size",
+      "min": 14,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title color",
+      "default": "#121212"
+    },
+    {
+      "type": "color",
+      "id": "post_title_color",
+      "label": "Post title color",
+      "default": "#121212"
+    },
+    {
+      "type": "color",
+      "id": "excerpt_color",
+      "label": "Excerpt color",
+      "default": "#666666"
+    },
+    {
+      "type": "color",
+      "id": "meta_color",
+      "label": "Meta color",
+      "default": "#999999"
+    },
+    {
+      "type": "header",
+      "content": "Filter style"
+    },
+    {
+      "type": "color",
+      "id": "filter_bg_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "filter_text_color",
+      "label": "Text color",
+      "default": "#121212"
+    },
+    {
+      "type": "color",
+      "id": "filter_border_color",
+      "label": "Border color",
+      "default": "#e0e0e0"
+    },
+    {
+      "type": "color",
+      "id": "filter_active_bg_color",
+      "label": "Active background color",
+      "default": "#121212"
+    },
+    {
+      "type": "color",
+      "id": "filter_active_text_color",
+      "label": "Active text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "filter_border_radius",
+      "label": "Border radius",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "default": 4
+    },
+    {
+      "type": "header",
+      "content": "Card style"
+    },
+    {
+      "type": "color",
+      "id": "card_bg_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "card_border_radius",
+      "label": "Border radius",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "header",
+      "content": "Button style"
+    },
+    {
+      "type": "color",
+      "id": "button_bg_color",
+      "label": "Background color",
+      "default": "#121212"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_bg_color",
+      "label": "Hover background color",
+      "default": "#334fb4"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_text_color",
+      "label": "Hover text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "button_border_radius",
+      "label": "Border radius",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "default": 4
+    }
+  ],
+  "presets": [
+    {
+      "name": "Blog grid"
+    }
+  ]
+}
 {% endschema %}
