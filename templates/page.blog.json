@@ -54,7 +54,7 @@
             "max_width": 1300,
             "section_padding": 40,
             "grid_gap": 30,
-            "text_alignment": "left",
+            "text_alignment": "center",
             "title_size": 36,
             "post_title_size": 20,
             "title_color": "#121212",
