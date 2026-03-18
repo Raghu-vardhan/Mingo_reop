@@ -29,6 +29,50 @@
         "svg_icon": ""
       }
     },
+    "17738262320a49aaa3": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_4ed2418_gRaPpi": {
+          "type": "ai_gen_block_4ed2418",
+          "settings": {
+            "heading": "Our blogs",
+            "selection_type": "manual",
+            "article_1": "health/why-momints-wellness-strips-are-trending-in-the-supplement-industry",
+            "article_2": "health/what-are-momints-oral-strips-and-how-do-they-work",
+            "article_3": "health/how-nutrition-and-supplements-work-together-for-strong-immunity",
+            "blog": "health",
+            "show_date": true,
+            "show_author": false,
+            "show_excerpt": true,
+            "show_tags": true,
+            "desktop_width_percent": 100,
+            "grid_gap": 24,
+            "section_padding": 40,
+            "card_padding": 20,
+            "card_border_radius": 8,
+            "heading_alignment": "left",
+            "heading_size": 32,
+            "heading_spacing": 24,
+            "heading_color": "#121212",
+            "card_background": "#ffffff",
+            "card_title_size": 20,
+            "card_title_color": "#121212",
+            "excerpt_size": 14,
+            "excerpt_color": "#666666",
+            "meta_color": "#999999",
+            "link_hover_color": "#334fb4",
+            "tag_background": "#f3f3f3",
+            "tag_hover_background": "#e0e0e0",
+            "tag_text_color": "#121212"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_4ed2418_gRaPpi"
+      ],
+      "settings": {}
+    },
     "about_uss_aDgcdH": {
       "type": "About-uss",
       "blocks": {
@@ -259,6 +303,7 @@
     "main",
     "breadcrumb_3GDDaL",
     "main_banner_Xc8WPX",
+    "17738262320a49aaa3",
     "about_uss_aDgcdH",
     "video_9yzhtb",
     "about_second_k3U4Te",
