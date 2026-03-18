@@ -277,10 +277,10 @@
       "name": "t:sections.featured-blog.presets.name",
       "settings": {
         "heading": "Our Blogs",
-        "heading_size": "h1",
+        "heading_size": "h0",
         "blog": "health",
-        "post_limit": 3,
-        "columns_desktop": 3,
+        "post_limit": 4,
+        "columns_desktop": 2,
         "color_scheme": "scheme-67f77afc-af53-47db-aba4-3535e5d8f302",
         "show_image": true,
         "show_date": true,
