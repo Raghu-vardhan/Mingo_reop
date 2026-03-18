@@ -9,6 +9,23 @@
  */
 {
   "sections": {
+    "image_banner_CGj8az": {
+      "type": "image-banner",
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/Momints_Banner_2_v1.png",
+        "image_overlay_opacity": 0,
+        "image_height": "medium",
+        "desktop_content_position": "middle-center",
+        "show_text_box": false,
+        "desktop_content_alignment": "center",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
     "multi_image_nEdTnF": {
       "type": "Multi-image",
       "blocks": {
@@ -28,12 +45,29 @@
             "alt_text": "",
             "url_path": ""
           }
+        },
+        "banner_pcUyKD": {
+          "type": "banner",
+          "settings": {
+            "alt_text": "",
+            "url_path": ""
+          }
+        },
+        "banner_acMikF": {
+          "type": "banner",
+          "settings": {
+            "alt_text": "",
+            "url_path": ""
+          }
         }
       },
       "block_order": [
         "banner_jftpwV",
-        "banner_MfQNAq"
+        "banner_MfQNAq",
+        "banner_pcUyKD",
+        "banner_acMikF"
       ],
+      "disabled": true,
       "settings": {
         "slide_interval": 9
       }
@@ -423,6 +457,7 @@
     }
   },
   "order": [
+    "image_banner_CGj8az",
     "multi_image_nEdTnF",
     "banner",
     "probannerlast_YiNU6a",
