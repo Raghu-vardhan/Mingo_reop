@@ -25,8 +25,8 @@
     "main_banner_Xc8WPX": {
       "type": "main-banner",
       "settings": {
-        "banner_image": "shopify://shop_images/Mingo_HomePage_2.png",
-        "mobile_banner_image": "shopify://shop_images/Mingo_HomePage_2.png",
+        "banner_image": "shopify://shop_images/blog_banner_small_clear.jpg",
+        "mobile_banner_image": "shopify://shop_images/blog_banner_small_clear.jpg",
         "svg_icon": ""
       }
     },
