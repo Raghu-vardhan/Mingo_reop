@@ -25,8 +25,8 @@
     "main_banner_i8MjPR": {
       "type": "main-banner",
       "settings": {
-        "banner_image": "shopify://shop_images/Corporate-Tie-ups_Banner_1_424c755c-59a3-45aa-bcd0-b2e3a7093738.png",
-        "mobile_banner_image": "shopify://shop_images/Corporate-Tie-ups_Banner_1_d32f757d-84f2-4ee0-9a7f-28568b6b92eb.png",
+        "banner_image": "shopify://shop_images/corporate_banner.png",
+        "mobile_banner_image": "shopify://shop_images/corporate_banner.png",
         "svg_icon": ""
       }
     },
