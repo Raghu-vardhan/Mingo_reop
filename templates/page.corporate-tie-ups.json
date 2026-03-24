@@ -258,6 +258,7 @@
         },
         "image_rNTBtn": {
           "type": "image",
+          "disabled": true,
           "settings": {
             "carousel_image": "shopify://shop_images/Artboard_1_4.png",
             "alt_text": "Carousel Image"
