@@ -29,9 +29,7 @@
       "type": "img-content",
       "custom_css": [
         "h2 {font-weight: 700;}",
-        ".text-content p {margin: 10px 0;}",
-        ".custom-image-banner {padding-top: 9rem;}",
-        "@media (max-width: 600px) {.custom-image-banner {padding-top: 4rem; }}"
+        ".text-content p {margin: 10px 0;}"
       ],
       "settings": {
         "heading": "The Powerhouse Behind Innovation.",
