@@ -61,7 +61,7 @@
       ],
       "custom_css": [
         "h2 {font-weight: 700; color: #80079e !important;}",
-        ".p {font-weight: 400; color: #121212 !important; max-width: 650px; line-height: 1.5;}"
+        "p {margin: 10px 0; font-weight: 400; color: #121212 !important; max-width: 650px; line-height: 1.5;}"
       ],
       "name": "t:sections.rich-text.presets.name",
       "settings": {
