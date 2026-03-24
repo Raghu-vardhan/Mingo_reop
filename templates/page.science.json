@@ -25,17 +25,67 @@
         "svg_icon": ""
       }
     },
+    "rich_text_R6rEMn": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_hkMbWj": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>The Powerhouse Behind Innovation.</strong>",
+            "heading_size": "h2"
+          }
+        },
+        "text_QQMkHk": {
+          "type": "text",
+          "settings": {
+            "text": "<p>At the heart of our innovation lies a powerful blend of science, technology, and an unwavering passion for wellness. Guided by a bold vision to create future-ready products that address global health needs, our R&D powerhouse is redefining the boundaries of wellness solutions.</p><p>Led by a team of acclaimed scientists and experts with industry-renowned experience and groundbreaking patents, we bring together cutting-edge knowledge and a relentless drive for excellence. Our state-of-the-art facilities are equipped with advanced technologies and stability calibration tools, enable precise and innovative formulations that push the limits of possibility.</p><p>Grounded in comprehensive research, we are driven by a commitment to natural healing and sustainable wellness, creating transformative products through our ‘seed to shelf’ philosophy.</p><p>This is the foundation of our cutting-edge innovation: a pursuit of excellence that inspires a healthier, more sustainable world.</p>"
+          }
+        },
+        "button_jHmhRg": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_hkMbWj",
+        "text_QQMkHk",
+        "button_jHmhRg"
+      ],
+      "custom_css": [
+        "h2 {font-weight: 700; color: #80079e !important;}",
+        ".p {margin: 10px 0;}"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-2",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
     "img_content_Kif46G": {
       "type": "img-content",
       "custom_css": [
         "h2 {font-weight: 700;}",
-        ".text-content p {margin: 10px 0;}"
+        ".text-content p {margin: 10px 0;}",
+        ".custom-image-banner {padding-top: 9rem;}",
+        "@media (max-width: 600px) {.custom-image-banner {padding-top: 4rem; }}"
       ],
       "settings": {
         "heading": "The Powerhouse Behind Innovation.",
         "desc": "",
         "text": "<p>At the heart of our innovation lies a powerful blend of science, technology, and an unwavering passion for wellness. Guided by a bold vision to create future-ready products that address global health needs, our R&D powerhouse is redefining the boundaries of wellness solutions.</p><p>Led by a team of acclaimed scientists and experts with industry-renowned experience and groundbreaking patents, we bring together cutting-edge knowledge and a relentless drive for excellence. Our state-of-the-art facilities are equipped with advanced technologies and stability calibration tools, enable precise and innovative formulations that push the limits of possibility.</p><p>Grounded in comprehensive research, we are driven by a commitment to natural healing and sustainable wellness, creating transformative products through our ‘seed to shelf’ philosophy.</p><p>This is the foundation of our cutting-edge innovation: a pursuit of excellence that inspires a healthier, more sustainable world.</p>",
-        "layout": "text-right"
+        "layout": "text-left"
       }
     },
     "science_heading_gNcm7p": {
@@ -322,6 +372,7 @@
   "order": [
     "main",
     "main_banner_fpG8EC",
+    "rich_text_R6rEMn",
     "img_content_Kif46G",
     "science_heading_gNcm7p",
     "main_banner_jqEKFg",
