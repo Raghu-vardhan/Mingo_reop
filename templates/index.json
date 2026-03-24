@@ -177,6 +177,7 @@
         },
         "box_mAhVEy": {
           "type": "box",
+          "disabled": true,
           "settings": {
             "title": "weight management",
             "quote": "Sreeja, India",
@@ -209,6 +210,7 @@
         },
         "box_r4MXMp": {
           "type": "box",
+          "disabled": true,
           "settings": {
             "title": "Multivit Kids",
             "quote": "Hansuja YH, India",
