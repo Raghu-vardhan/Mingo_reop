@@ -229,6 +229,7 @@
       "blocks": {
         "box_YqVn4Q": {
           "type": "box",
+          "disabled": true,
           "settings": {
             "title": "Multivit Kids",
             "quote": "Hansuja YH, India",
