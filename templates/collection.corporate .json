@@ -304,6 +304,7 @@
         },
         "box_mVhVQa": {
           "type": "box",
+          "disabled": true,
           "settings": {
             "title": "Coughcare",
             "quote": "Arnav Roy",
@@ -320,6 +321,7 @@
         },
         "box_p6GC49": {
           "type": "box",
+          "disabled": true,
           "settings": {
             "title": "Sleepcare",
             "quote": "YV Sudha, India",
