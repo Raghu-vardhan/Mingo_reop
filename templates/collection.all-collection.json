@@ -296,6 +296,7 @@
         },
         "box_kdKgcP": {
           "type": "box",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/2_2x_47df1009-cca8-41a7-9f96-b8fb286e3c82.png",
             "title": "Multivit Kids",
