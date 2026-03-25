@@ -219,6 +219,7 @@
         },
         "box_wwVr6P": {
           "type": "box",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/thesdex_logo.jpg",
             "title": "Founder, SDEX",
