@@ -26,6 +26,7 @@
       "type": "main-banner",
       "settings": {
         "banner_image": "shopify://shop_images/About_Us_Banner.png",
+        "mobile_banner_image": "shopify://shop_images/About_Us_Banner.png",
         "svg_icon": ""
       }
     },
