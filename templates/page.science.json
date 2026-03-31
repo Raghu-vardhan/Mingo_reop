@@ -368,6 +368,71 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "people_saying_XmwYjC": {
+      "type": "People-saying",
+      "blocks": {
+        "box_nMJWqJ": {
+          "type": "box",
+          "settings": {
+            "title": "Partner Name",
+            "quote": "Customer Quote",
+            "description": "Our trusted partners share our commitment to quality, innovation, and well-being, collaborating with us to bring the best in health and wellness."
+          }
+        },
+        "box_6HP4i7": {
+          "type": "box",
+          "settings": {
+            "title": "Partner Name",
+            "quote": "Customer Quote",
+            "description": "Our trusted partners share our commitment to quality, innovation, and well-being, collaborating with us to bring the best in health and wellness."
+          }
+        },
+        "box_6FUi4Y": {
+          "type": "box",
+          "settings": {
+            "title": "Partner Name",
+            "quote": "Customer Quote",
+            "description": "Our trusted partners share our commitment to quality, innovation, and well-being, collaborating with us to bring the best in health and wellness."
+          }
+        },
+        "box_PCVJDA": {
+          "type": "box",
+          "settings": {
+            "title": "Partner Name",
+            "quote": "Customer Quote",
+            "description": "Our trusted partners share our commitment to quality, innovation, and well-being, collaborating with us to bring the best in health and wellness."
+          }
+        },
+        "box_mLFgJB": {
+          "type": "box",
+          "settings": {
+            "title": "Partner Name",
+            "quote": "Customer Quote",
+            "description": "Our trusted partners share our commitment to quality, innovation, and well-being, collaborating with us to bring the best in health and wellness."
+          }
+        },
+        "box_YaTQxg": {
+          "type": "box",
+          "settings": {
+            "title": "Partner Name",
+            "quote": "Customer Quote",
+            "description": "Our trusted partners share our commitment to quality, innovation, and well-being, collaborating with us to bring the best in health and wellness."
+          }
+        }
+      },
+      "block_order": [
+        "box_nMJWqJ",
+        "box_6HP4i7",
+        "box_6FUi4Y",
+        "box_PCVJDA",
+        "box_mLFgJB",
+        "box_YaTQxg"
+      ],
+      "name": "People Say Slider",
+      "settings": {
+        "heading": "What People are Saying"
+      }
     }
   },
   "order": [
@@ -387,6 +452,7 @@
     "img_content_P8M7FH",
     "img_content_JjTEKe",
     "carousal_VdWGDk",
-    "collapsible_content_PjnNwb"
+    "collapsible_content_PjnNwb",
+    "people_saying_XmwYjC"
   ]
 }
