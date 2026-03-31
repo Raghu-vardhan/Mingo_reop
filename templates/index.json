@@ -127,6 +127,14 @@
     "people_saying_44HhY9": {
       "type": "People-saying",
       "blocks": {
+        "box_HgiRJD": {
+          "type": "box",
+          "settings": {
+            "title": "SK Healthcare",
+            "quote": "Mr. Ganesh M R",
+            "description": "We are very happy with the product range of Mingo nutrition. We use and promote their products across our customer network."
+          }
+        },
         "box_Fchwct": {
           "type": "box",
           "settings": {
@@ -245,6 +253,7 @@
         }
       },
       "block_order": [
+        "box_HgiRJD",
         "box_Fchwct",
         "box_ww7RVG",
         "box_XWVHVc",
