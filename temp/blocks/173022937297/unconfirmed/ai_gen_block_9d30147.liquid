@@ -1,6 +1,370 @@
+{% doc %}
+  @prompt
+    Add mobile responsiveness to this collection grid section. The section has a main video on the left and two product videos stacked on the right. On mobile, the layout should stack vertically (main video on top, then the two product videos below side by side or stacked). Here is the existing code: Make the .product-showcase section use flexbox with a row layout on desktop and column layout on mobile (breakpoint at 768px). On mobile, the main video should take full width, and the two product videos in .product-list should display side by side (50% each) or stacked. Ensure videos are 100% width within their containers, with proper aspect ratios maintained. Keep all existing animations and class names intact.
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .product-showcase-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: row;
+    gap: {{ block.settings.gap }}px;
+    width: {{ block.settings.desktop_width_percent }}%;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .main-video-{{ ai_gen_id }} {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .product-list-{{ ai_gen_id }} {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: {{ block.settings.gap }}px;
+    min-width: 0;
+  }
+
+  .video-container-{{ ai_gen_id }} {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    background-color: {{ block.settings.video_bg_color }};
+    border-radius: {{ block.settings.border_radius }}px;
+    overflow: hidden;
+  }
+
+  .video-container-{{ ai_gen_id }} video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .video-placeholder-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f4f4f4;
+  }
+
+  .video-placeholder-{{ ai_gen_id }} svg {
+    width: 60px;
+    height: 60px;
+    opacity: 0.3;
+  }
+
+  .video-overlay-{{ ai_gen_id }} {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+    color: #ffffff;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .video-container-{{ ai_gen_id }}:hover .video-overlay-{{ ai_gen_id }} {
+    opacity: 1;
+  }
+
+  .video-title-{{ ai_gen_id }} {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0 0 5px;
+  }
+
+  .video-description-{{ ai_gen_id }} {
+    font-size: 14px;
+    margin: 0;
+  }
+
+  @media screen and (max-width: 768px) {
+    .product-showcase-{{ ai_gen_id }} {
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .main-video-{{ ai_gen_id }} {
+      width: 100%;
+    }
+
+    .product-list-{{ ai_gen_id }} {
+      width: 100%;
+      {% if block.settings.mobile_layout == 'side-by-side' %}
+        flex-direction: row;
+      {% else %}
+        flex-direction: column;
+      {% endif %}
+    }
+
+    .video-title-{{ ai_gen_id }} {
+      font-size: 16px;
+    }
+
+    .video-description-{{ ai_gen_id }} {
+      font-size: 12px;
+    }
+  }
+{% endstyle %}
+
+<div class="product-showcase-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="main-video-{{ ai_gen_id }}">
+    <div class="video-container-{{ ai_gen_id }}">
+      {% if block.settings.main_video %}
+        <video
+          autoplay
+          muted
+          loop
+          playsinline
+          {% if block.settings.main_video_poster %}
+            poster="{{ block.settings.main_video_poster | image_url: width: 1200 }}"
+          {% endif %}
+        >
+          <source src="{{ block.settings.main_video }}" type="video/mp4">
+        </video>
+      {% else %}
+        <div class="video-placeholder-{{ ai_gen_id }}">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+          </svg>
+        </div>
+      {% endif %}
+      {% if block.settings.main_video_title != blank or block.settings.main_video_description != blank %}
+        <div class="video-overlay-{{ ai_gen_id }}">
+          {% if block.settings.main_video_title != blank %}
+            <h3 class="video-title-{{ ai_gen_id }}">{{ block.settings.main_video_title }}</h3>
+          {% endif %}
+          {% if block.settings.main_video_description != blank %}
+            <p class="video-description-{{ ai_gen_id }}">{{ block.settings.main_video_description }}</p>
+          {% endif %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="product-list-{{ ai_gen_id }}">
+    <div class="video-container-{{ ai_gen_id }}">
+      {% if block.settings.product_video_1 %}
+        <video
+          autoplay
+          muted
+          loop
+          playsinline
+          {% if block.settings.product_video_1_poster %}
+            poster="{{ block.settings.product_video_1_poster | image_url: width: 800 }}"
+          {% endif %}
+        >
+          <source src="{{ block.settings.product_video_1 }}" type="video/mp4">
+        </video>
+      {% else %}
+        <div class="video-placeholder-{{ ai_gen_id }}">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+          </svg>
+        </div>
+      {% endif %}
+      {% if block.settings.product_video_1_title != blank or block.settings.product_video_1_description != blank %}
+        <div class="video-overlay-{{ ai_gen_id }}">
+          {% if block.settings.product_video_1_title != blank %}
+            <h3 class="video-title-{{ ai_gen_id }}">{{ block.settings.product_video_1_title }}</h3>
+          {% endif %}
+          {% if block.settings.product_video_1_description != blank %}
+            <p class="video-description-{{ ai_gen_id }}">{{ block.settings.product_video_1_description }}</p>
+          {% endif %}
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="video-container-{{ ai_gen_id }}">
+      {% if block.settings.product_video_2 %}
+        <video
+          autoplay
+          muted
+          loop
+          playsinline
+          {% if block.settings.product_video_2_poster %}
+            poster="{{ block.settings.product_video_2_poster | image_url: width: 800 }}"
+          {% endif %}
+        >
+          <source src="{{ block.settings.product_video_2 }}" type="video/mp4">
+        </video>
+      {% else %}
+        <div class="video-placeholder-{{ ai_gen_id }}">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+          </svg>
+        </div>
+      {% endif %}
+      {% if block.settings.product_video_2_title != blank or block.settings.product_video_2_description != blank %}
+        <div class="video-overlay-{{ ai_gen_id }}">
+          {% if block.settings.product_video_2_title != blank %}
+            <h3 class="video-title-{{ ai_gen_id }}">{{ block.settings.product_video_2_title }}</h3>
+          {% endif %}
+          {% if block.settings.product_video_2_description != blank %}
+            <p class="video-description-{{ ai_gen_id }}">{{ block.settings.product_video_2_description }}</p>
+          {% endif %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Video collection grid",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "gap",
+      "label": "Gap between videos",
+      "min": 0,
+      "max": 40,
+      "step": 4,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "select",
+      "id": "mobile_layout",
+      "label": "Mobile product videos layout",
+      "options": [
+        {
+          "value": "stacked",
+          "label": "Stacked"
+        },
+        {
+          "value": "side-by-side",
+          "label": "Side by side"
+        }
+      ],
+      "default": "side-by-side"
+    },
+    {
+      "type": "header",
+      "content": "Main video"
+    },
+    {
+      "type": "video_url",
+      "id": "main_video",
+      "label": "Main video",
+      "accept": ["youtube", "vimeo"]
+    },
+    {
+      "type": "image_picker",
+      "id": "main_video_poster",
+      "label": "Main video poster image"
+    },
+    {
+      "type": "text",
+      "id": "main_video_title",
+      "label": "Main video title"
+    },
+    {
+      "type": "text",
+      "id": "main_video_description",
+      "label": "Main video description"
+    },
+    {
+      "type": "header",
+      "content": "Product video 1"
+    },
+    {
+      "type": "video_url",
+      "id": "product_video_1",
+      "label": "Product video 1",
+      "accept": ["youtube", "vimeo"]
+    },
+    {
+      "type": "image_picker",
+      "id": "product_video_1_poster",
+      "label": "Product video 1 poster"
+    },
+    {
+      "type": "text",
+      "id": "product_video_1_title",
+      "label": "Product video 1 title"
+    },
+    {
+      "type": "text",
+      "id": "product_video_1_description",
+      "label": "Product video 1 description"
+    },
+    {
+      "type": "header",
+      "content": "Product video 2"
+    },
+    {
+      "type": "video_url",
+      "id": "product_video_2",
+      "label": "Product video 2",
+      "accept": ["youtube", "vimeo"]
+    },
+    {
+      "type": "image_picker",
+      "id": "product_video_2_poster",
+      "label": "Product video 2 poster"
+    },
+    {
+      "type": "text",
+      "id": "product_video_2_title",
+      "label": "Product video 2 title"
+    },
+    {
+      "type": "text",
+      "id": "product_video_2_description",
+      "label": "Product video 2 description"
+    },
+    {
+      "type": "header",
+      "content": "Style"
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "label": "Border radius",
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "default": 6
+    },
+    {
+      "type": "color",
+      "id": "video_bg_color",
+      "label": "Video background",
+      "default": "#000000"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Video collection grid"
+    }
+  ]
+}
 {% endschema %}
