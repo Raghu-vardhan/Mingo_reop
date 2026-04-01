@@ -396,6 +396,35 @@
         ".custom_grid-img {padding: 0;}"
       ],
       "settings": {}
+    },
+    "1774965808aca6c37e": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_9d30147_PP7UUd": {
+          "type": "ai_gen_block_9d30147",
+          "settings": {
+            "desktop_width_percent": 100,
+            "gap": 12,
+            "mobile_layout": "side-by-side",
+            "main_video": "",
+            "main_video_title": "",
+            "main_video_description": "",
+            "product_video_1": "",
+            "product_video_1_title": "",
+            "product_video_1_description": "",
+            "product_video_2": "",
+            "product_video_2_title": "",
+            "product_video_2_description": "",
+            "border_radius": 6,
+            "video_bg_color": "#000000"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_9d30147_PP7UUd"
+      ],
+      "settings": {}
     }
   },
   "order": [
@@ -409,6 +438,7 @@
     "featured_collection_7EHj3j",
     "people_saying_44HhY9",
     "partners_yMbjmb",
-    "reels_ELBUYi"
+    "reels_ELBUYi",
+    "1774965808aca6c37e"
   ]
 }
