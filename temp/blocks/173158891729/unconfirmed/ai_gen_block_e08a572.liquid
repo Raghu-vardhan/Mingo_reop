@@ -1,6 +1,537 @@
+{% doc %}
+  @prompt
+    Create a video collection grid section with the following requirements:
+    
+    - Mobile-responsive grid layout: 1 column on mobile, 2 columns on tablet, 3 columns on desktop
+    - Each grid item has a video block with these settings:
+      - A Shopify file picker for uploading/selecting a video (type: video or url input for CDN-hosted MP4)
+      - A poster/thumbnail image picker (shown before video loads)
+      - A text field for video title/caption displayed below the video
+      - Optional overlay text on hover
+    - Videos must autoplay, muted, loop, and playsinline for mobile compatibility
+    - Smooth hover effect on each grid card (slight scale or shadow)
+    - Section settings:
+      - Heading text for the section
+      - Number of columns (2 or 3) on desktop
+      - Grid gap/spacing control
+    - Each video block should gracefully fall back to showing the poster image if the video URL is missing
+    - Clean, minimal card design with rounded corners
+    - Section should support up to 6 video blocks
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-video-grid-{{ ai_gen_id }} {
+    display: block;
+    width: 100%;
+    padding: 40px 20px;
+  }
+
+  .ai-video-grid-container-{{ ai_gen_id }} {
+    max-width: {{ block.settings.max_width }}px;
+    margin: 0 auto;
+  }
+
+  .ai-video-grid-heading-{{ ai_gen_id }} {
+    text-align: center;
+    margin: 0 0 {{ block.settings.grid_gap }}px;
+    font-size: 32px;
+    font-family: {{ block.settings.heading_font.family }}, {{ block.settings.heading_font.fallback_families }};
+    font-weight: {{ block.settings.heading_font.weight }};
+    color: {{ block.settings.heading_color }};
+  }
+
+  .ai-video-grid-wrapper-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: repeat({{ block.settings.desktop_columns }}, 1fr);
+    gap: {{ block.settings.grid_gap }}px;
+  }
+
+  @media screen and (max-width: 989px) {
+    .ai-video-grid-wrapper-{{ ai_gen_id }} {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-video-grid-wrapper-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .ai-video-card-{{ ai_gen_id }} {
+    position: relative;
+    border-radius: {{ block.settings.card_border_radius }}px;
+    overflow: hidden;
+    background-color: {{ block.settings.card_background }};
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .ai-video-card-{{ ai_gen_id }}:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  }
+
+  .ai-video-card-wrapper-{{ ai_gen_id }} {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    overflow: hidden;
+    background-color: #f4f4f4;
+  }
+
+  .ai-video-card-video-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ai-video-card-poster-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ai-video-card-placeholder-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f4f4f4;
+  }
+
+  .ai-video-card-placeholder-{{ ai_gen_id }} svg {
+    width: 60%;
+    height: 60%;
+    opacity: 0.3;
+  }
+
+  .ai-video-card-overlay-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+  }
+
+  .ai-video-card-{{ ai_gen_id }}:hover .ai-video-card-overlay-{{ ai_gen_id }} {
+    opacity: 1;
+  }
+
+  .ai-video-card-overlay-text-{{ ai_gen_id }} {
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+    padding: 0 20px;
+  }
+
+  .ai-video-card-caption-{{ ai_gen_id }} {
+    padding: 16px;
+    text-align: center;
+  }
+
+  .ai-video-card-title-{{ ai_gen_id }} {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: {{ block.settings.caption_color }};
+  }
+
+  .ai-video-grid-empty-state-{{ ai_gen_id }} {
+    text-align: center;
+    padding: 60px 20px;
+    color: #666;
+    font-size: 14px;
+  }
+{% endstyle %}
+
+<video-collection-grid-{{ ai_gen_id }}
+  class="ai-video-grid-{{ ai_gen_id }}"
+  {{ block.shopify_attributes }}
+>
+  <div class="ai-video-grid-container-{{ ai_gen_id }}">
+    {% if block.settings.section_heading != blank %}
+      <h2 class="ai-video-grid-heading-{{ ai_gen_id }}">{{ block.settings.section_heading }}</h2>
+    {% endif %}
+
+    {% assign has_videos = false %}
+    {% for i in (1..6) %}
+      {% assign video_url_key = 'video_url_' | append: i %}
+      {% if block.settings[video_url_key] != blank %}
+        {% assign has_videos = true %}
+        {% break %}
+      {% endif %}
+    {% endfor %}
+
+    {% if has_videos %}
+      <div class="ai-video-grid-wrapper-{{ ai_gen_id }}">
+        {% for i in (1..6) %}
+          {% assign video_url_key = 'video_url_' | append: i %}
+          {% assign poster_key = 'poster_image_' | append: i %}
+          {% assign title_key = 'video_title_' | append: i %}
+          {% assign overlay_key = 'overlay_text_' | append: i %}
+
+          {% assign video_url = block.settings[video_url_key] %}
+          {% assign poster_image = block.settings[poster_key] %}
+          {% assign video_title = block.settings[title_key] %}
+          {% assign overlay_text = block.settings[overlay_key] %}
+
+          {% if video_url != blank %}
+            <div class="ai-video-card-{{ ai_gen_id }}" data-video-index="{{ i }}">
+              <div class="ai-video-card-wrapper-{{ ai_gen_id }}">
+                <video
+                  class="ai-video-card-video-{{ ai_gen_id }}"
+                  src="{{ video_url }}"
+                  {% if poster_image %}
+                    poster="{{ poster_image | image_url: width: 800 }}"
+                  {% endif %}
+                  autoplay
+                  muted
+                  loop
+                  playsinline
+                  preload="metadata"
+                ></video>
+
+                {% if overlay_text != blank %}
+                  <div class="ai-video-card-overlay-{{ ai_gen_id }}">
+                    <div class="ai-video-card-overlay-text-{{ ai_gen_id }}">{{ overlay_text }}</div>
+                  </div>
+                {% endif %}
+              </div>
+
+              {% if video_title != blank %}
+                <div class="ai-video-card-caption-{{ ai_gen_id }}">
+                  <h3 class="ai-video-card-title-{{ ai_gen_id }}">{{ video_title }}</h3>
+                </div>
+              {% endif %}
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    {% else %}
+      <div class="ai-video-grid-empty-state-{{ ai_gen_id }}">
+        Add video URLs to display your video collection
+      </div>
+    {% endif %}
+  </div>
+</video-collection-grid-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class VideoCollectionGrid{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        this.videos = this.querySelectorAll('.ai-video-card-video-{{ ai_gen_id }}');
+        this.setupVideoObserver();
+      }
+
+      setupVideoObserver() {
+        const options = {
+          root: null,
+          rootMargin: '0px',
+          threshold: 0.5
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            const video = entry.target;
+            if (entry.isIntersecting) {
+              video.play().catch(() => {});
+            } else {
+              video.pause();
+            }
+          });
+        }, options);
+
+        this.videos.forEach((video) => {
+          observer.observe(video);
+
+          video.addEventListener('error', function() {
+            const card = this.closest('.ai-video-card-{{ ai_gen_id }}');
+            const wrapper = card.querySelector('.ai-video-card-wrapper-{{ ai_gen_id }}');
+            const posterKey = 'poster_image_' + card.dataset.videoIndex;
+
+            this.style.display = 'none';
+
+            const existingPoster = wrapper.querySelector('.ai-video-card-poster-{{ ai_gen_id }}');
+            if (!existingPoster) {
+              const placeholder = document.createElement('div');
+              placeholder.className = 'ai-video-card-placeholder-{{ ai_gen_id }}';
+              placeholder.innerHTML = '{{ 'image' | placeholder_svg_tag }}';
+              wrapper.appendChild(placeholder);
+            }
+          });
+        });
+      }
+    }
+
+    customElements.define('video-collection-grid-{{ ai_gen_id }}', VideoCollectionGrid{{ ai_gen_id }});
+  })();
+</script>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Video collection grid",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section"
+    },
+    {
+      "type": "text",
+      "id": "section_heading",
+      "label": "Heading",
+      "default": "Video collection"
+    },
+    {
+      "type": "font_picker",
+      "id": "heading_font",
+      "label": "Heading font",
+      "default": "assistant_n4"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#121212"
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Maximum width",
+      "min": 800,
+      "max": 1600,
+      "step": 100,
+      "unit": "px",
+      "default": 1300
+    },
+    {
+      "type": "header",
+      "content": "Grid layout"
+    },
+    {
+      "type": "select",
+      "id": "desktop_columns",
+      "label": "Desktop columns",
+      "options": [
+        {
+          "value": "2",
+          "label": "2"
+        },
+        {
+          "value": "3",
+          "label": "3"
+        }
+      ],
+      "default": "3"
+    },
+    {
+      "type": "range",
+      "id": "grid_gap",
+      "label": "Grid spacing",
+      "min": 8,
+      "max": 40,
+      "step": 4,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Card style"
+    },
+    {
+      "type": "range",
+      "id": "card_border_radius",
+      "label": "Border radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "color",
+      "id": "card_background",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "caption_color",
+      "label": "Caption color",
+      "default": "#121212"
+    },
+    {
+      "type": "header",
+      "content": "Video 1"
+    },
+    {
+      "type": "url",
+      "id": "video_url_1",
+      "label": "Video URL"
+    },
+    {
+      "type": "image_picker",
+      "id": "poster_image_1",
+      "label": "Poster image"
+    },
+    {
+      "type": "text",
+      "id": "video_title_1",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "overlay_text_1",
+      "label": "Hover overlay text"
+    },
+    {
+      "type": "header",
+      "content": "Video 2"
+    },
+    {
+      "type": "url",
+      "id": "video_url_2",
+      "label": "Video URL"
+    },
+    {
+      "type": "image_picker",
+      "id": "poster_image_2",
+      "label": "Poster image"
+    },
+    {
+      "type": "text",
+      "id": "video_title_2",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "overlay_text_2",
+      "label": "Hover overlay text"
+    },
+    {
+      "type": "header",
+      "content": "Video 3"
+    },
+    {
+      "type": "url",
+      "id": "video_url_3",
+      "label": "Video URL"
+    },
+    {
+      "type": "image_picker",
+      "id": "poster_image_3",
+      "label": "Poster image"
+    },
+    {
+      "type": "text",
+      "id": "video_title_3",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "overlay_text_3",
+      "label": "Hover overlay text"
+    },
+    {
+      "type": "header",
+      "content": "Video 4"
+    },
+    {
+      "type": "url",
+      "id": "video_url_4",
+      "label": "Video URL"
+    },
+    {
+      "type": "image_picker",
+      "id": "poster_image_4",
+      "label": "Poster image"
+    },
+    {
+      "type": "text",
+      "id": "video_title_4",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "overlay_text_4",
+      "label": "Hover overlay text"
+    },
+    {
+      "type": "header",
+      "content": "Video 5"
+    },
+    {
+      "type": "url",
+      "id": "video_url_5",
+      "label": "Video URL"
+    },
+    {
+      "type": "image_picker",
+      "id": "poster_image_5",
+      "label": "Poster image"
+    },
+    {
+      "type": "text",
+      "id": "video_title_5",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "overlay_text_5",
+      "label": "Hover overlay text"
+    },
+    {
+      "type": "header",
+      "content": "Video 6"
+    },
+    {
+      "type": "url",
+      "id": "video_url_6",
+      "label": "Video URL"
+    },
+    {
+      "type": "image_picker",
+      "id": "poster_image_6",
+      "label": "Poster image"
+    },
+    {
+      "type": "text",
+      "id": "video_title_6",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "overlay_text_6",
+      "label": "Hover overlay text"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Video collection grid"
+    }
+  ]
+}
 {% endschema %}
