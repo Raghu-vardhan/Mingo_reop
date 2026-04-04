@@ -116,7 +116,6 @@
     },
     "collage_grid_ndUiBn": {
       "type": "collage-grid",
-      "disabled": true,
       "custom_css": [
         ".coll-head {}",
         "@media (max-width: 600px) {.coll-head {margin-bottom: 4rem; }}"
