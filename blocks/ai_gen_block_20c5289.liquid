@@ -266,10 +266,8 @@
                   width="{{ poster_image.width }}"
                   height="{{ poster_image.height }}"
                 >
-              {% else %}
-                <div class="ai-video-poster-placeholder-{{ ai_gen_id }}">
-                  {{ 'image' | placeholder_svg_tag }}
-                </div>
+             
+                
               {% endif %}
 
               {% if video_file == blank and video_url == blank %}
