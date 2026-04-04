@@ -1,4 +1,13 @@
 <style>
+
+  /* start Hide 'mobile explore' section on mobile */
+@media screen and (max-width: 749px) {
+  .mobile-explore-section {
+    display: none !important;
+  }
+}
+  /* end Hide 'mobile explore' section on mobile */
+
   .coll-head{
     margin:7rem auto;
   }
@@ -189,15 +198,15 @@
     }
   }
   /*start */
-  @media screen and (max-width: 749px) {
+ /* @media screen and (max-width: 749px) {
   .product-list {
     flex-direction: column; /* Stacks them vertically on phones */
-  }
+  /*}
   
-  .product-list .product-item {
+ /* .product-list .product-item {
     width: 100%;
   }
-}
+} */
 /* Isolated Responsiveness for the Highlight Section Only */
 /*@media screen and (max-width: 749px) {
   /* Targets the container specifically */
