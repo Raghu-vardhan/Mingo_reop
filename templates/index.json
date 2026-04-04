@@ -402,6 +402,7 @@
       "blocks": {
         "ai_gen_block_9d30147_PP7UUd": {
           "type": "ai_gen_block_9d30147",
+          "disabled": true,
           "settings": {
             "desktop_width_percent": 100,
             "gap": 12,
@@ -425,6 +426,45 @@
         "ai_gen_block_9d30147_PP7UUd"
       ],
       "settings": {}
+    },
+    "1775293699d8ef36e8": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_faff7b0_mjMQBP": {
+          "type": "ai_gen_block_faff7b0",
+          "settings": {
+            "desktop_columns": 3,
+            "grid_gap": 20,
+            "max_width": 1300,
+            "enable_autoplay": true,
+            "enable_hover_play": false,
+            "enable_loop": true,
+            "card_border_radius": 6,
+            "card_background_color": "#ffffff",
+            "text_color": "#121212",
+            "video_1": "shopify://files/videos/GG-website.mp4",
+            "title_1": "Video title",
+            "description_1": "Add a description for your video",
+            "video_2": "shopify://files/videos/Momints 16-9 (1).mp4",
+            "title_2": "",
+            "description_2": "",
+            "video_3": "shopify://files/videos/Syn Short 1 (1).mp4",
+            "title_3": "",
+            "description_3": "",
+            "title_4": "",
+            "description_4": "",
+            "title_5": "",
+            "description_5": "",
+            "title_6": "",
+            "description_6": ""
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_faff7b0_mjMQBP"
+      ],
+      "settings": {}
     }
   },
   "order": [
@@ -439,6 +479,7 @@
     "people_saying_44HhY9",
     "partners_yMbjmb",
     "reels_ELBUYi",
-    "1774965808aca6c37e"
+    "1774965808aca6c37e",
+    "1775293699d8ef36e8"
   ]
 }
