@@ -436,11 +436,10 @@
       "blocks": {
         "ai_gen_block_20c5289_ThAngt": {
           "type": "ai_gen_block_20c5289",
-          "disabled": true,
           "settings": {
-            "heading": "Video gallery",
+            "heading": "Explore Our Collection",
             "heading_alignment": "center",
-            "heading_color": "#121212",
+            "heading_color": "#80079e",
             "max_width": 1300,
             "enable_autoplay": true,
             "columns_desktop": 3,
