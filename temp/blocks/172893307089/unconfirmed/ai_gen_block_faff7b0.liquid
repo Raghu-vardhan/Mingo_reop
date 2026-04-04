@@ -1,6 +1,683 @@
+{% doc %}
+  @prompt
+    Create a video collection grid section that uses Shopify-hosted videos via a file picker (not YouTube/Vimeo URL fields). The section should support multiple video blocks in a responsive grid layout. Each block should have: a video file picker (for Shopify-hosted mp4 videos), a poster/thumbnail image picker, a video title text field, and a video description text field. The grid should display 2 columns on mobile and 3-4 columns on desktop. Videos should autoplay muted on hover or loop silently as background, with controls available. Gap between videos should be configurable. The section should be mobile-friendly with proper stacking.
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-video-grid-{{ ai_gen_id }} {
+    display: block;
+    width: 100%;
+    padding: 40px 20px;
+  }
+
+  .ai-video-grid-container-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: {{ block.settings.grid_gap }}px;
+    max-width: {{ block.settings.max_width }}px;
+    margin: 0 auto;
+  }
+
+  @media screen and (min-width: 750px) {
+    .ai-video-grid-container-{{ ai_gen_id }} {
+      grid-template-columns: repeat({{ block.settings.desktop_columns }}, 1fr);
+    }
+  }
+
+  .ai-video-card-{{ ai_gen_id }} {
+    position: relative;
+    border-radius: {{ block.settings.card_border_radius }}px;
+    overflow: hidden;
+    background-color: {{ block.settings.card_background_color }};
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .ai-video-wrapper-{{ ai_gen_id }} {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    background-color: #000000;
+    overflow: hidden;
+  }
+
+  .ai-video-wrapper-{{ ai_gen_id }} video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ai-video-poster-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+  }
+
+  .ai-video-poster-placeholder-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ai-video-poster-placeholder-{{ ai_gen_id }} svg {
+    width: 60%;
+    height: 60%;
+    opacity: 0.3;
+  }
+
+  .ai-video-wrapper-{{ ai_gen_id }}.playing .ai-video-poster-{{ ai_gen_id }} {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .ai-video-controls-{{ ai_gen_id }} {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+    padding: 20px 15px 15px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .ai-video-card-{{ ai_gen_id }}:hover .ai-video-controls-{{ ai_gen_id }} {
+    opacity: 1;
+  }
+
+  .ai-video-play-button-{{ ai_gen_id }} {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 2;
+  }
+
+  .ai-video-play-button-{{ ai_gen_id }}:hover {
+    background-color: rgba(255, 255, 255, 1);
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+
+  .ai-video-wrapper-{{ ai_gen_id }}.playing .ai-video-play-button-{{ ai_gen_id }} {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .ai-video-play-button-{{ ai_gen_id }} svg {
+    width: 24px;
+    height: 24px;
+    margin-left: 3px;
+  }
+
+  .ai-video-control-bar-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .ai-video-control-button-{{ ai_gen_id }} {
+    background: none;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ai-video-control-button-{{ ai_gen_id }} svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .ai-video-progress-{{ ai_gen_id }} {
+    flex-grow: 1;
+    height: 4px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 2px;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .ai-video-progress-bar-{{ ai_gen_id }} {
+    height: 100%;
+    background-color: #ffffff;
+    border-radius: 2px;
+    width: 0%;
+    transition: width 0.1s linear;
+  }
+
+  .ai-video-info-{{ ai_gen_id }} {
+    padding: 15px;
+  }
+
+  .ai-video-title-{{ ai_gen_id }} {
+    font-size: 18px;
+    font-weight: 600;
+    color: {{ block.settings.text_color }};
+    margin: 0 0 8px;
+  }
+
+  .ai-video-description-{{ ai_gen_id }} {
+    font-size: 14px;
+    color: {{ block.settings.text_color }};
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .ai-video-empty-state-{{ ai_gen_id }} {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 12px 20px;
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+    pointer-events: none;
+  }
+{% endstyle %}
+
+<video-grid-{{ ai_gen_id }} class="ai-video-grid-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-video-grid-container-{{ ai_gen_id }}">
+    {% for i in (1..6) %}
+      {% liquid
+        assign video_key = 'video_' | append: i
+        assign poster_key = 'poster_' | append: i
+        assign title_key = 'title_' | append: i
+        assign description_key = 'description_' | append: i
+
+        assign video = block.settings[video_key]
+        assign poster = block.settings[poster_key]
+        assign title = block.settings[title_key]
+        assign description = block.settings[description_key]
+      %}
+
+      {% if video != blank or poster != blank or title != blank or description != blank %}
+        <div class="ai-video-card-{{ ai_gen_id }}" data-video-index="{{ i }}">
+          <div class="ai-video-wrapper-{{ ai_gen_id }}" data-video-wrapper>
+            {% if video != blank %}
+              <video
+                data-video-element
+                muted
+                playsinline
+                {% if block.settings.enable_loop %}loop{% endif %}
+                preload="metadata"
+              >
+                <source src="{{ video }}" type="video/mp4">
+              </video>
+            {% endif %}
+
+            {% if poster != blank %}
+              <img
+                src="{{ poster | image_url: width: 800 }}"
+                alt="{{ title | escape }}"
+                class="ai-video-poster-{{ ai_gen_id }}"
+                loading="lazy"
+                width="800"
+                height="450"
+              >
+            {% else %}
+              <div class="ai-video-poster-placeholder-{{ ai_gen_id }}">
+                {{ 'image' | placeholder_svg_tag }}
+                {% if video == blank %}
+                  <div class="ai-video-empty-state-{{ ai_gen_id }}">
+                    Next, add a video file
+                  </div>
+                {% endif %}
+              </div>
+            {% endif %}
+
+            {% if video != blank %}
+              <button class="ai-video-play-button-{{ ai_gen_id }}" data-play-button aria-label="Play video">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M8 5v14l11-7z"/>
+                </svg>
+              </button>
+
+              <div class="ai-video-controls-{{ ai_gen_id }}">
+                <div class="ai-video-control-bar-{{ ai_gen_id }}">
+                  <button class="ai-video-control-button-{{ ai_gen_id }}" data-play-pause aria-label="Play/Pause">
+                    <svg data-play-icon xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M8 5v14l11-7z"/>
+                    </svg>
+                    <svg data-pause-icon style="display: none;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/>
+                    </svg>
+                  </button>
+                  <div class="ai-video-progress-{{ ai_gen_id }}" data-progress>
+                    <div class="ai-video-progress-bar-{{ ai_gen_id }}" data-progress-bar></div>
+                  </div>
+                  <button class="ai-video-control-button-{{ ai_gen_id }}" data-mute-toggle aria-label="Mute/Unmute">
+                    <svg data-volume-icon xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/>
+                    </svg>
+                    <svg data-mute-icon style="display: none;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            {% endif %}
+          </div>
+
+          {% if title != blank or description != blank %}
+            <div class="ai-video-info-{{ ai_gen_id }}">
+              {% if title != blank %}
+                <h3 class="ai-video-title-{{ ai_gen_id }}">{{ title }}</h3>
+              {% endif %}
+              {% if description != blank %}
+                <p class="ai-video-description-{{ ai_gen_id }}">{{ description }}</p>
+              {% endif %}
+            </div>
+          {% endif %}
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</video-grid-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class VideoGrid{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+        this.videos = [];
+      }
+
+      connectedCallback() {
+        this.initializeVideos();
+      }
+
+      initializeVideos() {
+        const videoCards = this.querySelectorAll('.ai-video-card-{{ ai_gen_id }}');
+        
+        videoCards.forEach((card) => {
+          const wrapper = card.querySelector('[data-video-wrapper]');
+          const video = card.querySelector('[data-video-element]');
+          const playButton = card.querySelector('[data-play-button]');
+          const playPauseButton = card.querySelector('[data-play-pause]');
+          const muteToggle = card.querySelector('[data-mute-toggle]');
+          const progress = card.querySelector('[data-progress]');
+          const progressBar = card.querySelector('[data-progress-bar]');
+          const playIcon = card.querySelector('[data-play-icon]');
+          const pauseIcon = card.querySelector('[data-pause-icon]');
+          const volumeIcon = card.querySelector('[data-volume-icon]');
+          const muteIcon = card.querySelector('[data-mute-icon]');
+
+          if (!video) return;
+
+          const enableAutoplay = {{ block.settings.enable_autoplay | json }};
+          const enableHoverPlay = {{ block.settings.enable_hover_play | json }};
+
+          if (playButton) {
+            playButton.addEventListener('click', () => {
+              this.playVideo(video, wrapper);
+            });
+          }
+
+          if (playPauseButton) {
+            playPauseButton.addEventListener('click', () => {
+              if (video.paused) {
+                this.playVideo(video, wrapper);
+              } else {
+                this.pauseVideo(video, wrapper);
+              }
+            });
+          }
+
+          if (muteToggle) {
+            muteToggle.addEventListener('click', () => {
+              video.muted = !video.muted;
+              this.updateMuteIcon(video.muted, volumeIcon, muteIcon);
+            });
+          }
+
+          if (progress) {
+            progress.addEventListener('click', (e) => {
+              const rect = progress.getBoundingClientRect();
+              const pos = (e.clientX - rect.left) / rect.width;
+              video.currentTime = pos * video.duration;
+            });
+          }
+
+          video.addEventListener('timeupdate', () => {
+            if (progressBar && video.duration) {
+              const percent = (video.currentTime / video.duration) * 100;
+              progressBar.style.width = percent + '%';
+            }
+          });
+
+          video.addEventListener('play', () => {
+            this.updatePlayPauseIcon(false, playIcon, pauseIcon);
+          });
+
+          video.addEventListener('pause', () => {
+            this.updatePlayPauseIcon(true, playIcon, pauseIcon);
+          });
+
+          if (enableHoverPlay) {
+            card.addEventListener('mouseenter', () => {
+              if (video.paused) {
+                this.playVideo(video, wrapper);
+              }
+            });
+
+            card.addEventListener('mouseleave', () => {
+              if (!video.paused) {
+                this.pauseVideo(video, wrapper);
+              }
+            });
+          }
+
+          if (enableAutoplay) {
+            const observer = new IntersectionObserver((entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  this.playVideo(video, wrapper);
+                } else {
+                  this.pauseVideo(video, wrapper);
+                }
+              });
+            }, { threshold: 0.5 });
+
+            observer.observe(card);
+          }
+
+          this.videos.push({ video, wrapper });
+        });
+      }
+
+      playVideo(video, wrapper) {
+        video.play().catch(() => {});
+        wrapper.classList.add('playing');
+      }
+
+      pauseVideo(video, wrapper) {
+        video.pause();
+        wrapper.classList.remove('playing');
+      }
+
+      updatePlayPauseIcon(isPaused, playIcon, pauseIcon) {
+        if (playIcon && pauseIcon) {
+          playIcon.style.display = isPaused ? 'block' : 'none';
+          pauseIcon.style.display = isPaused ? 'none' : 'block';
+        }
+      }
+
+      updateMuteIcon(isMuted, volumeIcon, muteIcon) {
+        if (volumeIcon && muteIcon) {
+          volumeIcon.style.display = isMuted ? 'none' : 'block';
+          muteIcon.style.display = isMuted ? 'block' : 'none';
+        }
+      }
+    }
+
+    customElements.define('video-grid-{{ ai_gen_id }}', VideoGrid{{ ai_gen_id }});
+  })();
+</script>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Video collection grid",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "desktop_columns",
+      "label": "Desktop columns",
+      "min": 2,
+      "max": 4,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "grid_gap",
+      "label": "Gap between videos",
+      "min": 8,
+      "max": 40,
+      "step": 4,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Maximum width",
+      "min": 1000,
+      "max": 1600,
+      "step": 100,
+      "unit": "px",
+      "default": 1300
+    },
+    {
+      "type": "header",
+      "content": "Video playback"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_autoplay",
+      "label": "Enable autoplay on scroll",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_hover_play",
+      "label": "Enable play on hover",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_loop",
+      "label": "Loop videos",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Style"
+    },
+    {
+      "type": "range",
+      "id": "card_border_radius",
+      "label": "Card border radius",
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "default": 6
+    },
+    {
+      "type": "color",
+      "id": "card_background_color",
+      "label": "Card background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#121212"
+    },
+    {
+      "type": "header",
+      "content": "Video 1"
+    },
+    {
+      "type": "video",
+      "id": "video_1",
+      "label": "Video file"
+    },
+    {
+      "type": "image_picker",
+      "id": "poster_1",
+      "label": "Poster image"
+    },
+    {
+      "type": "text",
+      "id": "title_1",
+      "label": "Title",
+      "default": "Video title"
+    },
+    {
+      "type": "textarea",
+      "id": "description_1",
+      "label": "Description",
+      "default": "Add a description for your video"
+    },
+    {
+      "type": "header",
+      "content": "Video 2"
+    },
+    {
+      "type": "video",
+      "id": "video_2",
+      "label": "Video file"
+    },
+    {
+      "type": "image_picker",
+      "id": "poster_2",
+      "label": "Poster image"
+    },
+    {
+      "type": "text",
+      "id": "title_2",
+      "label": "Title"
+    },
+    {
+      "type": "textarea",
+      "id": "description_2",
+      "label": "Description"
+    },
+    {
+      "type": "header",
+      "content": "Video 3"
+    },
+    {
+      "type": "video",
+      "id": "video_3",
+      "label": "Video file"
+    },
+    {
+      "type": "image_picker",
+      "id": "poster_3",
+      "label": "Poster image"
+    },
+    {
+      "type": "text",
+      "id": "title_3",
+      "label": "Title"
+    },
+    {
+      "type": "textarea",
+      "id": "description_3",
+      "label": "Description"
+    },
+    {
+      "type": "header",
+      "content": "Video 4"
+    },
+    {
+      "type": "video",
+      "id": "video_4",
+      "label": "Video file"
+    },
+    {
+      "type": "image_picker",
+      "id": "poster_4",
+      "label": "Poster image"
+    },
+    {
+      "type": "text",
+      "id": "title_4",
+      "label": "Title"
+    },
+    {
+      "type": "textarea",
+      "id": "description_4",
+      "label": "Description"
+    },
+    {
+      "type": "header",
+      "content": "Video 5"
+    },
+    {
+      "type": "video",
+      "id": "video_5",
+      "label": "Video file"
+    },
+    {
+      "type": "image_picker",
+      "id": "poster_5",
+      "label": "Poster image"
+    },
+    {
+      "type": "text",
+      "id": "title_5",
+      "label": "Title"
+    },
+    {
+      "type": "textarea",
+      "id": "description_5",
+      "label": "Description"
+    },
+    {
+      "type": "header",
+      "content": "Video 6"
+    },
+    {
+      "type": "video",
+      "id": "video_6",
+      "label": "Video file"
+    },
+    {
+      "type": "image_picker",
+      "id": "poster_6",
+      "label": "Poster image"
+    },
+    {
+      "type": "text",
+      "id": "title_6",
+      "label": "Title"
+    },
+    {
+      "type": "textarea",
+      "id": "description_6",
+      "label": "Description"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Video collection grid"
+    }
+  ]
+}
 {% endschema %}
