@@ -111,12 +111,12 @@
       "block_order": [
         "ai_gen_block_20c5289_ThAngt"
       ],
+      "disabled": true,
       "name": "mobile explore",
       "settings": {}
     },
     "collage_grid_ndUiBn": {
       "type": "collage-grid",
-      "disabled": true,
       "custom_css": [
         ".coll-head {}",
         "@media (max-width: 600px) {.coll-head {margin-bottom: 4rem; }}"
