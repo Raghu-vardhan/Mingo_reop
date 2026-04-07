@@ -3782,7 +3782,7 @@ details-disclosure > details {
   margin-top: 10px;
 }
 /* new css starts */
-@media (width >= 1024px){
+@media (width >= 768px){
 
     .ai-video-grid-container-ar1g4tuvnenb4b3hneaigenblock20c5289thangt{
     display:none;
