@@ -3781,10 +3781,17 @@ details-disclosure > details {
 .wishlist-page button {
   margin-top: 10px;
 }
+
 /* new css starts */
 @media (width >= 768px){
 
     .ai-video-grid-container-ar1g4tuvnenb4b3hneaigenblock20c5289thangt{
+    display:none;
+    }
+}
+@media (768px <= width < 1024px){
+
+    .background scroll-trigger animate--slide-in{
     display:none;
     }
 }
