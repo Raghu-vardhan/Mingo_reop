@@ -3791,7 +3791,7 @@ details-disclosure > details {
 }
 @media (width < 768px){
 
-    .background scroll-trigger animate--slide-in{
+    .scroll-trigger animate--slide-in{
     display:none;
     }
 }
