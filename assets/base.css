@@ -3792,7 +3792,9 @@ details-disclosure > details {
 @media (width < 768px){
 
     .scroll-trigger animate--slide-in{
+
     display:none;
+    
     }
 }
   /* new css ends */
