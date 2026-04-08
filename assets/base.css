@@ -3789,12 +3789,13 @@ details-disclosure > details {
     display:none;
     }
 }
+
 @media (width < 768px){
 
     .scroll-trigger animate--slide-in{
 
     display:none;
-    
+
     }
 }
   /* new css ends */
