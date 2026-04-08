@@ -3786,13 +3786,15 @@ details-disclosure > details {
 @media (width >= 768px){
 
     .ai-video-grid-container-ar1g4tuvnenb4b3hneaigenblock20c5289thangt{
+
     display:none;
+
     }
 }
 
 @media (width < 768px){
 
-    .scroll-trigger animate--slide-in{
+    .scroll-trigger{
 
     display:none;
 
