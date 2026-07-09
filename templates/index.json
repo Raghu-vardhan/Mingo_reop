@@ -44,6 +44,7 @@
     },
     "video_img_banner_Yh7kJm": {
       "type": "video-img-banner",
+      "disabled": true,
       "settings": {
         "slide_interval": 5
       }
