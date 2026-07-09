@@ -116,14 +116,13 @@
     },
     "collage_grid_ndUiBn": {
       "type": "collage-grid",
+      "disabled": true,
       "custom_css": [
         ".coll-head {}",
         "@media (max-width: 600px) {.coll-head {margin-bottom: 4rem; }}"
       ],
       "settings": {
-        "collection_img": "shopify://shop_images/Rectangle_266_a07d92c4-93b1-4f30-9825-c82a47569222.jpg",
         "collection_url": "shopify://collections/gogummies",
-        "image1": "shopify://shop_images/momints_1.webp",
         "image1_url": "shopify://collections/momints",
         "image1_url1": "shopify://collections/syn"
       }
@@ -131,15 +130,12 @@
     "main_banner_a9W3Pk": {
       "type": "main-banner",
       "settings": {
-        "banner_image": "shopify://shop_images/Mingo-banner.jpg",
-        "mobile_banner_image": "shopify://shop_images/Mingo_Homepage_mobile.png",
         "svg_icon": ""
       }
     },
     "abouthome_mjrUJg": {
       "type": "abouthome",
       "settings": {
-        "abt_img": "shopify://shop_images/transforming_wellness1.png",
         "desc1": "<p>We’re taking wellness to the next level with innovative technologies and smart formulations. Our NanoDrop Technology<strong> </strong>delivers nutrients with over 95% bioavailability, ensuring your body gets what it needs quickly and efficiently. With nanocarrier systems like liposomes and solid lipid nanoparticles, we’ve found a way to maximize absorption and stability for every active ingredient. </p><p>Our encapsulation technology locks in the goodness, while our opaque gummies<strong> </strong>bring you real fruit flavors, natural colors, and a satisfying chew without the medicinal aftertaste. Plus, everything is designed for high bioavailability, so nothing goes to waste!</p>",
         "abt_heading": "Transforming Wellness with Cutting-Edge Science"
       }
@@ -204,7 +200,6 @@
         "box_Fchwct": {
           "type": "box",
           "settings": {
-            "image": "shopify://shop_images/Untitled_design_1.png",
             "title": "Healthcare Provider",
             "quote": "Aarka Hospitals",
             "description": "We are a wellness hospital and our patients strive on asking health supplements that are natural, safe and effective. Now we found the right partner who supply gummies and oral strips with a wide range of products. We are very happy with Momints and Gogummies."
@@ -213,7 +208,6 @@
         "box_ww7RVG": {
           "type": "box",
           "settings": {
-            "image": "shopify://shop_images/Untitled_design.png",
             "title": "Healthcare Provider",
             "quote": "Amma Hospitals",
             "description": "It has been 3 years that we have their products in our pharmacies. Their oral strips are very effective and a better alternative for tablets and capsules. They have about 20 health supplements products like Vitamin C, D, Multivitamin, B Complex, Iron, women health etc."
@@ -222,7 +216,6 @@
         "box_XWVHVc": {
           "type": "box",
           "settings": {
-            "image": "shopify://shop_images/Artboard_1_1_82f7899d-bb36-438c-9c7c-ba48a7159ba5.png",
             "title": "Founder, Cargo Exchange",
             "quote": "Srihari",
             "description": "Superb product portfolio. I have tasted their gummies and chocolates. Their products – Gogummies, Momints and SYN are one of its kind. We use and promote their products in our national and international networks"
@@ -231,7 +224,6 @@
         "box_HTxxAt": {
           "type": "box",
           "settings": {
-            "image": "shopify://shop_images/Artboard_1_1.png",
             "title": "Founder, SDEX",
             "quote": "Anjan Roy",
             "description": "We have been using their products for over 3 years. Firstly, the taste is really good. The gummies are very chewy and you can’t resist after eating one. We use and promote their products through our network"
@@ -345,57 +337,39 @@
       "blocks": {
         "image_mRpyQK": {
           "type": "image",
-          "settings": {
-            "partner_img": "shopify://shop_images/Rectangle_17_1.png"
-          }
+          "settings": {}
         },
         "image_KmWhya": {
           "type": "image",
-          "settings": {
-            "partner_img": "shopify://shop_images/Rectangle_17_1.png"
-          }
+          "settings": {}
         },
         "image_Tkdcc7": {
           "type": "image",
-          "settings": {
-            "partner_img": "shopify://shop_images/Rectangle_17_1.png"
-          }
+          "settings": {}
         },
         "image_Vd3kL3": {
           "type": "image",
-          "settings": {
-            "partner_img": "shopify://shop_images/Rectangle_17_1.png"
-          }
+          "settings": {}
         },
         "image_4Knzyn": {
           "type": "image",
-          "settings": {
-            "partner_img": "shopify://shop_images/Rectangle_17_1.png"
-          }
+          "settings": {}
         },
         "image_wrLAQx": {
           "type": "image",
-          "settings": {
-            "partner_img": "shopify://shop_images/Rectangle_17_1.png"
-          }
+          "settings": {}
         },
         "image_W4rKCx": {
           "type": "image",
-          "settings": {
-            "partner_img": "shopify://shop_images/Rectangle_17_1.png"
-          }
+          "settings": {}
         },
         "image_kA7y6P": {
           "type": "image",
-          "settings": {
-            "partner_img": "shopify://shop_images/Rectangle_17_1.png"
-          }
+          "settings": {}
         },
         "image_9kAAgH": {
           "type": "image",
-          "settings": {
-            "partner_img": "shopify://shop_images/Rectangle_17_1.png"
-          }
+          "settings": {}
         }
       },
       "block_order": [
